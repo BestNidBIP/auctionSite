@@ -70,3 +70,8 @@ body{
 .publications .single-publication{
     margin-top: 10px;
 }
+
+.line-bottom{
+    border-bottom: 2px solid #7CCECA;
+    margin-bottom: 20px;
+}
