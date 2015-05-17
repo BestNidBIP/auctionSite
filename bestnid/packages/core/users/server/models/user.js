@@ -62,6 +62,10 @@ var UserSchema = new Schema({
     required: true,
     get: escapeProperty
   },
+  lastname: {
+    type: String,
+    required: true
+  },
   roles: {
     type: Array,
     default: ['authenticated']
@@ -73,6 +77,30 @@ var UserSchema = new Schema({
   provider: {
     type: String,
     default: 'local'
+  },
+  phone_number: {
+    type: Number,
+    required: true
+  },
+  type_credit_card: {
+    type: String,
+    required: true
+  },
+  credit_card_number: {
+    type: Number,
+    required: true
+  },
+  credit_card_security_code: {
+    type: Number,
+    required: true
+  },
+  cc_expiration_month: {
+    type: Number,
+    required: true
+  },
+  cc_expiration_year: {
+    type: Number,
+    required: true
   },
   salt: String,
   resetPasswordToken: String,
