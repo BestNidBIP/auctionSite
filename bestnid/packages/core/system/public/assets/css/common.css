@@ -42,11 +42,6 @@ body{
     font-weight: bold;
 }
 
-.publications{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
 .links-footer{
     padding-top: 20px;
 }
@@ -64,4 +59,14 @@ body{
 
 .footer{
     background-color:  #00697E;
+}
+
+.publications h3{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.publications .single-publication{
+    margin-top: 10px;
 }
