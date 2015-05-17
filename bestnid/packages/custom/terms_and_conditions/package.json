@@ -1,0 +1,15 @@
+{
+  "name": "terms_and_conditions",
+  "version": "0.0.1",
+  "description": "Some description of terms_and_conditions",
+  "author": {
+    "name": "mean scaffold"
+  },
+  "mean": "0.4.7",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "dependencies": {},
+  "license": "MIT"
+}
