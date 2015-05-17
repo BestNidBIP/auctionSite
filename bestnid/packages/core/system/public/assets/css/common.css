@@ -1,52 +1,43 @@
-.page-header {
-    padding-bottom: 0 !important;
-    margin: 0 !important;
-    border-bottom: 0 !important;
-}
-.page-header .navbar-nav {
-    float: right;
-}
-.page-header > div > div, .page-header > div > ul {
-    display: inline-block;
-}
-.text-edit {
-    padding: 13px 0 0 0;
-}
-.account {
-    text-align:right;
-}
-.account > div, .account > ul {
-    text-align: left;
-}
-.navbar .nav > li > a.brand {
-    padding-left: 20px;
-    margin-left: 0
-}
-.content {
-    margin-top: 70px;
-    width: 100%
-}
-footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	height: 30px;
-	width: 100%;
-	background: #ddd;
-	-webkit-box-shadow: 0 8px 6px 6px black;
-	-moz-box-shadow: 0 8px 6px 6px black;
-	box-shadow: 0 8px 6px 6px black
-}
-footer p {
-	padding: 5px 0 12px 10px
+
+.navbar-img{
+  max-height: 40px;
 }
 
-.featuredpic img{
-  width:510px;
+.navbar-default {
+    background-color: white;
+    border-bottom: 4px solid #07A2B3;
+    min-height: 60px;
 }
-/*.ng-invalid.ng-dirty{*/
-    /*border-color:#FA787E;*/
-/*}*/
-/*.ng-valid.ng-dirty{*/
-    /*border-color:#78FA89;*/
-/*}*/
+
+.navbar-form .form-control{
+    margin-top: 5px;
+}
+
+.home-banner{
+    position: relative;
+    background-image: url("/theme/assets/img/E-Commerce.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    min-height: 300px;
+}
+
+.home-title{
+    background-color: rgba(0,0,0,0.7);
+    margin-top: 100px;
+}
+
+.home-title h1{
+    color: white !important;
+    padding: 25px;
+}
+
+.home-title .bestnid-brand-name{
+    color: #F25A2B;
+    font-weight: bold;
+}
+
+.publications{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
