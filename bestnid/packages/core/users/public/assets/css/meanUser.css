@@ -1,3 +1,4 @@
-#forms h1{
-	color: white;
+.line-bottom{
+	border-bottom: 2px solid #7CCECA;
+	margin-bottom: 20px;
 }

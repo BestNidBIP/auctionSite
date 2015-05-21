@@ -1,32 +1,40 @@
-<div id="forms" data-ng-controller="LoginCtrl">
-    <div class="col-xs-hidden col-sm-hidden col-md-4 col-lg-4"></div>
-    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-        <h2>Iniciar Sesión</h2>
-        <div class="alert alert-danger animated fadeIn" ng-show="loginerror">{{loginerror}}</div>
-        <form id="login_form" ng-submit="login()">
-        <div class="input-wrapper">
-            <input required id="email_block" type="email" name="email" placeholder="Email Address" ng-model="user.email">
-            <div class="error_message">Please enter a correct info #</div>
-            <span class="pic email"></span>
+<div data-ng-controller="LoginCtrl">
+    <div class="container">
+        <div class="col-xs-hidden col-sm-hidden col-md-4 col-lg-4"></div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <h2 class="text-center">Iniciar Sesión</h2>
+            <div class="line-bottom"></div>
+            <div class="alert alert-danger animated fadeIn" ng-show="loginerror">{{loginerror}}</div>
+            <form id="login_form" ng-submit="login()">
+                <div class="form-group">
+                    <label for="email_block">Correo electrónico:</label>
+                    <input class="form-control" required id="email_block" type="email" name="email" placeholder="usuario@mail.com" ng-model="user.email">
+                    <span class="pic email"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password_block">Contraseña:</label>
+                    <input class="form-control" required id="password_block" name="password" type="{{input.type}}" placeholder="{{input.placeholder}}" ng-model="user.password">
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="button_login text-center">
+                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <br>
+                        <p class="text-center">¿Todavía no tienes una cuenta?
+                        <a ui-sref='auth.register'>Registrarte</a></p>
+                    </div>
+                </div>
+                <div class="forgot_password text-center">
+                    <a ui-sref='forgot-password'>¿Olvidaste tu contraseña?</a>
+                </div>
+
+            </form>
         </div>
-        <div class="input-wrapper">
-            <input required id="password_block" name="password" type="{{input.type}}" placeholder="{{input.placeholder}}" ng-model="user.password">
-            <div class="error_message">Please enter a correct info #</div>
-                <span class="pic password {{input.iconClass}}" ng-click = "togglePasswordVisible()">
-                      <div class="hide_text_password">
-                          {{input.tooltipText}}
-                      </div>
-                </span>
-        </div>
-        <div class="forgot_password">
-            <a ui-sref='forgot-password'>Forgot your password?</a>
-        </div>
-        <div class="button_login">
-            <button type="submit" class="submit_button">Login</button>
-            <p>Don't have an account?</p>
-            <a ui-sref='auth.register' >Sign up</a>
-        </div>
-    </form>
+        <div class="col-xs-hidden col-sm-hidden col-md-4 col-lg-4"></div>
     </div>
-    <div class="col-xs-hidden col-sm-hidden col-md-4 col-lg-4"></div>    
+
 </div>
