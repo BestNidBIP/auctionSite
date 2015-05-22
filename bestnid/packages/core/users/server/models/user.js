@@ -42,47 +42,76 @@ var escapeProperty = function(value) {
  * User Schema
  */
 
-var UserSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-    get: escapeProperty
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    // Regexp to validate emails with more strict rules as added in tests/users.js which also conforms mostly with RFC2822 guide lines
-    match: [/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'Please enter a valid email'],
-    validate: [validateUniqueEmail, 'E-mail address is already in-use']
-  },
-  username: {
-    type: String,
-    unique: true,
-    required: true,
-    get: escapeProperty
-  },
-  roles: {
-    type: Array,
-    default: ['authenticated']
-  },
-  hashed_password: {
-    type: String,
-    validate: [validatePresenceOf, 'Password cannot be blank']
-  },
-  provider: {
-    type: String,
-    default: 'local'
-  },
-  salt: String,
-  resetPasswordToken: String,
-  resetPasswordExpires: Date,
-  profile: {},
-  facebook: {},
-  twitter: {},
-  github: {},
-  google: {},
-  linkedin: {}
+var UserSchema;
+UserSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+        get: escapeProperty
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        // Regexp to validate emails with more strict rules as added in tests/users.js which also conforms mostly with RFC2822 guide lines
+        match: [/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'Please enter a valid email'],
+        validate: [validateUniqueEmail, 'E-mail address is already in-use']
+    },
+    username: {
+        type: String,
+        unique: true,
+        required: true,
+        get: escapeProperty
+    },
+    roles: {
+        type: Array,
+        default: ['authenticated']
+    },
+    hashed_password: {
+        type: String,
+        validate: [validatePresenceOf, 'Password cannot be blank']
+    },
+    provider: {
+        type: String,
+        default: 'local'
+    },
+    lastname: {
+        type: String,
+        required: true
+    },
+    phone: {
+        type: String,
+        required: true
+    },
+    typeOfCreditCard: {
+        type: String,
+        required: true
+    },
+    creditCardNumber: {
+        type: String,
+        required: true
+    },
+    creditCardSecCode: {
+        type: String,
+        required: true
+    },
+    creditCardExpMonth: {
+        type: String,
+        required: true
+    },
+    creditCardExpYear: {
+        type: String,
+        required: true
+    },
+    salt: String,
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
+    profile: {},
+    facebook: {},
+    twitter: {},
+    github: {},
+    google: {},
+    linkedin: {}
 });
 
 /**

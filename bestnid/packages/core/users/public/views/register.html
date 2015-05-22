@@ -32,6 +32,63 @@
         </div>
 
         <div class="input-wrapper">
+            <input required id="lastname" type="text" name="lastname" placeholder="Last name"
+                   ng-model="user.lastname">
+
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic username"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="phone" type="number" name="phone" placeholder="Phone number"
+                   ng-model="user.phone">
+
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic username"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="creditCardNumber" type="number" name="creditCardNumber" placeholder="Credit card number"
+                   ng-model="user.creditCardNumber">
+
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic username"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="creditCardSecCode" type="number" name="creditCardSecCode" placeholder="Security code"
+                   ng-model="user.creditCardSecCode">
+
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic username"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="creditCardExpMonth" type="number" name="creditCardExpMonth" placeholder="Expiration month"
+                   ng-model="user.creditCardExpMonth">
+
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic username"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="creditCardExpYear" type="number" name="creditCardExpYear" placeholder="Expiration year"
+                   ng-model="user.creditCardExpYear">
+
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic username"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <input required id="typeOfCreditCad" type="number" name="typeOfCreditCad" placeholder="Tipo Tarjeta de crédito"
+                   ng-model="user.typeOfCreditCard">
+
+            <div class="error_message">Please enter a correct info #</div>
+            <span class="pic username"></span>
+        </div>
+
+
+        <div class="input-wrapper">
             <input required id="password_block" name="password" type="{{input.type}}"
                    placeholder="{{input.placeholder}}" ng-model="user.password">
 
@@ -58,9 +115,6 @@
             <button type="submit" class="submit_button">Sign up</button>
             <p>Already have an account?</p>
             <a ui-sref='auth.login'>Log in</a>
-        </div>
-        <div class="woman_ninja_bottom">
-            <img src="/theme/assets/img/woman_ninja.png" alt="#">
         </div>
     </form>
 </div>
