@@ -57,7 +57,7 @@ angular.module('mean.users')
             }
           })
           .error(function() {
-            $scope.loginerror = 'Authentication failed.';
+            $scope.loginerror = 'Alguno de los datos ingresados son inválidos.';
           });
       };
     }

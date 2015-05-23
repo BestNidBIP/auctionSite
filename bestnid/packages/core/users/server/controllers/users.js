@@ -54,11 +54,12 @@ exports.create = function(req, res, next) {
   console.log(req);
 
   // because we set our user.provider to local our models/user.js validation will always be true
-  req.assert('name', 'You must enter a name').notEmpty();
-  req.assert('email', 'You must enter a valid email address').isEmail();
-  req.assert('password', 'Password must be between 8-20 characters long').len(8, 20);
-  req.assert('username', 'Username cannot be more than 20 characters').len(1, 20);
-  req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
+  req.assert('name', 'Por favor ingresa un nombre').notEmpty();
+  req.assert('lastname', 'Por favor ingresa tu apellido').notEmpty();
+  req.assert('email', 'Por favor ingresa una dirección de correo válida').isEmail();
+  req.assert('password', 'Por favor ingresa un password que contenga entre 8 y 20 caracteres.').len(8, 20);
+  req.assert('username', 'El nombre de usuario no puede tener mas de 20 caracteres.').len(1, 20);
+  req.assert('confirmPassword', 'Las contraseñas no son iguales.').equals(req.body.password);
 
   var errors = req.validationErrors();
   if (errors) {
@@ -73,7 +74,7 @@ exports.create = function(req, res, next) {
         case 11000:
         case 11001:
           res.status(400).json([{
-            msg: 'Username already taken',
+            msg: 'El nombre de usuario ya esta tomado',
             param: 'username'
           }]);
           break;
@@ -225,7 +226,7 @@ exports.forgotpassword = function(req, res, next) {
         status: 'success'
       };
       if (err) {
-        response.message = 'User does not exist';
+        response.message = 'El usuario no existe';
         response.status = 'danger';
       }
       res.json(response);
