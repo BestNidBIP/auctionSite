@@ -1,3 +1,4 @@
-.profile-example h1 {
-  background-color: purple
+.profile-content{
+  background-color: white;
+  border-radius: 50px;
 }
