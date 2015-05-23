@@ -226,7 +226,7 @@ exports.forgotpassword = function(req, res, next) {
         status: 'success'
       };
       if (err) {
-        response.message = 'El usuario no existe';
+        response.message = 'El usuario ingresado no existe.';
         response.status = 'danger';
       }
       res.json(response);
