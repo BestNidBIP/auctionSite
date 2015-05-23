@@ -81,27 +81,31 @@ UserSchema = new Schema({
     },
     phone: {
         type: String,
-        required: true
+        required: false
     },
     typeOfCreditCard: {
         type: String,
-        required: true
+        required: false
     },
     creditCardNumber: {
         type: String,
-        required: true
+        required: false
     },
     creditCardSecCode: {
         type: String,
-        required: true
+        required: false
     },
     creditCardExpMonth: {
         type: String,
-        required: true
+        required: false
     },
     creditCardExpYear: {
         type: String,
-        required: true
+        required: false
+    },
+    image: {
+        type: String,
+        default: ''
     },
     salt: String,
     resetPasswordToken: String,
