@@ -7,5 +7,12 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
     $scope.package = {
       name: 'profile'
     };
+
+    $scope.user_profile = Profile.getProfile();
+
+    $scope.user_profile.then(function(response){
+    	console.log(response);
+    });
+
   }
 ]);
