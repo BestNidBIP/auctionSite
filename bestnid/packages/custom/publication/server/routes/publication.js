@@ -1,20 +1,18 @@
 'use strict';
 
+
+var comment = require('../controllers/publication'),
+    config = require('meanio').loadConfig();
+
+
 /* jshint -W098 */
 // The Package is past automatically as first parameter
 module.exports = function(Publication, app, auth, database) {
 
-  app.get('/publication/example/anyone', function(req, res, next) {
-    res.send('Anyone can access this');
-  });
+  app.route('/publication')
+    .get(comment.all)
+    .post(comment.create);
 
-  app.get('/publication/example/auth', auth.requiresLogin, function(req, res, next) {
-    res.send('Only authenticated users can access this');
-  });
-
-  app.get('/publication/example/admin', auth.requiresAdmin, function(req, res, next) {
-    res.send('Only users with Admin role can access this');
-  });
 
   app.get('/publication/example/render', function(req, res, next) {
     Publication.render('index', {

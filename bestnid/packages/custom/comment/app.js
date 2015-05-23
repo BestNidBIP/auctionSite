@@ -5,26 +5,26 @@
  */
 var Module = require('meanio').Module;
 
-var Comment = new Module('comment');
+var Comments = new Module('comment');
 
 /*
  * All MEAN packages require registration
  * Dependency injection is used to define required modules
  */
-Comment.register(function(app, auth, database) {
+Comments.register(function(app, auth, database) {
 
   //We enable routing. By default the Package Object is passed to the routes
-  Comment.routes(app, auth, database);
+  Comments.routes(app, auth, database);
 
   //We are adding a link to the main menu for all authenticated users
-  Comment.menus.add({
+  Comments.menus.add({
     title: 'comment example page',
     link: 'comment example page',
     roles: ['authenticated'],
     menu: 'main'
   });
   
-  Comment.aggregateAsset('css', 'comment.css');
+  Comments.aggregateAsset('css', 'comment.css');
 
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
@@ -48,5 +48,5 @@ Comment.register(function(app, auth, database) {
     });
     */
 
-  return Comment;
+  return Comments;
 });

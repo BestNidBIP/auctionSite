@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  db: 'mongodb://' + (process.env.DB_PORT_27017_TCP_ADDR || 'localhost') + '/mean-test',
+  db: 'mongodb://' + (process.env.DB_PORT_27017_TCP_ADDR || 'localhost') + '/bestnid-test',
   http: {
     port: 3001
   },
@@ -9,7 +9,7 @@ module.exports = {
     format: 'common'
   },
   app: {
-    name: 'MEAN - A Modern Stack - Test'
+    name: 'BestNid - Test'
   },
   facebook: {
     clientID: 'APP_ID',
