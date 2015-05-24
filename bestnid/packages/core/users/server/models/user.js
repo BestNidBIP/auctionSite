@@ -80,27 +80,19 @@ UserSchema = new Schema({
         required: true
     },
     phone: {
-        type: String,
-        required: false
-    },
-    typeOfCreditCard: {
-        type: String,
+        type: Number,
         required: false
     },
     creditCardNumber: {
-        type: String,
+        type: Number,
         required: false
     },
     creditCardSecCode: {
-        type: String,
+        type: Number,
         required: false
     },
-    creditCardExpMonth: {
-        type: String,
-        required: false
-    },
-    creditCardExpYear: {
-        type: String,
+    creditCardExpDate: {
+        type: Number,
         required: false
     },
     image: {
