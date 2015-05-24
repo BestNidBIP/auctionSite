@@ -27,6 +27,11 @@ OfferSchema = new Schema({
       ref: 'User',
       required: true,
     },
+    offer:{
+      type: Number,
+      required: true,
+    },
+  }
 
 });
 

@@ -29,7 +29,6 @@ PublicationSchema = new Schema({
     },
     pictures: {
       type: [Schema.ObjectId],
-      //required: true,
     },
 
 
