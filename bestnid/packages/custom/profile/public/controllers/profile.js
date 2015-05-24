@@ -8,10 +8,10 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
       name: 'profile'
     };
 
-    $scope.user_profile = Profile.getProfile();
+    $scope.user_data_promise = Profile.getProfile();
 
-    $scope.user_profile.then(function(response){
-    	console.log(response);
+    $scope.user_data_promise.then(function(response){
+    	$scope.user_data = response.data;
     });
 
   }

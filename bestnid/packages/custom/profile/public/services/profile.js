@@ -7,7 +7,7 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
 
   	function _getUserProfile(){
   		//TODO.
-  		return $http.get('http://localhost:3000/users/me');
+  		return $http.get('/users/me');
   	}
 
     return {
