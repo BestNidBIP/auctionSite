@@ -74,6 +74,8 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
             }
         ];
 
+        //Lo que debería traer el servicio que trae las ofertas
+        $scope.offers_data = [];
     }
 ]);
 

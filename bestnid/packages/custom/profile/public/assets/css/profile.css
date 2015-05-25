@@ -49,6 +49,14 @@
     background-color: #FFA000;
 }
 
+#myOffers {
+    padding: 15px;
+}
+
+#myOffers .search-for{
+    background-color: #00A8BD;
+}
+
 @media (max-width: 767px) {
     #myPublications .btn {
         margin-top: 10px;
