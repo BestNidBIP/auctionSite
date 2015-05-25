@@ -13,12 +13,18 @@
 .profile-main-data {
     background-color: #00697F;
     padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-.profile-main-data p {
+.profile-main-data h5 {
     padding-top: 10px;
     color: white;
     font-size: 14px;
+}
+
+.profile-main-data img {
+    max-height: 80px;
+    margin: 0 auto;
 }
 
 .line-bottom {

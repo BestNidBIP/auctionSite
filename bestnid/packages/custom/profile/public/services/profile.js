@@ -31,7 +31,7 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
 
         return {
             name: 'profile',
-            getProfile: _getUserProfile
+            getProfile: _getUserProfile,
         };
     }
 ]);

@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="profile-main-data">
+            <!-- User profile picture -->
+            <img ng-if="!user_data.image" src="/profile/assets/img/default_profile_pic.jpg"
+                 alt="My Profile picture" class="img-circle img-responsive"/>
+            <img ng-if="user_data.image" src="" alt="My Profile Picture"
+                 class="img-thumbnail img-responsive"/>
+            <h5 class="text-center">Hola <b>{{user_data.name}}</b>!</h5>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-7 col-lg-7">
+        <h3>Mi Perfil</h3>
+
+        <div class="line-bottom"></div>
+        <h4>Mis Datos Personales</h4>
+
+        <form>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="username">Nombre de usuario:</label>
+                        <input type="text" class="form-control" name="username" id="username"
+                               placeholder="{{user_data.username}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" class="form-control" name="name" id="name"
+                               placeholder="{{user_data.name}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Apellido:</label>
+                        <input type="text" class="form-control" name="lastname" id="lastname"
+                               placeholder="{{user_data.lastname}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono:</label>
+                        <input type="number" class="form-control" name="phone" id="phone"
+                               placeholder="{{user_data.phone}}"/>
+                    </div>
+
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" class="form-control" name="email" id="email"
+                               placeholder="{{user_data.email}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" class="form-control" name="password" id="password"
+                               placeholder="{{user_data.password}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Contraseña:</label>
+                        <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
+                               placeholder="{{user_data.password}}"/>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <h4>Mis Datos De Facturación</h4>
+            
+        </form>
+    </div>
+</div>
