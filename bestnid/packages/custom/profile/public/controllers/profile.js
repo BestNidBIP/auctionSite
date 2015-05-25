@@ -11,15 +11,18 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
         $scope.tabsContent = [
             {
                 name: 'Mi Perfil',
-                url: '.myProfile'
+                url: '.myProfile',
+                active: true
             },
             {
                 name: 'Mis Publicaciones',
-                url: '.myPublications'
+                url: '.myPublications',
+                active: false
             },
             {
                 name: 'Mis Ofertas',
-                url: '.myOffers'
+                url: '.myOffers',
+                active: false
             }
         ];
 
@@ -42,12 +45,32 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
             {
                 title: 'Bicicleta plegable',
                 imgPath: 'http://labicikleta.com/wp-content/uploads/2013/07/Viajes.jpg',
-                daysRemained: 5
+                daysRemained: 5,
+                linkPublication: ''
             },
             {
                 title: 'Remera nirvana',
                 imgPath: 'http://mlu-s2-p.mlstatic.com/remeras-de-nirvana-estampadas-en-serigrafia-1668-MLU3418072179_112012-O.jpg',
-                daysRemained: 10
+                daysRemained: 10,
+                linkPublication: ''
+            },
+            {
+                title: 'Lego Batman',
+                imgPath: 'http://ecx.images-amazon.com/images/I/41mH%2BlM7cmL.jpg',
+                daysRemained: 1,
+                linkPublication: ''
+            },
+            {
+                title: 'Mochila Samsonite',
+                imgPath: 'http://mlm-s1-p.mlstatic.com/mochilas-marcas-bolsas-carteras-10400-MLM20027752729_012014-Y.jpg',
+                daysRemained: 2,
+                linkPublication: ''
+            },
+            {
+                title: 'Zapatillas Nike',
+                imgPath: '',
+                daysRemained: 0,
+                linkPublication: ''
             }
         ];
 

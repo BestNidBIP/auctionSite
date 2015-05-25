@@ -23,15 +23,28 @@
                 <div class="caption">
                     <h3 class="text-center">{{publication.title}}</h3>
                     <ul class="list-unstyled">
-                        <li class="text-center">
-                            <b><span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                        <li class="text-center" ng-hide="publication.daysRemained == 0">
+                            <b><span
+
+                                    class="glyphicon glyphicon-time"
+                                    aria-hidden="true"></span>
                                 Termina en</b> {{publication.daysRemained}} días.
+                        </li>
+                        <li ng-hide="publication.daysRemained != 0" class="text-center text-danger">
+                            Esta publicación ya finalizo.
                         </li>
                     </ul>
                     <div class="text-center">
-                        <button type="button" class="btn btn-info">Ver</button>
-                        <button type="button" class="btn btn-success">Editar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        <!-- If the publication expired -->
+                        <a ng-hide="publication.daysRemained == 0" href="{{publication.linkPublication}}"
+                                type="button" class="btn btn-info">Ver</a>
+                        <a ng-hide="publication.daysRemained != 0"
+                                type="button" class="btn btn-warning">Publicar</a>
+
+
+                        <a type="button" class="btn btn-success">Editar</a>
+                        <a type="button" class="btn btn-danger">Eliminar</a>
+                        </div>
                     </div>
 
                 </div>
