@@ -60,7 +60,34 @@
             </div>
             <hr/>
             <h4>Mis Datos De Facturación</h4>
-            
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="creditCardNumber">Número de la tarjeta de crédito:</label>
+                        <input type="number" class="form-control" name="creditCardNumber" id="creditCardNumber"
+                               placeholder="{{user_data.creditCardNumber}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="creditCardExpDate">Fecha de expiración:</label>
+                        <input type="month" class="form-control" name="creditCardExpDate" id="creditCardExpDate"
+                               placeholder="{{user_data.creditCardExpDate}}" min="2050-01" max="2015-12"/>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="creditCardSecCode">Código de seguridad:</label>
+                        <input type="number" class="form-control" name="creditCardSecCode" id="creditCardSecCode"
+                               placeholder="{{user_data.creditCardSecCode}}"/>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <br/>
+                    <button type="button" class="btn btn-success">Actualizar Perfil</button>
+                    <button type="button" class="btn btn-danger">Borrar Cuenta</button>
+                </div>
+            </div>
+
         </form>
     </div>
 </div>
