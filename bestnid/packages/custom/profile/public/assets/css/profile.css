@@ -44,3 +44,9 @@
 #myPublications img{
     max-height: 160px;
 }
+
+.search-for{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #FF8800;
+}

@@ -3,13 +3,20 @@
 
     <div class="line-bottom"></div>
 
-    <div class="row">
-    <!-- For each publication repeat this div -->
+    <ol class="breadcrumb search-for">
 
-        <div class="col-xs-12 col-sm-4 col-md-3" ng-repeat="publication in publication_data">
+            <input class="form-control" ng-model="search_for_publications"
+                   placeholder="Buscar en mis publicaciones">
+    </ol>
+
+    <div class="row">
+        <!-- For each publication repeat this div -->
+
+        <div class="col-xs-12 col-sm-4 col-md-3"
+             ng-repeat="publication in publication_data | filter: search_for_publications">
             <div class="thumbnail">
                 <img ng-if="!publication.imgPath" src="/publication/assets/img/image-comming-soon.png"
-                        class="img-responsive">
+                     class="img-responsive">
                 <img ng-if="publication.imgPath" src="{{publication.imgPath}}"
                      class="img-responsive">
 
@@ -18,7 +25,7 @@
                     <ul class="list-unstyled">
                         <li class="text-center">
                             <b><span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            Termina en</b> {{publication.daysRemained}} días.
+                                Termina en</b> {{publication.daysRemained}} días.
                         </li>
                     </ul>
                     <div class="text-center">
