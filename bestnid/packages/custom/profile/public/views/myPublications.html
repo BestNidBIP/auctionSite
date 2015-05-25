@@ -3,47 +3,58 @@
 
     <div class="line-bottom"></div>
 
-    <ol class="breadcrumb search-for">
+    <div ng-if="publication_data">
+        <div class="breadcrumb search-for">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                    <input class="form-control" ng-model="search_for_publications"
+                           placeholder="Buscar en mis publicaciones">
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <a href="" class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        Nueva Publicación
+                    </a>
+                </div>
+            </div>
 
-            <input class="form-control" ng-model="search_for_publications"
-                   placeholder="Buscar en mis publicaciones">
-    </ol>
+        </div>
 
-    <div class="row">
-        <!-- For each publication repeat this div -->
+        <div class="row">
+            <!-- For each publication repeat this div -->
 
-        <div class="col-xs-12 col-sm-4 col-md-3"
-             ng-repeat="publication in publication_data | filter: search_for_publications">
-            <div class="thumbnail">
-                <img ng-if="!publication.imgPath" src="/publication/assets/img/image-comming-soon.png"
-                     class="img-responsive">
-                <img ng-if="publication.imgPath" src="{{publication.imgPath}}"
-                     class="img-responsive">
+            <div class="col-xs-12 col-sm-4 col-md-3"
+                 ng-repeat="publication in publication_data | filter: search_for_publications">
+                <div class="thumbnail">
+                    <img ng-if="!publication.imgPath" src="/publication/assets/img/image-comming-soon.png"
+                         class="img-responsive">
+                    <img ng-if="publication.imgPath" src="{{publication.imgPath}}"
+                         class="img-responsive">
 
-                <div class="caption">
-                    <h3 class="text-center">{{publication.title}}</h3>
-                    <ul class="list-unstyled">
-                        <li class="text-center" ng-hide="publication.daysRemained == 0">
-                            <b><span
+                    <div class="caption">
+                        <h3 class="text-center">{{publication.title}}</h3>
+                        <ul class="list-unstyled">
+                            <li class="text-center" ng-hide="publication.daysRemained == 0">
+                                <b><span
 
-                                    class="glyphicon glyphicon-time"
-                                    aria-hidden="true"></span>
-                                Termina en</b> {{publication.daysRemained}} días.
-                        </li>
-                        <li ng-hide="publication.daysRemained != 0" class="text-center text-danger">
-                            Esta publicación ya finalizo.
-                        </li>
-                    </ul>
-                    <div class="text-center">
-                        <!-- If the publication expired -->
-                        <a ng-hide="publication.daysRemained == 0" href="{{publication.linkPublication}}"
-                                type="button" class="btn btn-info">Ver</a>
-                        <a ng-hide="publication.daysRemained != 0"
-                                type="button" class="btn btn-warning">Publicar</a>
+                                        class="glyphicon glyphicon-time"
+                                        aria-hidden="true"></span>
+                                    Termina en</b> {{publication.daysRemained}} días.
+                            </li>
+                            <li ng-hide="publication.daysRemained != 0" class="text-center text-danger">
+                                Esta publicación ya finalizo.
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <!-- If the publication expired -->
+                            <a ng-hide="publication.daysRemained == 0" href="{{publication.linkPublication}}"
+                               type="button" class="btn btn-info">Ver</a>
+                            <a ng-hide="publication.daysRemained != 0"
+                               type="button" class="btn btn-warning">Publicar</a>
 
 
-                        <a type="button" class="btn btn-success">Editar</a>
-                        <a type="button" class="btn btn-danger">Eliminar</a>
+                            <a type="button" class="btn btn-success">Editar</a>
+                            <a type="button" class="btn btn-danger">Eliminar</a>
                         </div>
                     </div>
 
@@ -51,5 +62,17 @@
             </div>
         </div>
     </div>
+
+    <div ng-if="!publication_data">
+        <div class="well well-lg text-center">
+            <h4>Todavía no creaste ninguna publicación.</h4><br>
+            <a href="" class="btn btn-success">
+                <b>Crear Publicación</b>
+            </a>
+        </div>
+
+
+    </div>
+</div>
 </div>
 
