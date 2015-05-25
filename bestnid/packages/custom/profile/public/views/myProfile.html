@@ -15,28 +15,72 @@
         <div class="line-bottom"></div>
         <h4>Mis Datos Personales</h4>
 
-        <form>
+        <form name="userData" novalidate>
+
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group">
                         <label for="username">Nombre de usuario:</label>
                         <input type="text" class="form-control" name="username" id="username"
-                               placeholder="{{user_data.username}}"/>
+                               placeholder="{{user_data.username}}" ng-model="user_data.username"
+                               value="{{user_data.username}}" disabled/>
                     </div>
                     <div class="form-group">
                         <label for="name">Nombre:</label>
                         <input type="text" class="form-control" name="name" id="name"
-                               placeholder="{{user_data.name}}"/>
+                               placeholder="{{user_data.name}}"
+                               ng-model="user_data.name"
+                               ng-pattern="/[a-zA-Z0-9^ ]/"
+                               ng-class="{highlight: userData.name.$error.required}"
+                               value="{{user_data.name}}"
+                               required/>
+
+                        <div class="alert alert-danger" role="alert" ng-show="userData.name.$error.required">
+                            <span class="text-danger text-center">
+                                Por favor ingrese su nombre.
+                            </span>
+                        </div>
+
                     </div>
                     <div class="form-group">
                         <label for="lastname">Apellido:</label>
-                        <input type="text" class="form-control" name="lastname" id="lastname"
-                               placeholder="{{user_data.lastname}}"/>
+                        <input type="text" class="form-control"
+                               name="lastname" id="lastname"
+                               placeholder="{{user_data.lastname}}"
+                               ng-model="user_data.lastname"
+                               ng-pattern="/[a-zA-Z0-9^ ]/" required/>
+
+                        <div class="alert alert-danger" role="alert" ng-show="userData.lastname.$error.required">
+                            <span class="text-danger text-center">
+                                Por favor ingrese su apellido.
+                            </span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="phone">Teléfono:</label>
-                        <input type="number" class="form-control" name="phone" id="phone"
-                               placeholder="{{user_data.phone}}"/>
+                        <input type="tel"
+                               class="form-control"
+                               name="phone"
+                               id="phone"
+                               placeholder="{{user_data.phone}}"
+                               ng-model="user_data.phone"
+                               ng-minlength="8"
+                               ng-maxlength="13"
+                               required/>
+
+                        <div class="alert alert-danger" role="alert"
+                             ng-show="userData.phone.$error.required">
+                            <span class="text-danger text-center">
+                                Por favor ingrese su número de teléfono.
+                            </span>
+                        </div>
+                        <div class="alert alert-danger" role="alert"
+                             ng-show="userData.phone.$error.maxlength ||
+                             userData.phone.$error.minlength">
+                            <span class="text-danger text-center">
+                                Por favor ingrese un número que contenga entre 8 y 13 dígitos.
+                            </span>
+                        </div>
                     </div>
 
                 </div>
@@ -44,17 +88,20 @@
                     <div class="form-group">
                         <label for="email">Correo electrónico:</label>
                         <input type="email" class="form-control" name="email" id="email"
-                               placeholder="{{user_data.email}}"/>
+                               placeholder="{{user_data.email}}" ng-model="user_data.email" disabled/>
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña:</label>
                         <input type="password" class="form-control" name="password" id="password"
-                               placeholder="{{user_data.password}}"/>
+                               placeholder="{{user_data.password}}" ng-model="user_data.password"
+                               value="{{user_data.password}}"
+                               disabled/>
                     </div>
                     <div class="form-group">
                         <label for="confirmPassword">Contraseña:</label>
                         <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
-                               placeholder="{{user_data.password}}"/>
+                               placeholder="{{user_data.confirmPassword}}" ng-model="user_data.confirmPassword"
+                               value="{{user_data.confirmPassword}}" disabled/>
                     </div>
                 </div>
             </div>
@@ -66,28 +113,75 @@
                     <div class="form-group">
                         <label for="creditCardNumber">Número de la tarjeta de crédito:</label>
                         <input type="number" class="form-control" name="creditCardNumber" id="creditCardNumber"
-                               placeholder="{{user_data.creditCardNumber}}"/>
+                               placeholder="{{user_data.creditCardNumber}}"
+                               ng-model="user_data.creditCardNumber"
+                               ng-minlength="16"
+                               ng-maxlength="16"
+                               required/>
+
+                        <div class="alert alert-danger" role="alert"
+                             ng-show="userData.creditCardNumber.$error.required">
+                            <span class="text-danger text-center">
+                                Por favor ingrese su número de tarjeta de crédito.
+                            </span>
+                        </div>
+                        <div class="alert alert-danger" role="alert"
+                             ng-show="userData.creditCardNumber.$error.maxlength ||
+                             userData.creditCardNumber.$error.minlength">
+                            <span class="text-danger text-center">
+                                Por favor ingrese un número que contenga 16 dígitos.
+                            </span>
+                        </div>
+
                     </div>
                     <div class="form-group">
                         <label for="creditCardExpDate">Fecha de expiración:</label>
                         <input type="month" class="form-control" name="creditCardExpDate" id="creditCardExpDate"
-                               placeholder="{{user_data.creditCardExpDate}}" min="2050-01" max="2015-12"/>
+                               placeholder="{{user_data.creditCardExpDate}}"
+                               ng-minlength="2015-01"
+                               ng-maxlength="2050-12"
+                               ng-model="user_data.creditCardExpDate" required/>
+
+                        <div class="alert alert-danger" role="alert"
+                             ng-show="userData.creditCardExpDate.$error.required">
+                            <span class="text-danger text-center">
+                                Por favor ingrese la fecha de expiración.
+                            </span>
+                        </div>
                     </div>
+
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group">
                         <label for="creditCardSecCode">Código de seguridad:</label>
                         <input type="number" class="form-control" name="creditCardSecCode" id="creditCardSecCode"
-                               placeholder="{{user_data.creditCardSecCode}}"/>
+                               placeholder="{{user_data.creditCardSecCode}}" ng-model="user_data.creditCardSecCode"
+                               ng-minlength="3" ng-maxlength="4" required/>
+                        <div class="alert alert-danger" role="alert"
+                             ng-show="userData.creditCardSecCode.$error.required">
+                            <span class="text-danger text-center">
+                                Por favor, ingrese el código de seguridad.
+                            </span>
+                        </div>
+                        <div class="alert alert-danger" role="alert"
+                             ng-show="userData.creditCardSecCode.$error.minlength ||
+                             userData.creditCardSecCode.$error.maxlength">
+                            <span class="text-danger text-center">
+                                Por favor, ingrese un código que contenga entre 3 y 4 dígitos.
+                            </span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-12">
                     <br/>
-                    <button type="button" class="btn btn-success">Actualizar Perfil</button>
-                    <button type="button" class="btn btn-danger">Borrar Cuenta</button>
+                    <button type="button" class="btn btn-success"
+                            ng-click="updateUser(user_data)">Actualizar Perfil
+                    </button>
+                    <button type="button" class="btn btn-danger" ng-click="">Borrar Cuenta</button>
                 </div>
             </div>
-
         </form>
+        Formulario valido: {{userData.$valid}}
+        {{master}}
     </div>
 </div>

@@ -5,7 +5,10 @@
             <tab ng-repeat="tab in tabsContent" heading="{{tab.name}}"
                  active="tab.active" disable="tab.disabled"
                  ui-sref="{{tab.url}}">
-                <div ui-view></div>
+                <div class="profile-content">
+                    <div ui-view></div>
+                </div>
+
             </tab>
         </tabset>
     </div>

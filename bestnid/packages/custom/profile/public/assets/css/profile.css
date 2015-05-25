@@ -27,13 +27,20 @@
     margin: 0 auto;
 }
 
-.full button span {
-    background-color: limegreen;
-    border-radius: 32px;
-    color: black;
+.alert-danger {
+    margin-top: 10px;
 }
-.partially button span {
-    background-color: orange;
-    border-radius: 32px;
-    color: black;
+
+.highlight {
+    border: 2px solid red;
+}
+
+#myPublications {
+    padding-top:5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#myPublications img{
+    max-height: 160px;
 }
