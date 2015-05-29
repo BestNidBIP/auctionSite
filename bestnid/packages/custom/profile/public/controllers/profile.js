@@ -93,7 +93,7 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
 
 
 
-        
+
     }
 ]);
 
