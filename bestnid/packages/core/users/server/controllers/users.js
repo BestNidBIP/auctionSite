@@ -9,7 +9,9 @@ var mongoose = require('mongoose'),
   config = require('meanio').loadConfig(),
   crypto = require('crypto'),
   nodemailer = require('nodemailer'),
-  templates = require('../template');
+  templates = require('../template'),
+  _   = require('lodash');
+
 
 /**
  * Auth callback
@@ -232,4 +234,36 @@ exports.forgotpassword = function(req, res, next) {
       res.json(response);
     }
   );
+};
+
+
+
+/**
+ * Update user profile
+ */
+exports.update = function(req, res) {
+  User
+    .findOne({
+      _id: req.user._id
+    })
+    .exec(function(err, user) {
+      if (err) return res.satus(500).json([{
+        error: true,
+        status: 300,
+        msg: err
+      }]);
+      console.log(user);
+      _.forIn(req.body, function(value, key){
+        user[key] = value;
+      });
+      
+      console.log(user);
+      user.save();
+      return res.status(200).json([{
+            error: false,
+            status: 200,
+            msg: 'Datos actualizados'
+
+          }]);
+    });
 };
