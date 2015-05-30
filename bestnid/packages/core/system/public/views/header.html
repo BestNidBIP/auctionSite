@@ -1,64 +1,61 @@
 <div class="container">
-<div class="" data-ng-controller="HeaderController">
+  <div class="" data-ng-controller="HeaderController">
    
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" ng-click="navbarCollapsed = !navbarCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" ng-click="navbarCollapsed = !navbarCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#!/">
           <img src="/theme/assets/img/bestnid-logo.png" class="img-responsive navbar-img" alt="Bestnid">
-      </a>
-  </div>
+        </a>
+      </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" collapse="navbarCollapsed">
-      <ul class="nav navbar-nav">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" collapse="navbarCollapsed">
+        <ul class="nav navbar-nav">
 
         <!--<li data-ng-repeat="item in menus.main" ui-route="/{{item.link}}" ui-sref-active="active" class="">
             <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
-        </li>-->
-    </ul>
-
-  <ul class="nav navbar-nav navbar-right">
-      <div class="text-edit">
-        <div class="pull-right" data-ng-show="global.authenticated" mean-token-editable></div>
-        <div class="pull-right" data-ng-show="global.authenticated" mean-translate></div>
-    </div>
-    <ul class="navbar-nav nav" data-ng-hide="global.authenticated">
-        <li><a ui-sref='auth.register'>Registrarme</a>
-        </li>
-        <li class="divider-vertical"></li>
-        <li><a ui-sref='auth.login'>Iniciar Sesión</a>
-        </li>
-    </ul>
-
-</ul>
-<form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-      </div>
-      <button type="submit" class="btn btn-default hidden">Submit</button>
-  </form>
-<ul class="navbar-nav nav"  data-ng-show="global.authenticated">
-    <li ng-if="global.user.profile" class="dropdown" mean-profile-menu>x</li>
-    <li ng-if="!global.user.profile" class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            {{global.user.name}} <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a href="#!/profile">Mi perfil</a></li>
-            <li><a href="/logout">Log Out</a></li>
+          </li>-->
         </ul>
-    </li>
 
-</ul>
-</div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
-</div>
+        <ul class="nav navbar-nav navbar-right">
+          <div class="text-edit">
+            <div class="pull-right" data-ng-show="global.authenticated" mean-token-editable></div>
+            <div class="pull-right" data-ng-show="global.authenticated" mean-translate></div>
+          </div>
+          <ul class="navbar-nav nav" data-ng-hide="global.authenticated">
+            <li><a ui-sref='auth.register'>Registrarme</a>
+            </li>
+            <li class="divider-vertical"></li>
+            <li><a ui-sref='auth.login'>Iniciar Sesión</a>
+            </li>
+          </ul>
+
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+          <button type="submit" class="btn btn-default hidden">Submit</button>
+        </form>
+        <ul class="navbar-nav nav"  data-ng-show="global.authenticated">
+          <li ng-if="global.user.profile" class="dropdown" mean-profile-menu>x</li>
+          <li ng-if="!global.user.profile" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              {{global.user.name}} <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#!/profile">Mi perfil</a></li>
+              <li><a href="/logout">Log Out</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </div>
 
 </div>

@@ -35,11 +35,11 @@
     border: 2px solid red;
 }
 
-#myPublications {
+.myPublications {
     padding: 15px;
 }
 
-#myPublications img {
+.myPublications img {
     max-height: 160px;
 }
 
@@ -49,16 +49,16 @@
     background-color: #FFA000;
 }
 
-#myOffers {
+.myOffers {
     padding: 15px;
 }
 
-#myOffers .search-for{
+.myOffers .search-for{
     background-color: #00A8BD;
 }
 
 @media (max-width: 767px) {
-    #myPublications .btn {
+    .myPublications .btn {
         margin-top: 10px;
     }
 }

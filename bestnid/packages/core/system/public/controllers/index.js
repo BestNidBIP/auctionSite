@@ -55,7 +55,9 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
       }
     });
 
-    $scope.publication_data = $scope.publication_data = [
+    $scope.publication_data = null;
+
+    /*$scope.publication_data = $scope.publication_data = [
       {
         publication_id: '',
         title: 'Bicicleta plegable',
@@ -97,7 +99,9 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
         linkPublication: '',
         offersReceived: 0
       }
-    ];
+    ];*/
+
+
 
 
   }

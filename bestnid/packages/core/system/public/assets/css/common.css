@@ -19,30 +19,6 @@ body{
     margin-top: 5px;
 }
 
-.home-banner{
-    position: relative;
-    background-image: url("/theme/assets/img/E-Commerce.jpg");
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: cover;
-    min-height: 300px;
-}
-
-.home-title{
-    background-color: rgba(0,0,0,0.7);
-    margin-top: 100px;
-}
-
-.home-title h1{
-    color: white !important;
-    padding: 25px;
-}
-
-.home-title .bestnid-brand-name{
-    color: #F25A2B;
-    font-weight: bold;
-}
-
 .links-footer{
     padding-top: 20px;
 }

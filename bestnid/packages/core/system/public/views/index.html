@@ -1,43 +1,51 @@
 <section class="welcome container-fluid" data-ng-controller="IndexController">
-
+  <div ng-if="publication_data">
     <div class="breadcrumb search-for">
-        <input class="form-control" ng-model="search_for_publications"
-               placeholder="Buscar en mis publicaciones">
+      <input class="form-control" ng-model="search_for_publications"
+      placeholder="Buscar en mis publicaciones">
 
     </div>
 
     <div class="publications">
-        <div class="row">
-            <div ng-repeat="publication in publication_data | filter: search_for_publications | orderBy: '-daysRemained'"
-                 class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <div class="thumbnail text-center">
-                    <img ng-if="publication.imgPath" src="{{publication.imgPath}}" alt="{{publication.title}}"
-                         class="img-responsive img-publication">
-                    <img ng-if="!publication.imgPath" src="/publication/assets/img/image-comming-soon.png"
-                         alt="{{publication.title}}"
-                         class="img-responsive img-publication">
+      <div class="row">
+        <div ng-repeat="publication in publication_data | filter: search_for_publications | orderBy: '-daysRemained'"
+        class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <div class="thumbnail text-center">
+          <img ng-if="publication.imgPath" src="{{publication.imgPath}}" alt="{{publication.title}}"
+          class="img-responsive img-publication">
+          <img ng-if="!publication.imgPath" src="/publication/assets/img/image-comming-soon.png"
+          alt="{{publication.title}}"
+          class="img-responsive img-publication">
 
-                    <div class="caption">
-                        <h4>{{publication.title}}</h4>
+          <div class="caption">
+            <h4>{{publication.title}}</h4>
 
-                        <ul class="list-unstyled">
-                            <li>
-                                <b>
-                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                    Quedan:
-                                </b>
-                                {{publication.daysRemained}}
-                            </li>
-                            <li>
-                                <b><span class="glyphicon glyphicon-bell"></span> Ofertas: </b>
-                                {{publication.offersReceived}}
-                            </li>
-                        </ul>
-                        <p><a href="#" class="btn btn-success" role="button">Ofertar</a>
-                    </div>
-                </div>
+            <ul class="list-unstyled">
+              <li>
+                <b>
+                  <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                  Quedan:
+                </b>
+                {{publication.daysRemained}}
+              </li>
+              <li>
+                <b><span class="glyphicon glyphicon-bell"></span> Ofertas: </b>
+                {{publication.offersReceived}}
+              </li>
+            </ul>
+            <p><a href="#" class="btn btn-success" role="button">Ofertar</a>
             </div>
+          </div>
         </div>
+      </div>
 
     </div>
+  </div>
+
+  <!-- When there are no publications -->
+  <div ng-if="!publication_data">
+    <div class="well well-lg">
+      <h3 class="text-center">Todavía no hay publicaciones,<br> se el primero en publicar!</h3>      
+    </div>
+  </div>
 </section>
