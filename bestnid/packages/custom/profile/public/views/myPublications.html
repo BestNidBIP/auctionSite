@@ -18,15 +18,14 @@
             </div>
 
         </div>
-{{user_publications}}
         <div class="row">
             <!-- For each publication repeat this div -->
             <div class="col-xs-12 col-sm-4 col-md-4"
                  ng-repeat="publication in user_publications | filter:search_for_publications">
                 <div class="thumbnail">
-                    <img ng-if="!publication.imgPath" src="/publication/assets/img/image-comming-soon.png"
+                    <img ng-if="!publication.pictures" src="/publication/assets/img/image-comming-soon.png"
                          class="img-responsive">
-                    <img ng-if="publication.imgPath" src="{{publication.pictures}}"
+                    <img ng-if="publication.pictures" src="{{publication.pictures}}"
                          class="img-responsive">
 
                     <div class="caption">

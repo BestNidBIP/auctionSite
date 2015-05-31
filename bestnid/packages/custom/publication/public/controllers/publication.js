@@ -17,11 +17,17 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 
 
       // Send new publications
-      $scope.submit_form = function(publication){
-          $scope.submit_form_promise = Publication.addNewPublication(publication);
-          $scope.submit_form_promise.then( function (response) {
-              $scope.response_form = response.data;
-          });
+      $scope.show_success_messsage = false;
+      $scope.submit_form = function(publication, isValid){
+          if (isValid){
+              $scope.submit_form_promise = Publication.addNewPublication(publication);
+              $scope.submit_form_promise.then( function (response) {
+                  $scope.response_form = response.data;
+                  $scope.show_success_messsage = true;
+              });
+          } else {
+              alert('Formulario invalido');
+          }
       };
   }
 ]);
