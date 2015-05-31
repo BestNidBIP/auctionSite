@@ -62,8 +62,9 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
       $scope.user_publications = null;
       $scope.user_publications_promise = $scope.getPublications();
       $scope.user_publications_promise.then(function(response) {
-          $scope.user_publications = response.data;
+          $scope.user_publications = response.data.data;
       });
+
 
   }
 ]);

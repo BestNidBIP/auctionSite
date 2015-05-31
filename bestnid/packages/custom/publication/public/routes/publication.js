@@ -9,7 +9,7 @@ angular.module('mean.publication').config(['$stateProvider',
         })
 
         .state('nueva publicacion', {
-            url: '/publication/nueva-publicacion',
+            url: '/publicacion/nueva-publicacion',
             templateUrl: 'publication/views/publicationNew.html'
         });
   }

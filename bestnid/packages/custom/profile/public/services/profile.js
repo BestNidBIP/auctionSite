@@ -14,7 +14,7 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
         }
 
         function _getUserPublications() {
-            return $http.get('/publication');
+            return $http.get('/user/publications');
         }
 
         function _deleteUserPublication() {

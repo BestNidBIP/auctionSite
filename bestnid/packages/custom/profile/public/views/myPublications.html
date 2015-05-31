@@ -1,8 +1,5 @@
 <div class="myPublications">
     <h3>Mis Publicaciones</h3>
-
-    {{user_publications}}
-
     <div class="line-bottom"></div>
 
     <div ng-if="user_publications">
@@ -13,7 +10,7 @@
                            placeholder="Buscar en mis publicaciones">
                 </div>
                 <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                    <a href="#!/publication/nueva-publicacion" class="btn btn-success">
+                    <a href="#!/publicacion/nueva-publicacion" class="btn btn-success">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                         Publicación
                     </a>
@@ -21,26 +18,31 @@
             </div>
 
         </div>
-
+{{user_publications}}
         <div class="row">
             <!-- For each publication repeat this div -->
             <div class="col-xs-12 col-sm-4 col-md-4"
-                 ng-repeat="publication in user_publications | filter: search_for_publications">
+                 ng-repeat="publication in user_publications | filter:search_for_publications">
                 <div class="thumbnail">
                     <img ng-if="!publication.imgPath" src="/publication/assets/img/image-comming-soon.png"
                          class="img-responsive">
-                    <img ng-if="publication.imgPath" src="{{publication.imgPath}}"
+                    <img ng-if="publication.imgPath" src="{{publication.pictures}}"
                          class="img-responsive">
 
                     <div class="caption">
                         <h3 class="text-center">{{publication.title}}</h3>
                         <ul class="list-unstyled">
+                            <li class="text-center">
+                                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                                {{publication.category}}
+                            </li>
                             <li class="text-center" ng-hide="publication.daysRemained == 0">
                                 <b><span
 
                                         class="glyphicon glyphicon-time"
                                         aria-hidden="true"></span>
-                                    Termina en</b> {{publication.daysRemained}} días.
+                                    Termina en</b> {{publication.created | date: 'dd-MM-yyyy'}} días.
+
                             </li>
                             <li ng-hide="publication.daysRemained != 0" class="text-center text-danger">
                                 Esta publicación ya finalizo.
@@ -72,7 +74,7 @@
         </div>
     </div>
 
-    <div ng-if="!user_publications.isEmpty">
+    <div ng-if="!user_publications">
         <div class="well well-lg text-center">
             <h4>Todavía no creaste ninguna publicación.</h4><br>
             <a href="" class="btn btn-success">

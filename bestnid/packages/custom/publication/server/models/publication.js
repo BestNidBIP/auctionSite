@@ -34,7 +34,7 @@ PublicationSchema = new Schema({
       type: Date,
       default: Date.now
     },
-    cotegory: {
+    category: {
       type: Schema.ObjectId,
       ref: 'Category'
     },

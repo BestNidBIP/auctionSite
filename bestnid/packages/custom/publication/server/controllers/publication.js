@@ -12,8 +12,15 @@ var mongoose = require('mongoose'),
  */
 exports.all = function(req, res) {
   Publications.find({}, function(err, publications) {
-   
-    res.send([publications]);  
+
+    var response = {};
+    response.data = publications;
+    response.status = {
+      error : "false",
+      code : 200,
+      msg : "OK"
+    }
+    res.send(response);
   });
 };
 
@@ -57,8 +64,14 @@ exports.get_publications = function(req, res) {
         error: 'Cannot list the publications'
       });
     }
-    res.json([publications]);
-
+    var response = {};
+    response.data = publications;
+    response.status = {
+      error : "false",
+      code : 200,
+      msg : "OK"
+    }
+    res.send(response);
   });
 
 };
@@ -75,7 +88,14 @@ exports.get_user_publications = function(req, res) {
         error: 'Cannot list the publications'
       });
     }
-    res.json([publications]);
+    var response = {};
+    response.data = publications;
+    response.status = {
+      error : "false",
+      code : 200,
+      msg : "OK"
+    }
+    res.send(response);
 
   });
 

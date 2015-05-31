@@ -4,14 +4,15 @@
       <input class="form-control" ng-model="search_for_publications"
       placeholder="Buscar en mis publicaciones">
 
+        {{user_publications}}
     </div>
-
-    {{user_publications}}
-
     <div class="publications">
       <div class="row">
-        <div ng-repeat="publication in user_publications | filter: search_for_publications | orderBy: '-daysRemained'"
+        <div ng-repeat="publication in user_publications | filter: search_for_publications"
         class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+
+
+
         <div class="thumbnail text-center">
           <img ng-if="publication.image" src="{{publication.image}}" alt="{{publication.title}}"
           class="img-responsive img-publication">
@@ -23,21 +24,21 @@
             <h4>{{publication.title}}</h4>
 
             <ul class="list-unstyled">
-              <li><b><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-              Categoría</b> {{publication.category}}</li>
+              <li><b><span class="glyphicon glyphicon-tag" aria-hidden="true"></span></b> {{publication.category}}</li>
               <li>
                 <b>
                   <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                   Quedan:
                 </b>
-                {{publication.days_remained}}
+                {{publication.created | date:'dd-MM-yy'}}
               </li>
               <li>
                 <b><span class="glyphicon glyphicon-bell"></span> Ofertas: </b>
                 {{publication.offers_received}}
               </li>
             </ul>
-            <p><a href="#" class="btn btn-success" role="button">Ofertar</a>
+            <p>
+              <a ng-if="global.user.name" href="" class="btn btn-success" role="button">Ofertar</a>
             </div>
           </div>
         </div>
@@ -45,6 +46,8 @@
 
     </div>
   </div>
+
+
 
   <!-- When there are no publications -->
   <div ng-if="!user_publications">
