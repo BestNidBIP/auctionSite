@@ -8,10 +8,6 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
             name: 'profile'
         };
 
-        $scope.isActive = function($scope){
-          return route === $location.path();
-        };
-
         $scope.tabsContent = [
             {
                 name: 'Mi Perfil',

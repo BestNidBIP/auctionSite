@@ -4,7 +4,7 @@
             <!-- User profile picture -->
             <img ng-if="!user_data.image" src="/profile/assets/img/default_profile_pic.jpg"
                  alt="My Profile picture" class="img-circle img-responsive"/>
-            <img ng-if="user_data.image" src="" alt="My Profile Picture"
+            <img ng-if="user_data.image" src="{{user_data.image}}" alt="My Profile Picture"
                  class="img-thumbnail img-responsive"/>
             <h5 class="text-center">Hola <b>{{user_data.name}}</b>!</h5>
         </div>
