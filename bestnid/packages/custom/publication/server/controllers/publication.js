@@ -12,13 +12,8 @@ var mongoose = require('mongoose'),
  */
 exports.all = function(req, res) {
   Publications.find({}, function(err, publications) {
-    var publicationMap = {};
-
-    publications.forEach(function(publication) {
-      publicationMap[publication._id] = publication;
-    });
-
-    res.send(publicationMap);  
+   
+    res.send([publications]);  
   });
 };
 
@@ -62,7 +57,7 @@ exports.get_publications = function(req, res) {
         error: 'Cannot list the publications'
       });
     }
-    res.json(publications);
+    res.json([publications]);
 
   });
 
@@ -80,7 +75,7 @@ exports.get_user_publications = function(req, res) {
         error: 'Cannot list the publications'
       });
     }
-    res.json(publications);
+    res.json([publications]);
 
   });
 
