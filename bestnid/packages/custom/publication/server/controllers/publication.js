@@ -19,7 +19,7 @@ exports.all = function(req, res) {
       error : 'false',
       code : 200,
       msg : 'OK'
-    }
+    };
     res.send(response);
   });
 };
@@ -70,7 +70,7 @@ exports.get_publications = function(req, res) {
       error : 'false',
       code : 200,
       msg : 'OK'
-    }
+    };
     res.send(response);
   });
 
@@ -94,7 +94,7 @@ exports.get_user_publications = function(req, res) {
       error : 'false',
       code : 200,
       msg : 'OK'
-    }
+    };
     res.send(response);
 
   });
@@ -120,7 +120,7 @@ exports.get_publication_by_id = function(req, res) {
       error : 'false',
       code : 200,
       msg : 'OK'
-    }
+    };
     res.send(response);
 
   });

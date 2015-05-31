@@ -4,11 +4,11 @@ angular.module('mean.publication').factory('Publication', [ '$http',
   function($http) {
 
     function _getCategories(){
-      return $http.get('/category')
+      return $http.get('/category');
     }
 
       function _addNewPublication(publication_data){
-        return $http.post('/publication', publication_data)
+        return $http.post('/publication', publication_data);
       }
 
 

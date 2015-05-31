@@ -42,6 +42,13 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
             $scope.user_publications = response.data.data;
         });
 
+        // Offers
+        $scope.user_offers = null;
+        $scope.user_offers_promise = Profile.getUserOffers;
+        $scope.user_offers_promise.then( function(response){
+            $scope.user_offers = response.data;
+        });
+
         //Lo que debería traer el servicio que trae las ofertas
         $scope.offers_data = [
             {

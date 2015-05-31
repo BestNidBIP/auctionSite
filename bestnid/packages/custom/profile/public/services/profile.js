@@ -22,7 +22,7 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
         }
 
         function _getUserOffers() {
-            //TODO
+            return $http.get('/offers');
         }
 
         function _deleteUserOffer() {
