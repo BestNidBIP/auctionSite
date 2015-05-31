@@ -9,7 +9,12 @@ module.exports = function(Offer, app, auth, database) {
 
   app.route('/offer')
     .get(offer.all)
+    .delete(offer.delete)
     .post(offer.create);
+
+  app.route('/offer/:publicationID')
+    .get(offer.get_offer_by_id);
+    
 
 
   app.get('/offer/example/render', function(req, res, next) {

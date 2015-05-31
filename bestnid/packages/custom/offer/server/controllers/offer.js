@@ -39,3 +39,42 @@ exports.create = function(req, res) {
 
   });
 };
+
+
+/**
+ * Get Offers by publication ID
+ */
+exports.get_offer_by_id = function(req, res) {
+  
+  Offers.find({publication : req.params.publicationID}).sort('-created').populate('user', 'name username').exec(function(err, offers) {
+    if (err) {
+      return res.status(500).json({
+        error: 'Cannot list offers'
+      });
+    }
+    res.json(offers);
+
+  });
+};
+
+
+
+/**
+ * Delete an offer
+ */
+
+exports.delete = function(req, res) {
+
+  Offers.findById( req.body.offer_id, function ( err, offer ){
+    console.log(offer);
+    offer.remove( function ( err, offer ){
+      res.json({
+        status: '200',
+        msg: 'Offer deleted'
+      });
+    });
+
+  });
+  
+};
+
