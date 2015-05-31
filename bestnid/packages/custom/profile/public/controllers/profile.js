@@ -2,10 +2,14 @@
 
 /* jshint -W098 */
 angular.module('mean.profile').controller('ProfileController', ['$scope', 'Global', 'Profile',
-    function ($scope, Global, Profile, $state) {
+    function ($scope, Global, Profile, $state, $location) {
         $scope.global = Global;
         $scope.package = {
             name: 'profile'
+        };
+
+        $scope.isActive = function($scope){
+          return route === $location.path();
         };
 
         $scope.tabsContent = [
@@ -17,12 +21,12 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
             {
                 name: 'Mis Publicaciones',
                 url: '.myPublications',
-                active: false
+                active: true
             },
             {
                 name: 'Mis Ofertas',
                 url: '.myOffers',
-                active: false
+                active: true
             }
         ];
 
