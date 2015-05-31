@@ -1,17 +1,19 @@
 <section class="welcome container-fluid" data-ng-controller="IndexController">
-  <div ng-if="publication_data">
+  <div ng-if="user_publications">
     <div class="breadcrumb search-for">
       <input class="form-control" ng-model="search_for_publications"
       placeholder="Buscar en mis publicaciones">
 
     </div>
 
+    {{user_publications}}
+
     <div class="publications">
       <div class="row">
-        <div ng-repeat="publication in publication_data | filter: search_for_publications | orderBy: '-daysRemained'"
+        <div ng-repeat="publication in user_publications | filter: search_for_publications | orderBy: '-daysRemained'"
         class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
         <div class="thumbnail text-center">
-          <img ng-if="publication.imgPath" src="{{publication.imgPath}}" alt="{{publication.title}}"
+          <img ng-if="publication.image" src="{{publication.image}}" alt="{{publication.title}}"
           class="img-responsive img-publication">
           <img ng-if="!publication.imgPath" src="/publication/assets/img/image-comming-soon.png"
           alt="{{publication.title}}"
@@ -28,11 +30,11 @@
                   <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                   Quedan:
                 </b>
-                {{publication.daysRemained}}
+                {{publication.days_remained}}
               </li>
               <li>
                 <b><span class="glyphicon glyphicon-bell"></span> Ofertas: </b>
-                {{publication.offersReceived}}
+                {{publication.offers_received}}
               </li>
             </ul>
             <p><a href="#" class="btn btn-success" role="button">Ofertar</a>
@@ -45,7 +47,7 @@
   </div>
 
   <!-- When there are no publications -->
-  <div ng-if="!publication_data">
+  <div ng-if="!user_publications">
     <div class="well well-lg">
       <h3 class="text-center">Todavía no hay publicaciones,<br> se el primero en publicar!</h3>      
     </div>
