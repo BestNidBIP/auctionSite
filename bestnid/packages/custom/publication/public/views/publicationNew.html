@@ -5,8 +5,9 @@
     <div class="line-bottom"></div>
 
     <form name="newPublicationForm" novalidate>
-        <div ng-show="show_success_messsage" class="alert alert-success" role="alert">
+        <div ng-show="show_success_messsage" class="alert alert-success text-center" role="alert">
             <h4 class="text-center">Tu publicación fue registrada con éxito</h4>
+            <a href="#!/perfil/mis-publicaciones" class="btn btn-warning">Ver mis publicaciones</a>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -33,7 +34,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="category">Categoría:</label>
+                    <label for="category">Elige una categoría:</label>
 
                     <select ng-model="publication.category" class="form-control"
                             id="category" name="category"
