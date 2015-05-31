@@ -16,9 +16,9 @@ exports.all = function(req, res) {
     var response = {};
     response.data = publications;
     response.status = {
-      error : "false",
+      error : 'false',
       code : 200,
-      msg : "OK"
+      msg : 'OK'
     }
     res.send(response);
   });
@@ -67,9 +67,9 @@ exports.get_publications = function(req, res) {
     var response = {};
     response.data = publications;
     response.status = {
-      error : "false",
+      error : 'false',
       code : 200,
-      msg : "OK"
+      msg : 'OK'
     }
     res.send(response);
   });
@@ -91,9 +91,9 @@ exports.get_user_publications = function(req, res) {
     var response = {};
     response.data = publications;
     response.status = {
-      error : "false",
+      error : 'false',
       code : 200,
-      msg : "OK"
+      msg : 'OK'
     }
     res.send(response);
 
@@ -103,3 +103,26 @@ exports.get_user_publications = function(req, res) {
 
 
 
+/**
+ * Get User Publications
+ */
+exports.get_publication_by_id = function(req, res) {
+
+  Publications.findOne({ _id : req.params.publicationId}).sort('-created').populate('user', 'name username').exec(function(err, publications) {
+    if (err) {
+      return res.status(500).json({
+        error: 'Cannot list the publications'
+      });
+    }
+    var response = {};
+    response.data = publications;
+    response.status = {
+      error : 'false',
+      code : 200,
+      msg : 'OK'
+    }
+    res.send(response);
+
+  });
+
+};
