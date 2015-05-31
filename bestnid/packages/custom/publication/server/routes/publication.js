@@ -1,7 +1,7 @@
 'use strict';
 
 
-var comment = require('../controllers/publication'),
+var publication = require('../controllers/publication'),
     config = require('meanio').loadConfig();
 
 
@@ -10,8 +10,11 @@ var comment = require('../controllers/publication'),
 module.exports = function (Publication, app, auth, database) {
 
     app.route('/publication')
-        .get(comment.all)
-        .post(comment.create);
+        .get(publication.all)
+        .post(publication.create);
+
+    app.route('/publication/:pageNumber')
+        .get(publication.get_publications);
 
 
     app.get('/publication/example/render', function (req, res, next) {

@@ -39,3 +39,31 @@ exports.create = function(req, res) {
 
   });
 };
+
+
+
+
+/**
+ * Get Publications
+ */
+exports.get_publications = function(req, res) {
+
+  // Publication per page to show
+  var PUBLICATIONS_PER_PAGE = 10;
+
+  // Page number
+
+  var page = req.params.pageNumber - 1;
+  var skip_publications = page * PUBLICATIONS_PER_PAGE;
+  console.log(skip_publications);
+  Publications.find().sort('-created').skip(skip_publications).limit(PUBLICATIONS_PER_PAGE).populate('user', 'name username').exec(function(err, publications) {
+    if (err) {
+      return res.status(500).json({
+        error: 'Cannot list the articles'
+      });
+    }
+    res.json(publications);
+
+  });
+
+};

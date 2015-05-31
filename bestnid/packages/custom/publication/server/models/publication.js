@@ -30,8 +30,10 @@ PublicationSchema = new Schema({
     pictures: {
       type: [Schema.ObjectId],
     },
-
-
+    created: {
+      type: Date,
+      default: Date.now
+    },
 });
 
 
