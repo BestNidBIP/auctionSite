@@ -104,7 +104,7 @@ exports.get_user_publications = function(req, res) {
 
 
 /**
- * Get User Publications
+ * Get Publication by ID
  */
 exports.get_publication_by_id = function(req, res) {
 
@@ -122,6 +122,39 @@ exports.get_publication_by_id = function(req, res) {
       msg : 'OK'
     }
     res.send(response);
+
+  });
+
+};
+
+
+/**
+ * Delete specific Publication
+ */
+exports.delete = function(req, res) {
+
+  Publications.findOne({ _id : req.params.publicationId}).sort('-created').populate('user', 'name username').exec(function(err, publication) {
+    if (err) {
+      return res.status(500).json({
+        error: 'Cannot find the publication'
+      });
+    }
+    publication.remove(function ( err, publication ){
+      if(err){
+        return res.status(500).json({
+        error: 'Cannot delete the publication'
+      });
+
+      }
+      var response = {};
+      response.status = {
+        error : 'false',
+        code : 200,
+        msg : 'OK'
+      };
+      res.send(response);
+
+    });
 
   });
 
