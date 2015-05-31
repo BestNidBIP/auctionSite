@@ -1,11 +1,48 @@
+<div ng-controller="PublicationController">
 <div class="container content-white">
     <h3>Nueva Publicación</h3>
 
     <div class="line-bottom"></div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"></div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"></div>
-    </div>
+    <form novalidate action="">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" class="form-control"
+                           id="title"
+                           placeholder="Título de la publicación"
+                            ng-model="publication.title">
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción:</label>
+                    <textarea type="text" class="form-control" id="description"
+                            ng-model="publication.description" />
+                </div>
 
+                <div class="form-group">
+                    <label for="category">Categoría:</label>
+
+                    <select ng-model="publication.category" class="form-control"
+                            id="category" ng-options="category._id as category.name for category in categories">
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                    <label for="images">Insertar hasta 3 imagenes:</label>
+                    <input type="text" class="form-control" id="images"/>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Acepto los <a href="">términos y condiciones</a>
+                    </label>
+                </div>
+                <input type="submit" class="btn btn-success" ng-click="submit_form(publication)" value="Enviar" />
+            </div>
+        </div>
+    </form>
+
+</div>
 </div>
