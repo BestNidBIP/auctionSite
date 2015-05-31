@@ -13,8 +13,13 @@ module.exports = function (Publication, app, auth, database) {
         .get(publication.all)
         .post(publication.create);
 
-    app.route('/publication/:pageNumber')
+
+    app.route('/publication/:publicationId')
+        .get(publication.get_publication_by_id);
+
+    app.route('/publication/page/:pageNumber')
         .get(publication.get_publications);
+    
 
     app.route('/user/publications')
         .get(publication.get_user_publications);
