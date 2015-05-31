@@ -1,9 +1,11 @@
 <div class="myPublications">
     <h3>Mis Publicaciones</h3>
 
+    {{user_publications}}
+
     <div class="line-bottom"></div>
 
-    <div ng-if="publication_data">
+    <div ng-if="user_publications">
         <div class="breadcrumb search-for">
             <div class="row text-center">
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
@@ -23,7 +25,7 @@
         <div class="row">
             <!-- For each publication repeat this div -->
             <div class="col-xs-12 col-sm-4 col-md-4"
-                 ng-repeat="publication in publication_data | filter: search_for_publications">
+                 ng-repeat="publication in user_publications | filter: search_for_publications">
                 <div class="thumbnail">
                     <img ng-if="!publication.imgPath" src="/publication/assets/img/image-comming-soon.png"
                          class="img-responsive">
@@ -70,7 +72,7 @@
         </div>
     </div>
 
-    <div ng-if="!publication_data">
+    <div ng-if="!user_publications.isEmpty">
         <div class="well well-lg text-center">
             <h4>Todavía no creaste ninguna publicación.</h4><br>
             <a href="" class="btn btn-success">

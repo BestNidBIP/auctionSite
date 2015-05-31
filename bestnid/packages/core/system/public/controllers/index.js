@@ -64,6 +64,7 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
         imgPath: 'http://labicikleta.com/wp-content/uploads/2013/07/Viajes.jpg',
         daysRemained: 5,
         linkPublication: '',
+        category: 'Deportes',
         offersReceived: 20
       },
       {
@@ -72,6 +73,7 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
         imgPath: 'http://mlu-s2-p.mlstatic.com/remeras-de-nirvana-estampadas-en-serigrafia-1668-MLU3418072179_112012-O.jpg',
         daysRemained: 10,
         linkPublication: '',
+        category: 'Indumentaria',
         offersReceived: 2
       },
       {
@@ -80,6 +82,7 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
         imgPath: 'http://ecx.images-amazon.com/images/I/41mH%2BlM7cmL.jpg',
         daysRemained: 1,
         linkPublication: '',
+        category: 'Juguetes',
         offersReceived: 6
       },
       {
@@ -88,6 +91,7 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
         imgPath: 'http://mlm-s1-p.mlstatic.com/mochilas-marcas-bolsas-carteras-10400-MLM20027752729_012014-Y.jpg',
         daysRemained: 2,
         linkPublication: '',
+        category: 'Indumentaria',
         offersReceived: 12
 
       },
@@ -97,6 +101,7 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
         imgPath: '',
         daysRemained: 0,
         linkPublication: '',
+        category: 'Indumentaria',
         offersReceived: 0
       }
     ];

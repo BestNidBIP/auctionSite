@@ -38,14 +38,16 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
             $scope.user_data = response.data;
         });
 
-        $scope.master = {};
 
-        $scope.updateUser = function (user) {
-            $scope.master = angular.copy(user);
-        };
+        // Publications
+        $scope.user_publications = null;
+        $scope.user_publications_promise = Profile.getUserPublications;
+        $scope.user_publications_promise.then(function(response) {
+            $scope.user_publications = response.data;
+        });
 
         // Lo que debería de traer el servicio de publicaciones
-        $scope.publication_data = [
+        /*$scope.publication_data = [
             {
                 publication_id: '',
                 title: 'Bicicleta plegable',
@@ -81,7 +83,7 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
                 daysRemained: 0,
                 linkPublication: ''
             }
-        ];
+        ];*/
 
         //Lo que debería traer el servicio que trae las ofertas
         $scope.offers_data = [

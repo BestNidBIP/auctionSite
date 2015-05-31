@@ -21,7 +21,6 @@ PublicationSchema = new Schema({
       type: Schema.ObjectId,
       ref: 'User',
       required: true,
-
     },
     description: {
       type: String,
