@@ -14,7 +14,7 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
         }
 
         function _getUserPublications() {
-            //TODO
+            return $http.get('/publication');
         }
 
         function _deleteUserPublication() {
@@ -33,7 +33,7 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
             name: 'profile',
             getProfile: _getUserProfile,
             updateUserProfile: _updateUserProfile(),
-            getUserPublicatios: _getUserPublications(),
+            getUserPublications: _getUserPublications(),
             deleteUserPublication: _deleteUserPublication(),
             getUserOffers: _getUserOffers(),
             deleteUserOffer: _deleteUserOffer()

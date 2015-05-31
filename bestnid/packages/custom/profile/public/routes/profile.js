@@ -9,7 +9,7 @@ angular.module('mean.profile').config(['$stateProvider',
             })
 
             .state('homeProfile.myProfile', {
-                url: '/me',
+                url: '/mis-datos',
                 templateUrl: 'profile/views/myProfile.html'
             })
 

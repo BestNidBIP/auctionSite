@@ -1,15 +1,20 @@
 <div class="" data-ng-controller="ProfileController">
     <div class="container">
-        <!-- This is where the content goes -->
-        <tabset>
-            <tab ng-repeat="tab in tabsContent" heading="{{tab.name}}"
-                 active="tab.active"
-                 ui-sref="{{tab.url}}">
+        <div class="row">
+            <div class="col-xs-hidden col-sm-hidden col-md-2 col-lg-2">
+                <!-- Side Bar -->
+                <ul class="nav nav-pills nav-stacked">
+                    <li ng-repeat="tab in tabsContent" ui-sref-active="active">
+                        <a ui-sref="{{tab.url}}">{{tab.name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-sm-10">
                 <div class="profile-content">
                     <div ui-view></div>
                 </div>
-            </tab>
-        </tabset>
+            </div>
+        </div>
     </div>
 </div>
 

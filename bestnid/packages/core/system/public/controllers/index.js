@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
-  function($scope, Global) {
+angular.module('mean.system').controller('IndexController', ['$scope', 'Global', '$http', '$q',
+  function($scope, Global, $http, $q) {
     $scope.global = Global;
     $scope.sites = {
       'makeapoint':{
@@ -55,54 +55,15 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
       }
     });
 
-    $scope.publication_data = null;
+      $scope.getPublications = function(){
+          return $http.get('/publication');
+      };
 
-    /*$scope.publication_data = $scope.publication_data = [
-      {
-        publication_id: '',
-        title: 'Bicicleta plegable',
-        imgPath: 'http://labicikleta.com/wp-content/uploads/2013/07/Viajes.jpg',
-        daysRemained: 5,
-        linkPublication: '',
-        offersReceived: 20
-      },
-      {
-        publication_id: '',
-        title: 'Remera nirvana',
-        imgPath: 'http://mlu-s2-p.mlstatic.com/remeras-de-nirvana-estampadas-en-serigrafia-1668-MLU3418072179_112012-O.jpg',
-        daysRemained: 10,
-        linkPublication: '',
-        offersReceived: 2
-      },
-      {
-        publication_id: '',
-        title: 'Lego Batman',
-        imgPath: 'http://ecx.images-amazon.com/images/I/41mH%2BlM7cmL.jpg',
-        daysRemained: 1,
-        linkPublication: '',
-        offersReceived: 6
-      },
-      {
-        publication_id: '',
-        title: 'Mochila Samsonite',
-        imgPath: 'http://mlm-s1-p.mlstatic.com/mochilas-marcas-bolsas-carteras-10400-MLM20027752729_012014-Y.jpg',
-        daysRemained: 2,
-        linkPublication: '',
-        offersReceived: 12
-
-      },
-      {
-        publication_id: '',
-        title: 'Zapatillas Nike',
-        imgPath: '',
-        daysRemained: 0,
-        linkPublication: '',
-        offersReceived: 0
-      }
-    ];*/
-
-
-
-
+      $scope.user_publications = null;
+      $scope.user_publications_promise = $scope.getPublications();
+      $scope.user_publications_promise.then(function(response) {
+          $scope.user_publications = response.data;
+      });
+      
   }
 ]);

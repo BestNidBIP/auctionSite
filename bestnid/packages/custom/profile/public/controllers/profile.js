@@ -2,10 +2,14 @@
 
 /* jshint -W098 */
 angular.module('mean.profile').controller('ProfileController', ['$scope', 'Global', 'Profile',
-    function ($scope, Global, Profile, $state) {
+    function ($scope, Global, Profile, $state, $location) {
         $scope.global = Global;
         $scope.package = {
             name: 'profile'
+        };
+
+        $scope.isActive = function($scope){
+          return route === $location.path();
         };
 
         $scope.tabsContent = [
@@ -17,12 +21,12 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
             {
                 name: 'Mis Publicaciones',
                 url: '.myPublications',
-                active: false
+                active: true
             },
             {
                 name: 'Mis Ofertas',
                 url: '.myOffers',
-                active: false
+                active: true
             }
         ];
 
@@ -34,14 +38,16 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
             $scope.user_data = response.data;
         });
 
-        $scope.master = {};
 
-        $scope.updateUser = function (user) {
-            $scope.master = angular.copy(user);
-        };
+        // Publications
+        $scope.user_publications = null;
+        $scope.user_publications_promise = Profile.getUserPublications;
+        $scope.user_publications_promise.then(function(response) {
+            $scope.user_publications = response.data;
+        });
 
         // Lo que debería de traer el servicio de publicaciones
-        $scope.publication_data = [
+        /*$scope.publication_data = [
             {
                 publication_id: '',
                 title: 'Bicicleta plegable',
@@ -77,7 +83,7 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
                 daysRemained: 0,
                 linkPublication: ''
             }
-        ];
+        ];*/
 
         //Lo que debería traer el servicio que trae las ofertas
         $scope.offers_data = [
