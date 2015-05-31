@@ -4,7 +4,7 @@ angular.module('mean.profile').config(['$stateProvider',
     function ($stateProvider) {
         $stateProvider
             .state('homeProfile', {
-                url: '/profile',
+                url: '/perfil',
                 templateUrl: 'profile/views/index.html'
             })
 
@@ -14,12 +14,12 @@ angular.module('mean.profile').config(['$stateProvider',
             })
 
             .state('homeProfile.myOffers', {
-                url: '/myOffers',
+                url: '/mis-ofertas',
                 templateUrl: 'profile/views/myOffers.html'
             })
 
             .state('homeProfile.myPublications', {
-                url: '/myPublications',
+                url: '/mis-publicaciones',
                 templateUrl: 'profile/views/myPublications.html'
             });
 

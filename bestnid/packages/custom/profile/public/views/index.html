@@ -3,7 +3,7 @@
         <!-- This is where the content goes -->
         <tabset>
             <tab ng-repeat="tab in tabsContent" heading="{{tab.name}}"
-                 active="tab.active" disable="tab.disabled"
+                 active="tab.active"
                  ui-sref="{{tab.url}}">
                 <div class="profile-content">
                     <div ui-view></div>
