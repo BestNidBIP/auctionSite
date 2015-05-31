@@ -70,7 +70,7 @@ exports.get_publications = function(req, res) {
 
 
 /**
- * Get Publications
+ * Get User Publications
  */
 exports.get_user_publications = function(req, res) {
 

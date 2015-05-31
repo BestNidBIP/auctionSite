@@ -21,7 +21,6 @@ PublicationSchema = new Schema({
       type: Schema.ObjectId,
       ref: 'User',
       required: true,
-
     },
     description: {
       type: String,
@@ -29,10 +28,15 @@ PublicationSchema = new Schema({
     },
     pictures: {
       type: [Schema.ObjectId],
+      ref: 'Media',
     },
     created: {
       type: Date,
       default: Date.now
+    },
+    cotegory: {
+      type: Schema.ObjectId,
+      ref: 'Category'
     },
 });
 
