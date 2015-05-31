@@ -59,7 +59,7 @@ exports.get_publications = function(req, res) {
   Publications.find().sort('-created').skip(skip_publications).limit(PUBLICATIONS_PER_PAGE).populate('user', 'name username').exec(function(err, publications) {
     if (err) {
       return res.status(500).json({
-        error: 'Cannot list the articles'
+        error: 'Cannot list the publications'
       });
     }
     res.json(publications);
@@ -67,3 +67,24 @@ exports.get_publications = function(req, res) {
   });
 
 };
+
+
+/**
+ * Get Publications
+ */
+exports.get_user_publications = function(req, res) {
+
+  Publications.find({ user : req.user._id}).sort('-created').populate('user', 'name username').exec(function(err, publications) {
+    if (err) {
+      return res.status(500).json({
+        error: 'Cannot list the publications'
+      });
+    }
+    res.json(publications);
+
+  });
+
+};
+
+
+
