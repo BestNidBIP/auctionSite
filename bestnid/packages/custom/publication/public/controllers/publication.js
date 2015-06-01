@@ -46,7 +46,7 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
       $scope.publication_data_by_id = null;
       $scope.publication_data_by_id_promise = Publication.getPublication($scope.publication_id("id"));
       $scope.publication_data_by_id_promise.then(function (response){
-         $scope.publication_data_by_id = response.data;
+         $scope.publication_data_by_id = response.data.data;
       });
   }
 ]);
