@@ -4,14 +4,49 @@
         <div class="line-bottom"></div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <!-- When the publication has no images -->
                 <img ng-if="publication_data_by_id.pictures == 0" src="/publication/assets/img/image-comming-soon.png"
                      class="img-responsive" alt=""/>
+                <!-- When the publication has images -->
+                <div ng-if="publication_data_by_id.pictures != 0" style="height: 305px">
+                    <carousel interval="myInterval">
+                        <slide ng-repeat="publication_image in publication_data_by_id.pictures" active="slide.active">
+                            <img ng-src="{{slide.image}}" style="margin:auto;">
+                            <div class="carousel-caption">
+                                <h4>Slide {{$index}}</h4>
+                                <p>{{slide.text}}</p>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
+
+                <!-- Make an offer button -->
+                <div class="text-center">
+                    <button type="button" class="btn btn-success btn-lg">Ofertar</button>
+                </div>
+
+                <!-- Formulario para ofertar -->
+
 
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8"></div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <b>Categoria: </b>
+                <div class="publication-category">{{publication_data_by_id.category}}</div>
+                <div class="row">
+                    <div class="col-xs-6 text-center ">
+                        <b>Días restantes: </b><br>
+                        <span class="text-big">{{publication_data_by_id.created | date: 'dd-MM-yy'}}</span>
+                    </div>
+                    <div class="col-xs-6 text-center">
+                        <b>Ofertas: </b><br>
+                        <span class="text-big">{{publication_data_by_id.offer_count}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <b>Descripción: </b><br/>
+                {{publication_data_by_id.description}}
+            </div>
         </div>
     </div>
-
-
-{{publication_data_by_id}}
 </div>
