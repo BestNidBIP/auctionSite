@@ -22,7 +22,7 @@
 
                 <!-- Make an offer button -->
                 <div class="text-center">
-                    <button type="button" class="btn btn-success btn-lg">Ofertar</button>
+                    <button type="button" class="btn btn-success btn-lg" disabled="!global.user.name">Ofertar</button>
                 </div>
 
                 <!-- Formulario para ofertar -->
@@ -33,7 +33,7 @@
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <b>Categoria: </b>
                 <div class="publication-category">{{publication_data_by_id.category}}</div>
                 <div class="row">
-                    <div class="col-xs-6 text-center ">
+                    <div class="col-xs-6 text-center">
                         <b>Días restantes: </b><br>
                         <span class="text-big">{{publication_data_by_id.created | date: 'dd-MM-yy'}}</span>
                     </div>
