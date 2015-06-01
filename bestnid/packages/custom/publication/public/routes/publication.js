@@ -11,6 +11,11 @@ angular.module('mean.publication').config(['$stateProvider',
         .state('nueva publicacion', {
             url: '/publicacion/nueva-publicacion',
             templateUrl: 'publication/views/publicationNew.html'
+        })
+
+        .state('ver publicacion', {
+            url: '/publicacion/:publicationId',
+            templateUrl: 'publication/views/viewPublication.html'
         });
   }
 ]);
