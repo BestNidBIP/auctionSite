@@ -49,6 +49,14 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
          $scope.publication_data_by_id = response.data.data;
       });
 
+      $scope.offer_button_disabled = function(){
+        if ($scope.global.authenticated == false){
+            return false;
+        }  else {
+            return true;
+        }
+      };
+
       $scope.myInterval = 5000;
       var slides = $scope.slides = [];
       $scope.addSlide = function() {
