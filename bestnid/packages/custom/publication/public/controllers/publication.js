@@ -29,5 +29,24 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
               alert('Formulario invalido');
           }
       };
+
+      $scope.publication_id = function(name){
+              name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+              var regexS = "[\\?&]"+name+"=([^&#]*)";
+              var regex = new RegExp( regexS );
+              var results = regex.exec( window.location.href );
+              if( results == null )
+                  return "";
+              else
+                  return results[1];
+
+      };
+
+      // Get specific publication
+      $scope.publication_data_by_id = null;
+      $scope.publication_data_by_id_promise = Publication.getPublication($scope.publication_id("id"));
+      $scope.publication_data_by_id_promise.then(function (response){
+         $scope.publication_data_by_id = response.data;
+      });
   }
 ]);
