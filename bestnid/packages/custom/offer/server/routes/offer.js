@@ -10,10 +10,12 @@ module.exports = function(Offer, app, auth, database) {
   app.route('/offer')
     .get(offer.all)
     .delete(offer.delete)
-    .post(offer.create);
+    .post(offer.create)
+    .put(offer.update);
 
   app.route('/offer/:publicationID')
     .get(offer.get_offer_by_id);
+
     
 
 

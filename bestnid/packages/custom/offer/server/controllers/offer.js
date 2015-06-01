@@ -1,5 +1,7 @@
 'use strict';
 
+var _   = require('lodash');
+
 /**
  * Module dependencies.
  */
@@ -68,11 +70,46 @@ exports.delete = function(req, res) {
   Offers.findById( req.body.offer_id, function ( err, offer ){
     console.log(offer);
     offer.remove( function ( err, offer ){
+      if(err){
+        res.json({
+          status: '500',
+          msg: 'Cant delete offer'
+        });
+      }
       res.json({
         status: '200',
         msg: 'Offer deleted'
       });
     });
+  });
+  
+};
+
+/**
+ * Update an offer
+ */
+
+exports.update = function(req, res) {
+
+  Offers.findById( req.body.offer_id, function ( err, offer ){
+    console.log(offer);
+    _.forIn(req.body, function(value, key){
+        offer[key] = value;
+      });
+    offer.save(function(err, offer){
+      if(err){
+        res.json({
+          status: '500',
+          msg: 'Error'
+        });
+      }
+      res.json({
+        status: '200',
+        msg: 'Offer updated'
+      });
+      
+    });
+    
 
   });
   
