@@ -32,6 +32,7 @@
     "gridfs-stream": "latest",
     "lodash": "latest",
     "meanio": "linnovate/meanio",
+    "moment": "^2.10.3",
     "mongoose": "latest",
     "morgan": "latest",
     "ms": "latest",

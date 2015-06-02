@@ -4,16 +4,25 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-  Publications = mongoose.model('Publication');
+  Publications = mongoose.model('Publication'),
+  moment = require('moment');
 
 
 /**
  * Get all user publications
  */
 exports.all = function(req, res) {
-  Publications.find({}, function(err, publications) {
+  Publications.find({}).lean().sort('-created').populate('user', 'name username').populate('category', 'name').exec(function(err, publications) {
 
+    
     var response = {};
+    publications.forEach(function(publication) { 
+      var date = moment(publication.created);
+      var diff = moment.duration(moment(date).add(30,'d').diff(date));
+      publication.addedProperty = 'remaining_hours';
+      publication.remaining_hours = diff.asHours();
+      
+    });
     response.data = publications;
     response.status = {
       error : 'false',
@@ -58,13 +67,21 @@ exports.get_publications = function(req, res) {
   var page = req.params.pageNumber - 1;
   var skip_publications = page * PUBLICATIONS_PER_PAGE;
   console.log(skip_publications);
-  Publications.find().sort('-created').skip(skip_publications).limit(PUBLICATIONS_PER_PAGE).populate('user', 'name username').exec(function(err, publications) {
+  Publications.find().lean().sort('-created').skip(skip_publications).limit(PUBLICATIONS_PER_PAGE).populate('user', 'name username').populate('category', 'name').exec(function(err, publications) {
     if (err) {
       return res.status(500).json({
         error: 'Cannot list the publications'
       });
     }
+    
     var response = {};
+    publications.forEach(function(publication) { 
+      var date = moment(publication.created);
+      var diff = moment.duration(moment(date).add(30,'d').diff(date));
+      publication.addedProperty = 'remaining_hours';
+      publication.remaining_hours = diff.asHours();
+    });
+    
     response.data = publications;
     response.status = {
       error : 'false',
@@ -82,13 +99,20 @@ exports.get_publications = function(req, res) {
  */
 exports.get_user_publications = function(req, res) {
 
-  Publications.find({ user : req.user._id}).sort('-created').populate('user', 'name username').exec(function(err, publications) {
+  Publications.find({ user : req.user._id}).lean().sort('-created').populate('user', 'name username').populate('category', 'name').exec(function(err, publications) {
     if (err) {
       return res.status(500).json({
         error: 'Cannot list the publications'
       });
     }
     var response = {};
+    publications.forEach(function(publication) { 
+      var date = moment(publication.created);
+      var diff = moment.duration(moment(date).add(30,'d').diff(date));
+      publication.addedProperty = 'remaining_hours';
+      publication.remaining_hours = diff.asHours();
+    });
+    
     response.data = publications;
     response.status = {
       error : 'false',
@@ -108,13 +132,19 @@ exports.get_user_publications = function(req, res) {
  */
 exports.get_publication_by_id = function(req, res) {
 
-  Publications.findOne({ _id : req.params.publicationId}).sort('-created').populate('user', 'name username').exec(function(err, publications) {
+  Publications.findOne({ _id : req.params.publicationId}).lean().sort('-created').populate('user', 'name username').populate('category','name').exec(function(err, publications) {
     if (err) {
       return res.status(500).json({
         error: 'Cannot list the publications'
       });
     }
     var response = {};
+
+    var date = moment(publications.created);
+    var diff = moment.duration(moment(date).add(30,'d').diff(date));
+    publications.addedProperty = 'remaining_hours';
+    publications.remaining_hours = diff.asHours();
+    
     response.data = publications;
     response.status = {
       error : 'false',
@@ -133,7 +163,7 @@ exports.get_publication_by_id = function(req, res) {
  */
 exports.delete = function(req, res) {
 
-  Publications.findOne({ _id : req.params.publicationId}).sort('-created').populate('user', 'name username').exec(function(err, publication) {
+  Publications.findOne({ _id : req.params.publicationId}).exec(function(err, publication) {
     if (err) {
       return res.status(500).json({
         error: 'Cannot find the publication'
