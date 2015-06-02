@@ -92,7 +92,7 @@ exports.delete = function(req, res) {
 exports.update = function(req, res) {
 
   Offers.findById( req.body.offer_id, function ( err, offer ){
-    console.log(offer);
+    
     _.forIn(req.body, function(value, key){
         offer[key] = value;
       });
