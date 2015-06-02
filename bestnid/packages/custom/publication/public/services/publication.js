@@ -11,11 +11,16 @@ angular.module('mean.publication').factory('Publication', [ '$http',
         return $http.post('/publication', publication_data);
       }
 
+    function _getPublication(publication_id){
+      return $http.get('/publication/' + publication_id)
+    }
+
 
     return {
       name: 'publication',
       getCategories: _getCategories,
-        addNewPublication: _addNewPublication
+      addNewPublication: _addNewPublication,
+      getPublication: _getPublication
     };
   }
 ]);

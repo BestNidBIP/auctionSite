@@ -29,5 +29,38 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
               alert('Formulario invalido');
           }
       };
+
+      $scope.publication_id = function(name){
+              name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+              var regexS = "[\\?&]"+name+"=([^&#]*)";
+              var regex = new RegExp( regexS );
+              var results = regex.exec( window.location.href );
+              if( results == null )
+                  return "";
+              else
+                  return results[1];
+
+      };
+
+      // Get specific publication
+      $scope.publication_data_by_id = null;
+      $scope.publication_data_by_id_promise = Publication.getPublication($scope.publication_id("id"));
+      $scope.publication_data_by_id_promise.then(function (response){
+         $scope.publication_data_by_id = response.data.data;
+      });
+
+      $scope.myInterval = 5000;
+      var slides = $scope.slides = [];
+      $scope.addSlide = function() {
+          var newWidth = 600 + slides.length + 1;
+          slides.push({
+              image: 'http://placekitten.com/' + newWidth + '/300',
+              text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
+              ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
+          });
+      };
+      for (var i=0; i<4; i++) {
+          $scope.addSlide();
+      }
   }
 ]);
