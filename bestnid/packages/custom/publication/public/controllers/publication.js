@@ -31,12 +31,12 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
       };
 
       $scope.publication_id = function(name){
-              name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-              var regexS = "[\\?&]"+name+"=([^&#]*)";
+              name = name.replace(/[\[]/,'\\\[').replace(/[\]]/,'\\\]');
+              var regexS = '[\\?&]'+name+'=([^&#]*)';
               var regex = new RegExp( regexS );
               var results = regex.exec( window.location.href );
-              if( results == null )
-                  return "";
+              if( results === null )
+                  return '';
               else
                   return results[1];
 
@@ -44,13 +44,13 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 
       // Get specific publication
       $scope.publication_data_by_id = null;
-      $scope.publication_data_by_id_promise = Publication.getPublication($scope.publication_id("id"));
+      $scope.publication_data_by_id_promise = Publication.getPublication($scope.publication_id('id'));
       $scope.publication_data_by_id_promise.then(function (response){
          $scope.publication_data_by_id = response.data.data;
       });
 
       $scope.offer_button_disabled = function(){
-        if ($scope.global.authenticated == false){
+        if ($scope.global.authenticated === false){
             return false;
         }  else {
             return true;
@@ -67,7 +67,7 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
               ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
           });
       };
-      for (var i=0; i<4; i++) {
+      for (var i=0; i<4; i = i+1) {
           $scope.addSlide();
       }
   }

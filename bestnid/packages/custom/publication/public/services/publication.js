@@ -12,7 +12,7 @@ angular.module('mean.publication').factory('Publication', [ '$http',
       }
 
     function _getPublication(publication_id){
-      return $http.get('/publication/' + publication_id)
+      return $http.get('/publication/' + publication_id);
     }
 
 
