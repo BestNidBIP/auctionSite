@@ -57,9 +57,13 @@
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <b>Categoria: </b>
                 <div class="publication-category">{{publication_data_by_id.category}}</div>
                 <div class="row">
-                    <div class="col-xs-6 text-center">
+                    <div class="col-xs-6 text-center" ng-if="publication_data_by_id.remaining_hours >= 24">
                         <b>Días restantes: </b><br>
-                        <span class="text-big">{{publication_data_by_id.created | date: 'dd-MM-yy'}}</span>
+                        <span class="text-big">{{publication_data_by_id.remaining_hours / 24 | number:0}}</span>
+                    </div>
+                    <div class="col-xs-6 text-center" ng-if="publication_data_by_id.remaining_hours < 24">
+                        <b>Días restantes: </b><br>
+                        <span class="text-big">{{Math.round(publication_data_by_id.remaining_hours / 24)}}</span>
                     </div>
                     <div class="col-xs-6 text-center">
                         <b>Ofertas: </b><br>

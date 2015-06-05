@@ -18,7 +18,7 @@ exports.all = function(req, res) {
     var response = {};
     publications.forEach(function(publication) { 
       var date = moment(publication.created);
-      var diff = moment.duration(moment(date).add(30,'d').diff(date));
+      var diff = moment.duration(moment(date).add(30,'d').diff(Date.now()));
       publication.addedProperty = 'remaining_hours';
       publication.remaining_hours = diff.asHours();
       
@@ -77,7 +77,7 @@ exports.get_publications = function(req, res) {
     var response = {};
     publications.forEach(function(publication) { 
       var date = moment(publication.created);
-      var diff = moment.duration(moment(date).add(30,'d').diff(date));
+      var diff = moment.duration(moment(date).add(30,'d').diff(Date.now()));
       publication.addedProperty = 'remaining_hours';
       publication.remaining_hours = diff.asHours();
     });
@@ -108,7 +108,7 @@ exports.get_user_publications = function(req, res) {
     var response = {};
     publications.forEach(function(publication) { 
       var date = moment(publication.created);
-      var diff = moment.duration(moment(date).add(30,'d').diff(date));
+      var diff = moment.duration(moment(date).add(30,'d').diff(Date.now()));
       publication.addedProperty = 'remaining_hours';
       publication.remaining_hours = diff.asHours();
     });
@@ -141,7 +141,7 @@ exports.get_publication_by_id = function(req, res) {
     var response = {};
 
     var date = moment(publications.created);
-    var diff = moment.duration(moment(date).add(30,'d').diff(date));
+    var diff = moment.duration(moment(date).add(30,'d').diff(Date.now()));
     publications.addedProperty = 'remaining_hours';
     publications.remaining_hours = diff.asHours();
     
