@@ -25,7 +25,7 @@
                 <div class="thumbnail">
                     <img ng-if="publication.pictures == 0" src="/publication/assets/img/image-comming-soon.png"
                          class="img-responsive">
-                    <img ng-if="publication.pictures != 0" src="{{publication.pictures}}"
+                    <img ng-if="publication.pictures != 0" ng-src="{{publication.pictures}}"
                          class="img-responsive">
 
                     <div class="caption">
@@ -33,17 +33,26 @@
                         <ul class="list-unstyled">
                             <li class="text-center">
                                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                                {{publication.category}}
+                                {{publication.category.name}}
                             </li>
-                            <li class="text-center" ng-hide="publication.daysRemained == 0">
-                                <b><span
+                            <li class="text-center" ng-if="publication.remaining_hours >= 0">
+                                <div ng-if="publication.remaining_hours >=60">
+                                    <b><span
 
-                                        class="glyphicon glyphicon-time"
-                                        aria-hidden="true"></span>
-                                    Termina en</b> {{publication.created | date: 'dd-MM-yyyy'}} días.
+                                            class="glyphicon glyphicon-time"
+                                            aria-hidden="true"></span>
+                                        Termina en</b> {{publication.remaining_hours /24 | number:0}} días.
+                                </div>
+                                <div ng-if="publication.remaining_hours < 60">
+                                    <b><span
+
+                                            class="glyphicon glyphicon-time"
+                                            aria-hidden="true"></span>
+                                        Termina en</b> {{publication.remaining_hours | number:0}} horas.
+                                </div>
 
                             </li>
-                            <li ng-hide="publication.daysRemained != 0" class="text-center text-danger">
+                            <li ng-if="publication.remaining_hours <= 0" class="text-center text-danger">
                                 Esta publicación ya finalizo.
                             </li>
                         </ul>
