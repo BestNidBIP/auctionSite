@@ -15,12 +15,17 @@ angular.module('mean.publication').factory('Publication', [ '$http',
       return $http.get('/publication/' + publication_id);
     }
 
+    function _getOffers(publication_id){
+      return $http.get('/offer/' + publication_id);
+    }
+
 
     return {
       name: 'publication',
       getCategories: _getCategories,
       addNewPublication: _addNewPublication,
-      getPublication: _getPublication
+      getPublication: _getPublication,
+      getOffers: _getOffers
     };
   }
 ]);

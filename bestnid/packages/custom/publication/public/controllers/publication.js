@@ -49,6 +49,15 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
          $scope.publication_data_by_id = response.data.data;
       });
 
+
+      // Get Offers
+      $scope.offers = null;
+      $scope.offer_promise = Publication.getOffers($scope.publication_id('id'));
+      $scope.offer_promise.then(function(response){
+        $scope.offers = response.data;
+      });
+
+
       $scope.offer_button_disabled = function(){
         if ($scope.global.authenticated === false){
             return false;

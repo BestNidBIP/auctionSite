@@ -65,9 +65,10 @@
                         <b>Días restantes: </b><br>
                         <span class="text-big">{{Math.round(publication_data_by_id.remaining_hours / 24)}}</span>
                     </div>
-                    <div class="col-xs-6 text-center">
-                        <b>Ofertas: </b><br>
-                        <span class="text-big">{{publication_data_by_id.offer_count}}</span>
+                    <b>Ofertas: {{offers.length}}</b><br>
+                    <div class="col-xs-6 text-center" ng-repeat="offer in offers">
+                        Descripcion: <span>{{offer.description}}</span>
+                        Usuario: <span>{{offer.user.name}}</span>
                     </div>
                 </div>
             </div>
