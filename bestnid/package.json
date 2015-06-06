@@ -84,6 +84,9 @@
     "gulp-util": "latest",
     "jshint-stylish": "latest",
     "require-dir": "latest",
-    "through": "latest"
+    "through": "latest",
+    "multiparty": "^4.1.2",
+    "node-uuid": "^1.4.3",
+    "moment": "^2.10.3"	
   }
 }
