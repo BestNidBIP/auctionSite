@@ -45,7 +45,6 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
         $scope.cancel_publication = function (publication_id) {
             $scope.delete_pub_promise = Profile.deleteUserPublication(publication_id);
             $scope.delete_pub_promise.then(function(response){
-                console.log(response);
                 $scope.user_publications_promise = Profile.getUserPublications();
                 $scope.user_publications_promise.then(function(response) {
                     $scope.user_publications = response.data.data;
