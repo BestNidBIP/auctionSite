@@ -6,7 +6,7 @@
                  alt="My Profile picture" class="img-circle img-responsive"/>
             <img ng-if="user_data.image" src="{{user_data.image}}" alt="My Profile Picture"
                  class="img-thumbnail img-responsive"/>
-            <h5 class="text-center">Hola <b>{{user_data.name}}</b>!</h5>
+            <h5 class="text-center">Hola <b>{{user_data.username}}</b>!</h5>
         </div>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-7 col-lg-7">
@@ -181,5 +181,7 @@
                 </div>
             </div>
         </form>
+
+        {{userData.$valid}}
     </div>
 </div>

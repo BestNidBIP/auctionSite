@@ -252,6 +252,7 @@ exports.update = function(req, res) {
         status: 300,
         msg: err
       }]);
+        
       console.log(user);
       _.forIn(req.body, function(value, key){
         user[key] = value;
