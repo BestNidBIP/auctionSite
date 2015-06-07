@@ -5,6 +5,18 @@ body{
     background-color: #F0ECEF;
 }
 
+.btn {
+    border-radius: 0px;
+}
+
+input {
+    border-radius: 0px;
+}
+
+textarea { 
+    border-radius: 0px;
+}
+
 .navbar-img{
   max-height: 40px;
 }

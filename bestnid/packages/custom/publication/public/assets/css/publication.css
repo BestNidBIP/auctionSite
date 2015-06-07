@@ -1,9 +1,54 @@
+.publication-data{
+	padding-bottom: 1em;
+}
+
 .text-big{
-  font-size: 30px;
-  font-weight: bold;
-  border: 3px solid black;
+	font-size: 30px;
+	font-weight: bold;
+	border: 3px solid black;
 }
 
 .publication-category{
-  padding-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+.category-name{
+	text-transform: capitalize;
+	padding-bottom: 10px;
+	color: grey;
+}
+
+.pub-box {
+	padding: 15px;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.days-remained-box{
+	background-color: #FF5027;
+}
+
+.offers-received-box{
+	background-color: #FF9300;
+	min-height: 111px;
+}
+
+.text-inside-box{
+	font-size: 1em;
+}
+
+.text-inside-box-quantity{
+	font-size: 2em;
+	font-weight: bold;	
+}
+
+.btn-make-offer{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding-right: 2em;
+	padding-left: 2em;
+}
+
+.offer-form {
+	border: 0.2em solid #F5F3E6;
+	padding: 1em;
 }

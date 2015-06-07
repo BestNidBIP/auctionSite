@@ -1,81 +1,93 @@
 <div ng-controller="PublicationController">
     <div class="container content-white">
-        <h1>{{publication_data_by_id.title}}</h1>
-        <div class="line-bottom"></div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                <!-- When the publication has no images -->
-                <img ng-if="publication_data_by_id.pictures == 0" src="/publication/assets/img/image-comming-soon.png"
-                     class="img-responsive" alt=""/>
-                <!-- When the publication has images -->
-                <div ng-if="publication_data_by_id.pictures != 0" style="height: 305px">
-                    <carousel interval="myInterval">
-                        <slide ng-repeat="publication_image in publication_data_by_id.pictures" active="slide.active">
-                            <img ng-src="{{slide.image}}" style="margin:auto;">
-                            <div class="carousel-caption">
-                                <h4>Slide {{$index}}</h4>
-                                <p>{{slide.text}}</p>
+        <div class="publication-data">
+            <div class="row">
+                <!-- Publication images -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <!-- When the publication has no images -->
+                    <img ng-if="publication_data_by_id.pictures == 0" src="/publication/assets/img/image-comming-soon.png"
+                    class="img-responsive" alt=""/>
+                    <!-- When the publication has images -->
+                    <div ng-if="publication_data_by_id.pictures != 0" style="height: 305px">
+                        <carousel interval="myInterval">
+                            <slide ng-repeat="publication_image in publication_data_by_id.pictures" active="slide.active">
+                                <img ng-src="{{slide.image}}" style="margin:auto;">
+                                <div class="carousel-caption">
+                                    <h4>Slide {{$index}}</h4>
+                                    <p>{{slide.text}}</p>
+                                </div>
+                            </slide>
+                        </carousel>
+                    </div>
+                </div>
+                <!-- Publication details -->
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <h1 class="text-left">{{publication_data_by_id.title}}</h1>
+                    <div class="line-bottom"></div>   
+                    <div class="category-name">
+                        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                        {{publication_data_by_id.category.name}}
+                    </div>             
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="pub-box days-remained-box text-center">
+                                        <span class="text-inside-box">Quedan</span><br/>
+                                        <span class="text-inside-box-quantity">{{publication_data_by_id.remaining_hours / 24 | number:0}}</span><br/>
+                                        días
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="pub-box offers-received-box text-center">
+
+                                        <span class="text-inside-box-quantity">{{offers.length}}</span><br/>
+                                        <span class="text-inside-box">Ofertas recibidas</span>
+                                    </div>
+                                </div>
                             </div>
-                        </slide>
-                    </carousel>
-                </div>
+                            <div class="text-center">
+                                <button class="btn btn-success btn-lg btn-make-offer" 
+                                ng-click="display_offer_form = !display_offer_form" aria-label="Toggle ngShow"
+                                type="submit">Ofertar</button>
+                            </div>
 
-                <!-- Make an offer button -->
-                <div class="text-center">
-                    <button type="button" class="btn btn-success btn-lg" ng-disabled="global.authenticated == false">Ofertar</button>
-                </div>
+                            
+                            <!-- Offer form -->
+                            <div class="offer-form" ng-show="display_offer_form"> 
+                                <h4 class="text-center">Escribe tu oferta</h4>
+                                <div class="line-bottom"></div>
+                                <form novalidate name="offer_form">
+                                    <div class="form-group">
+                                        <textarea type="text" class="form-control" id="description" name="description" placeholder="Escribe tu necesidad"
+                                        ng-model="offer.description"
+                                        ng-maxlength = "500"
+                                        required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="amount" name="amount"
+                                        ng-model="offer.offer" 
+                                        placeholder="Monto a ofertar" 
+                                        required>
+                                    </div>
+                                    <div class="text-center">
+                                    <button class="btn btn-success" ng-click="">Enviar Oferta</button>
+                                    </div>
+                                </form>
 
-                <!-- Offer form -->
-                <div class="offer-form" >
-                    <h2 class="text-center">Realizar una oferta</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="need">Necesidad</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                {{offer_form.$valid}}
+                            </div>
+                            
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                            {{publication_data_by_id.description}}
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputFile">File input</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Example block-level help text here.</p>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Check me out
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div>
-
-
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <b>Categoria: </b>
-                <div class="publication-category">{{publication_data_by_id.category.name}}</div>
-                <div class="row">
-                    <div class="col-xs-6 text-center" ng-if="publication_data_by_id.remaining_hours >= 24">
-                        <b>Días restantes: </b><br>
-                        <span class="text-big">{{publication_data_by_id.remaining_hours / 24 | number:0}}</span>
-                    </div>
-                    <div class="col-xs-6 text-center" ng-if="publication_data_by_id.remaining_hours < 24">
-                        <b>Días restantes: </b><br>
-                        <span class="text-big">{{Math.round(publication_data_by_id.remaining_hours / 24)}}</span>
-                    </div>
-                    <b>Ofertas: {{offers.length}}</b><br>
-                    <div class="col-xs-6 text-center" ng-repeat="offer in offers">
-                        Descripcion: <span>{{offer.description}}</span>
-                        Usuario: <span>{{offer.user.name}}</span>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                <b>Descripción: </b><br/>
-                {{publication_data_by_id.description}}
             </div>
         </div>
+        
+        <hr>
+        Comentarios
     </div>
 </div>

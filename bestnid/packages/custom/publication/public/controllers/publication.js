@@ -49,7 +49,6 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
          $scope.publication_data_by_id = response.data.data;
       });
 
-
       // Get Offers
       $scope.offers = null;
       $scope.offer_promise = Publication.getOffers($scope.publication_id('id'));
@@ -57,27 +56,5 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
         $scope.offers = response.data;
       });
 
-
-      $scope.offer_button_disabled = function(){
-        if ($scope.global.authenticated === false){
-            return false;
-        }  else {
-            return true;
-        }
-      };
-
-      $scope.myInterval = 5000;
-      var slides = $scope.slides = [];
-      $scope.addSlide = function() {
-          var newWidth = 600 + slides.length + 1;
-          slides.push({
-              image: 'http://placekitten.com/' + newWidth + '/300',
-              text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-              ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-          });
-      };
-      for (var i=0; i<4; i = i+1) {
-          $scope.addSlide();
-      }
   }
 ]);
