@@ -52,42 +52,70 @@
                                 type="submit">Ofertar</button>
                             </div>
 
-                            
                             <!-- Offer form -->
                             <div class="offer-form" ng-show="display_offer_form"> 
                                 <h4 class="text-center">Escribe tu oferta</h4>
                                 <div class="line-bottom"></div>
-                                <form novalidate name="offer_form">
+                                <form novalidate name="offer_form">  
+                                    <div class="alert alert-success text-center" role="alert">
+                                        La oferta fue ingresada con éxito.
+                                    </div>
                                     <div class="form-group">
                                         <textarea type="text" class="form-control" id="description" name="description" placeholder="Escribe tu necesidad"
                                         ng-model="offer.description"
-                                        ng-maxlength = "500"
                                         required></textarea>
+                                        <div class="alert alert-danger" role="alert"
+                                        ng-show="offer_form.description.$error.required &&  !offer_form.description.$pristine">
+                                        Por favor, ingresa tu necesidad.
                                     </div>
-                                    <div class="form-group">
-                                        <input type="number" class="form-control" id="amount" name="amount"
-                                        ng-model="offer.offer" 
-                                        placeholder="Monto a ofertar" 
-                                        required>
-                                    </div>
-                                    <div class="text-center">
-                                    <button class="btn btn-success" ng-click="">Enviar Oferta</button>
-                                    </div>
-                                </form>
-
-                                {{offer_form.$valid}}
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="amount" name="amount"
+                                    ng-model="offer.offer" 
+                                    ng-min="1"
+                                    placeholder="Monto a ofertar" 
+                                    required>
+                                    <div class="alert alert-danger" role="alert"
+                                    ng-show="offer_form.amount.$error.required && !offer_form.amount.$pristine">
+                                    Por favor, ingresa un monto a ofertar.
+                                </div>
+                                <div class="alert alert-danger" role="alert"
+                                ng-show="offer_form.amount.$error.min">
+                                Por favor, ingresa un monto mayor a $0.
                             </div>
-                            
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-                            {{publication_data_by_id.description}}
+                            <div class="alert alert-danger" role="alert"
+                            ng-show="offer_form.amount.$error.number">
+                            Por favor, ingresa caracteres numéricos.
                         </div>
                     </div>
-                </div>
+                    <div class="text-center">
+                        <button class="btn btn-success" ng-disabled="!offer_form.$valid" ng-click="">Enviar Oferta</button>
+                    </div>
+                </form>
             </div>
+
         </div>
-        
-        <hr>
-        Comentarios
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+            {{publication_data_by_id.description}}
+        </div>
     </div>
+</div>
+</div>
+</div>
+
+<hr>
+<h4>Comentarios:</h4>
+<div class="comment-section">
+    <div class="comment-question">
+        <p class="bg-primary">Comentario principal</p>
+    </div>
+</div>
+<div class="col-xs-12">
+    <div class="comment-response">
+        <p class="bg-info">
+            Rta: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem aliquam itaque, quaerat, consequuntur sit expedita ratione magni neque sequi. Quisquam maxime doloremque autem accusamus enim cumque id consequatur facere quod.
+        </p>
+    </div>
+</div>
+</div>
 </div>

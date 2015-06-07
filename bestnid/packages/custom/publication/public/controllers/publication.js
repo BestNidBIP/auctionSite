@@ -56,5 +56,12 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
         $scope.offers = response.data;
       });
 
+      // Submit offer
+      $scope.submit_offer = function (isValid){
+        if (isValid) {
+          alert("Formularo es válido")
+        };
+      }
+
   }
 ]);

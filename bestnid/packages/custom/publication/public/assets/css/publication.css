@@ -52,3 +52,11 @@
 	border: 0.2em solid #F5F3E6;
 	padding: 1em;
 }
+
+.comment-question p {
+	padding: 0.5em;
+}
+
+.comment-response p {
+	padding: 0.5em;
+}
