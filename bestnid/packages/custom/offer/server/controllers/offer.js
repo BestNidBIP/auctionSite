@@ -13,7 +13,7 @@ var mongoose = require('mongoose'),
  * Get all offers
  */
 exports.all = function(req, res) {
-  Offers.find({}, function(err, offers) {
+  Offers.find({ user: req.user._id}, function(err, offers) {
     var offerMap = {};
 
     offers.forEach(function(offer) {
