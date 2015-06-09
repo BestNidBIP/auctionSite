@@ -5,6 +5,7 @@
  */
 var mongoose = require('mongoose'),
   Publications = mongoose.model('Publication'),
+  _   = require('lodash'),
   moment = require('moment');
 
 
@@ -125,6 +126,42 @@ exports.get_user_publications = function(req, res) {
 
 };
 
+
+/**
+ * Update User Publication
+ */
+exports.update_user_publication = function(req, res) {
+
+  Publications.findOne({ _id : req.params.publicationId}).exec(function(err, publication) {
+    if (err) {
+      return res.status(500).json({
+        error: 'Cannot find the publication to update'
+      });
+    }
+    
+    // Update publication with every key in the body
+    _.forIn(req.body, function(value, key){
+      publication[key] = value;
+    });
+    publication.save(function(err, publication){
+      if(err){
+        return res.status(500).json({
+          error: 'Cannot update publication'
+        });
+      }
+      var response = {};
+      response.data = publication;
+      response.status = {
+        error : 'false',
+        code : 200,
+        msg : 'OK'
+      };
+      res.send(response);
+    });
+
+  });
+
+};
 
 
 /**

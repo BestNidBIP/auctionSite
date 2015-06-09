@@ -74,7 +74,7 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 							$scope.offers = response.data;
 						});
 						$scope.display_offer_form = false;	
-						$scope.offer = {}
+						$scope.offer = {};
 					});
 				}
 			};

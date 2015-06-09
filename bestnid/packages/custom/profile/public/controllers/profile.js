@@ -50,7 +50,7 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
                     $scope.user_publications = response.data.data;
                 });
             });
-        }
+        };
 
 
         // Offers
