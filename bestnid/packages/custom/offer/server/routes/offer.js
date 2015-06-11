@@ -16,9 +16,6 @@ module.exports = function(Offer, app, auth, database) {
   app.route('/offer/:publicationID')
     .get(offer.get_offer_by_id);
 
-    
-
-
   app.get('/offer/example/render', function(req, res, next) {
     Offer.render('index', {
       package: 'offer'
