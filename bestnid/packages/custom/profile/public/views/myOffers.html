@@ -15,15 +15,19 @@
             </div>
         </div>
 
-        <div class="row">
-            <div ng-repeat="offer in user_offers" class="col-xs-12 col-sm-12 col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading text-center">{{offer.publicationTitle}}</div>
-                    <div class="panel-body text-center">
-                        <p>
-                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                            <b>Días restantes:</b> {{offer.daysRemained}}
-                        </p>
+        
+            <table class="table table-striped">
+                <tr class="text-center">
+                    <th>Código de Oferta</th>
+                    <th>Descripción</th>
+                    <th>Ofertado</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="offer in user_offers">
+                    <td>{{ offer._id }}</td>
+                    <td>{{ offer.description }}</td>
+                    <td>{{ offer.offer | currency: "$":0 }}</td>
+                    <td>
                         <a href="" class="btn btn-success">
                             <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                         </a>
@@ -33,13 +37,10 @@
                         <a href="" class="btn btn-danger">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </a>
-                    </div>
-                </div>
-            </div>
+                    </td>
+                </tr>
+            </table>
         </div>
-
-    </div>
-
 
     <div ng-if="!user_offers">
         <div class="well well-lg text-center">
