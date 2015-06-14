@@ -16,6 +16,11 @@ angular.module('mean.publication').config(['$stateProvider',
         .state('ver publicacion', {
             url: '/publicacion?id=:publicationId',
             templateUrl: 'publication/views/viewPublication.html'
+        })
+
+        .state('modificar publicacion', {
+            url: '/publicacion/modificar-publicacion?id=:publicationId',
+            templateUrl: 'publication/views/editPublication.html'
         });
   }
 ]);
