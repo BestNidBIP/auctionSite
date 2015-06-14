@@ -23,6 +23,16 @@ angular.module('mean.publication').factory('Publication', [ '$http',
       return $http.post('/offer', offer_data);
     }
 
+    function _getComments(publication_id){
+      return $http.get('/comment/' + publication_id);
+    }
+
+    function _postComment(commentData){
+      return $http.post('/comment/', commentData);
+    }
+
+
+
 
     return {
       name: 'publication',
@@ -30,7 +40,9 @@ angular.module('mean.publication').factory('Publication', [ '$http',
       addNewPublication: _addNewPublication,
       getPublication: _getPublication,
       getOffers: _getOffers,
-      addOffer: _addOffer
+      addOffer: _addOffer,
+      getComments: _getComments,
+      postComment: _postComment
     };
   }
 ]);

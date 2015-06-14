@@ -107,18 +107,32 @@
 <hr>
 <h4>Comentarios:</h4>
 <div class="comment-section">
-    <div class="comment-question">
+    <div class="comment-question" ng-repeat="comment in comments">
+    
         <p class="bg-primary">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi porro rem placeat cumque, odio maxime non, vel, reprehenderit omnis sit nobis fugit adipisci consequatur saepe repudiandae. Illum earum voluptas quo.
+            {{comment.description}}
+            <br>
+            Respondido por: {{comment.user.name}}
+            El día: {{comment.created}}
         </p>
+        <div class="comment-response" ng-if="comment.response">
+            <p class="bg-info">
+                <strong>Respuesta:</strong> 
+                {{comment.response}}
+                <br>
+            </p>
+        </div>
     </div>
 </div>
-<div class="col-xs-12">
-    <div class="comment-response">
-        <p class="bg-info">
-            <strong>Respuesta:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem aliquam itaque, quaerat, consequuntur sit expedita ratione magni neque sequi. Quisquam maxime doloremque autem accusamus enim cumque id consequatur facere quod.
-        </p>
-    </div>
+
+<form action="submit">
+<div class="form-group">
+  <label for="comment">Comment:</label>
+  <textarea class="form-control" rows="5" ng-model="comment" id="comment"></textarea>
+  <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="post_comment(comment, publication_id)">PostComment</button>
+  </span>
 </div>
+</form>
 </div>
 </div>
