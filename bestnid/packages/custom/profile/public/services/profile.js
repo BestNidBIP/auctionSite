@@ -25,18 +25,22 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
             return $http.get('/offer');
         }
 
-        function _deleteUserOffer() {
-            //TODO
+        function _deleteUserOffer(offerid) {
+            return $http({ url: '/offer', 
+                method: 'DELETE', 
+                data: {offer_id: offerid}, 
+                headers: {'Content-Type': 'application/json;charset=utf-8'}
+            });
         }
 
         return {
             name: 'profile',
             getProfile: _getUserProfile,
-            updateUserProfile: _updateUserProfile(),
+            updateUserProfile: _updateUserProfile,
             getUserPublications: _getUserPublications,
             deleteUserPublication: _deleteUserPublication,
-            getUserOffers: _getUserOffers(),
-            deleteUserOffer: _deleteUserOffer()
+            getUserOffers: _getUserOffers,
+            deleteUserOffer: _deleteUserOffer
         };
     }
     ]);

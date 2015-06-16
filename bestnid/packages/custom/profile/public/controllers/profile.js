@@ -9,21 +9,21 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
         };
 
         $scope.tabsContent = [
-            {
-                name: 'Mi Perfil',
-                url: '.myProfile',
-                active: true
-            },
-            {
-                name: 'Mis Publicaciones',
-                url: '.myPublications',
-                active: true
-            },
-            {
-                name: 'Mis Ofertas',
-                url: '.myOffers',
-                active: true
-            }
+        {
+            name: 'Mi Perfil',
+            url: '.myProfile',
+            active: true
+        },
+        {
+            name: 'Mis Publicaciones',
+            url: '.myPublications',
+            active: true
+        },
+        {
+            name: 'Mis Ofertas',
+            url: '.myOffers',
+            active: true
+        }
         ];
 
         $scope.user_data = null;
@@ -55,26 +55,23 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
 
         // Offers
         $scope.user_offers = null;
-        $scope.user_offers_promise = Profile.getUserOffers;
+        $scope.user_offers_promise = Profile.getUserOffers();
         $scope.user_offers_promise.then( function(response){
             $scope.user_offers = response.data;
         });
 
-        //Lo que debería traer el servicio que trae las ofertas
-        $scope.offers_data = [
-            {
-                publicationTitle: 'Zapatos',
-                daysRemained: 1,
-                linkPublication: 12,
-                publication_id: '',
-                need_description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut deserunt doloremque eaque eligendi error, expedita illum iste nam natus nisi odit repellat, reprehenderit unde vero. Deleniti ducimus esse maiores.',
-                price: '50'
-            }
-        ];
+        $scope.user_remove_offer = function (offer_id) {
+            $scope.user_remove_offer_promise = Profile.deleteUserOffer(offer_id);
+            $scope.user_remove_offer_promise.then(function(response) {
+             $scope.user_offers_promise = Profile.getUserOffers();
+             $scope.user_offers_promise.then( function(response){
+                $scope.user_offers = response.data;
+            });
+         });
 
-
+        };
 
 
     }
-]);
+    ]);
 

@@ -66,9 +66,8 @@ exports.get_offer_by_id = function(req, res) {
  */
 
 exports.delete = function(req, res) {
-
+  console.log(req.body);
   Offers.findById( req.body.offer_id, function ( err, offer ){
-    console.log(offer);
     offer.remove( function ( err, offer ){
       if(err){
         res.json({
