@@ -5,20 +5,22 @@
  */
 var mongoose = require('mongoose'),
   Comments = mongoose.model('Comment');
+  
 
 
 /**
  * Get all user comments
  */
 exports.all = function(req, res) {
-  Comments.find({}, function(err, comments) {
-    var publicationMap = {};
-
-    comments.forEach(function(comment) {
-      publicationMap[comment._id] = comment;
-    });
-
-    res.send(publicationMap);  
+  Comments.find({publication: req.params.publicationId}).sort('-created').populate('user', 'name username').populate('comment', 'description created user').exec(function(err, comments) {
+    var response = {};
+    response.data = comments;
+    response.status = {
+      error : 'false',
+      code : 200,
+      msg : 'OK'
+    };
+    res.send(response);  
   });
 };
 
@@ -26,16 +28,36 @@ exports.all = function(req, res) {
  * Create comment
  */
 exports.create = function(req, res) {
-  var comment = new Comments(req.body);
-  comment.user = req.user;
+    var comment = new Comments(req.body);
+    comment.user = req.user;
 
-  comment.save(function(err) {
-    if (err) {
-      return res.status(500).json({
-        error: 'Cannot save the Comments'
-      });
-    }
-    res.json(comment);
+    comment.save(function(err) {
+      if (err) {
+        return res.status(500).json({
+          error: 'Cannot save the Comments'
+        });
+      }
+    });
+};
 
+
+/**
+ * Respond comment
+ */
+exports.respond = function(req, res) {
+  Comments.findOne({_id: req.body.comment}).exec(function(err, comment) {
+    comment.response = req.body.response;
+    comment.save(function(err) {
+      if (err) {
+        return res.status(500).json({
+          error: 'Cannot save the Comments'
+        });
+      }
+      return res.status(200).json({
+          error: false,
+          msg: 'Response saved'
+        });
+
+    });
   });
 };

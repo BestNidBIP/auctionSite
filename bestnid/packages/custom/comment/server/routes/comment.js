@@ -10,8 +10,14 @@ module.exports = function(Comment, app, auth, database) {
 
  
   app.route('/comment')
-    .get(comment.all)
     .post(comment.create);
+
+
+  app.route('/comment/respond')
+    .post(comment.respond);
+
+  app.route('/comment/:publicationId')
+    .get(comment.all);
 
 
   app.get('/comment/example/render', function(req, res, next) {
