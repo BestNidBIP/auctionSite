@@ -2,8 +2,8 @@
 
 angular.module('mean.offer').config(['$stateProvider',
   function($stateProvider) {
-    $stateProvider.state('offer example page', {
-      url: '/offer/example',
+    $stateProvider.state('Ver y/o actualizar oferta', {
+      url: '/oferta',
       templateUrl: 'offer/views/index.html'
     });
   }
