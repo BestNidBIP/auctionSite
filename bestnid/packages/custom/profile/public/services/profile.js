@@ -33,6 +33,19 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
             });
         }
 
+        function _updateUserOffer(currentOffer) {
+            return $http ({ 
+                url: 'offer',
+                method: 'PUT',
+                data: {
+                    offer_id: currentOffer._id,
+                    description: currentOffer.description,
+                    offer: currentOffer.offer
+                },
+                headers: {'Content-Type': 'application/json;charset=utf-8'} 
+            });
+        }
+
         return {
             name: 'profile',
             getProfile: _getUserProfile,
@@ -40,7 +53,8 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
             getUserPublications: _getUserPublications,
             deleteUserPublication: _deleteUserPublication,
             getUserOffers: _getUserOffers,
-            deleteUserOffer: _deleteUserOffer
+            deleteUserOffer: _deleteUserOffer,
+            updateUserOffer: _updateUserOffer
         };
     }
     ]);

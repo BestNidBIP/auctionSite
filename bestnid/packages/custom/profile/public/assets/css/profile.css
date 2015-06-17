@@ -56,6 +56,12 @@
     background-color: #00A8BD;
 }
 
+
+.highlight { 
+    background:#F84072;
+    border: 2px red solid;
+}
+
 @media (max-width: 767px) {
     .myPublications .btn {
         margin-top: 10px;
