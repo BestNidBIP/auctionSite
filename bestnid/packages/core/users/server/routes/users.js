@@ -12,6 +12,9 @@ module.exports = function(MeanUser, app, auth, database, passport) {
     .get(users.me)
     .post(users.update);
 
+  app.route('/users')
+    .get(users.all);
+
   // Setting up the users api
   app.route('/register')
     .post(users.create);

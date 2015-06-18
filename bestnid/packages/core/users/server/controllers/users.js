@@ -20,6 +20,19 @@ exports.authCallback = function(req, res) {
   res.redirect('/');
 };
 
+
+/**
+ * Get all users
+ */
+exports.all = function(req, res) {
+  User.find({})
+    .exec(function(err, users) {
+      res.send(users);  
+       
+    });
+   
+};
+
 /**
  * Show login form
  */
