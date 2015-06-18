@@ -64,7 +64,6 @@ test/coverage/
 modules/public/
 modules/views/
 /public/build/
-/packages/contrib/
 
 # --------------------
 # vim Files
