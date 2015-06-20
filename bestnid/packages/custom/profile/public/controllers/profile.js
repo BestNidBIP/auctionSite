@@ -80,8 +80,23 @@ angular.module('mean.profile').controller('ProfileController', ['$scope', 'Globa
                 });
                 $scope.offer_successful_modification = true;
             });
+        };
 
-            
+        // Media
+        $scope.upload_media = function(file){
+            console.log(file);
+            $scope.upload_media_promise = Profile.uploadProfilePicture(file);
+            $scope.upload_media_promise.then( function(response){
+                $scope.upload_media = response.data;
+                $scope.profile_picture_promise = Profile.addUserProfilePicture($scope.upload_media._id);
+                $scope.profile_picture_promise.then(function(response){
+
+                    $scope.profile_picture = response.data;
+
+                });
+
+            });
+
         };
 
 

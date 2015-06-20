@@ -13,6 +13,14 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
             //return $http.post('users/me',{username: user_profile_data.name });
         }
 
+        function _addUserProfilePicture(media_id){
+            return $http.post('/users/me', {image:media_id});
+        }
+
+        function _uploadProfilePicture(picture_data){
+            return $http.post('/media', {picture:picture_data});
+        }
+
         function _getUserPublications() {
             return $http.get('/user/publications');
         }
@@ -54,7 +62,9 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
             deleteUserPublication: _deleteUserPublication,
             getUserOffers: _getUserOffers,
             deleteUserOffer: _deleteUserOffer,
-            updateUserOffer: _updateUserOffer
+            updateUserOffer: _updateUserOffer,
+            uploadProfilePicture: _uploadProfilePicture,
+            addUserProfilePicture: _addUserProfilePicture
         };
     }
     ]);
