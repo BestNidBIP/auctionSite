@@ -4,33 +4,33 @@ angular.module('mean.mean-admin').controller('UsersController', ['$scope', 'Glob
     function($scope, Global, Menus, $rootScope, $http, Users) {
         $scope.global = Global;
         $scope.userSchema = [{
-            title: 'Email',
+            title: 'Correo electrónico',
             schemaKey: 'email',
             type: 'text',
             inTable: true
         }, {
-            title: 'Name',
+            title: 'Nombre',
             schemaKey: 'name',
             type: 'text',
             inTable: true
         }, {
-            title: 'Username',
+            title: 'Nombre de usuario',
             schemaKey: 'username',
             type: 'text',
             inTable: true
         }, {
-            title: 'Roles',
+            title: 'Rol',
             schemaKey: 'roles',
             type: 'select',
             options: ['authenticated', 'admin'],
             inTable: true
         }, {
-            title: 'Password',
+            title: 'Contraseña',
             schemaKey: 'password',
             type: 'password',
             inTable: false
         }, {
-            title: 'Repeat password',
+            title: 'Repetir contraseña',
             schemaKey: 'confirmPassword',
             type: 'password',
             inTable: false

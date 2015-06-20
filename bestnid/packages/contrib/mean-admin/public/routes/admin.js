@@ -2,7 +2,18 @@
 angular.module('mean.mean-admin').config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('users', {
+            .state('offers', {
+                url: '/admin/offers',
+                templateUrl: 'mean-admin/views/offers.html'
+            })
+            .state('reports', {
+                url: '/admin/reports',
+                templateUrl: 'mean-admin/views/reports.html'
+            })
+            .state('publications', {
+                url: '/admin/publications',
+                templateUrl: 'mean-admin/views/publications.html'
+            }).state('users', {
                 url: '/admin/users',
                 templateUrl: 'mean-admin/views/users.html'
             }).state('themes', {

@@ -37,6 +37,10 @@ exports.create = function(req, res) {
           error: 'Cannot save the Comments'
         });
       }
+      return res.status(200).json({
+          error: false,
+          msg: 'Response saved'
+        });
     });
 };
 

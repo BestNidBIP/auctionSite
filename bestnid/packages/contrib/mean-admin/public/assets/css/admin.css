@@ -1,4 +1,5 @@
 .admin-menu {
+    padding-top: 70px;
     z-index:1;
     position: fixed;
     background-color: #176583;
