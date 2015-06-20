@@ -3,7 +3,7 @@
 
     <div class="line-bottom"></div>
 
-    <div ng-if="user_offers">
+    <div ng-if="user_offers.valueOf.length != 0">
         <div class="breadcrumb search-for">
             <div class="row text-center">
                 <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
@@ -52,11 +52,11 @@
     </table>
 </div>
 
-<div ng-if="!user_offers">
+<div ng-if="user_offers.valueOf.length == 0">
     <div class="well well-lg text-center">
         <h4>No tienes ofertas realizadas.</h4><br>
-        <a href="#!" class="btn btn-warning">
-            <b>Buscar publicaciones</b>
+        <a href="#!/publicacion/nueva-publicacion" class="btn btn-warning">
+            <b>Ver publicaciones actuales</b>
         </a>
     </div>
 </div>
