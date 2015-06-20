@@ -123,7 +123,18 @@ exports.create = function(req, res, next) {
  * Send User
  */
 exports.me = function(req, res) {
-  res.json(req.user || null);
+  User
+    .findOne({
+      _id: req.user._id
+    })
+    .populate('image', 'src name')
+    .exec(function(err, user) {
+      if(err){
+        res.json(null);
+      }
+      
+      res.json(user || null);
+    });
 };
 
 /**
@@ -265,13 +276,11 @@ exports.update = function(req, res) {
         status: 300,
         msg: err
       }]);
-        
-      console.log(user);
       _.forIn(req.body, function(value, key){
         user[key] = value;
       });
       
-      console.log(user);
+    
       user.save();
       return res.status(200).json([{
             error: false,

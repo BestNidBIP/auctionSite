@@ -96,8 +96,9 @@ UserSchema = new Schema({
         required: false
     },
     image: {
-        type: String,
-        default: ''
+        type: Schema.ObjectId,
+        ref: 'Media',
+        default: null,
     },
     salt: String,
     resetPasswordToken: String,

@@ -13,10 +13,26 @@ var mongoose  = require('mongoose'),
 
 var MediaSchema;
 MediaSchema = new Schema({
-    image:{
+    name:{
     	type: String,
     	required: true,
-    }
+    },
+    src:{
+    	type: String,
+    	required: true,
+    },
+    size:{
+    	type: String,
+    	required: true,
+    },
+    type:{
+    	type: String,
+    	required: true,
+    },
+    created:{
+    	type: String,
+    	required: true,
+    },
 });
 
 

@@ -2,13 +2,22 @@
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div class="profile-main-data">
             <!-- User profile picture -->
-            <img ng-if="!user_data.image" src="/profile/assets/img/default_profile_pic.jpg"
+            <img ng-if="!user_data.image" data-ng-src="/profile/assets/img/default_profile_pic.jpg"
                  alt="My Profile picture" class="img-circle img-responsive"/>
-            <img ng-if="user_data.image" src="{{user_data.image}}" alt="My Profile Picture"
+            <img ng-if="user_data.image" data-ng-src="{{user_data.image.src}}" alt="My Profile Picture"
                  class="img-thumbnail img-responsive"/>
             <h5 class="text-center">Hola <b>{{user_data.username}}</b>!</h5>
         </div>
     </div>
+    <!-- Profile Image -->
+  
+    <mean-upload file-dest="'/files/photos/'"
+    upload-callback="uploadFinished(files)"
+    upload-file-callback="upload_media(file)"></mean-upload>
+    <div data-ng-repeat="img in images">
+        <img data-ng-src="{{img.src}}" alt="">
+    </div>
+    <!-- End Profile Image -->
     <div class="col-xs-12 col-sm-8 col-md-7 col-lg-7">
         <h3>Mi Perfil</h3>
 
