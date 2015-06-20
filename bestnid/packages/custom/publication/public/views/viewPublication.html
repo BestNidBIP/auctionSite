@@ -59,80 +59,96 @@
                                 <form novalidate name="offer_form">  
                                     <div class="alert alert-success text-center" role="alert"
                                     ng-show="success_message_offer">
-                                        La oferta fue ingresada con éxito.
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea type="text" class="form-control" id="description" name="description" placeholder="Escribe tu necesidad"
-                                        ng-model="offer.description"
-                                        required></textarea>
-                                        <div class="alert alert-danger" role="alert"
-                                        ng-show="offer_form.description.$error.required &&  !offer_form.description.$pristine">
-                                        Por favor, ingresa tu necesidad.
-                                    </div>
+                                    La oferta fue ingresada con éxito.
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="amount" name="amount"
-                                    ng-model="offer.offer" 
-                                    ng-min="1"
-                                    placeholder="Monto a ofertar" 
-                                    required>
+                                    <textarea type="text" class="form-control" id="description" name="description" placeholder="Escribe tu necesidad"
+                                    ng-model="offer.description"
+                                    required></textarea>
                                     <div class="alert alert-danger" role="alert"
-                                    ng-show="offer_form.amount.$error.required && !offer_form.amount.$pristine">
-                                    Por favor, ingresa un monto a ofertar.
+                                    ng-show="offer_form.description.$error.required &&  !offer_form.description.$pristine">
+                                    Por favor, ingresa tu necesidad.
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="amount" name="amount"
+                                ng-model="offer.offer" 
+                                ng-min="1"
+                                placeholder="Monto a ofertar" 
+                                required>
                                 <div class="alert alert-danger" role="alert"
-                                ng-show="offer_form.amount.$error.min">
-                                Por favor, ingresa un monto mayor a $0.
+                                ng-show="offer_form.amount.$error.required && !offer_form.amount.$pristine">
+                                Por favor, ingresa un monto a ofertar.
                             </div>
                             <div class="alert alert-danger" role="alert"
-                            ng-show="offer_form.amount.$error.number">
-                            Por favor, ingresa caracteres numéricos.
+                            ng-show="offer_form.amount.$error.min">
+                            Por favor, ingresa un monto mayor a $0.
                         </div>
+                        <div class="alert alert-danger" role="alert"
+                        ng-show="offer_form.amount.$error.number">
+                        Por favor, ingresa caracteres numéricos.
                     </div>
-                    <div class="text-center">
-                        <button class="btn btn-success" ng-disabled="!offer_form.$valid" 
-                        ng-click="submit_offer(offer, offer_form.$valid)">Enviar Oferta</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-            {{publication_data_by_id.description}}
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-success" ng-disabled="!offer_form.$valid" 
+                    ng-click="submit_offer(offer, offer_form.$valid)">Enviar Oferta</button>
+                </div>
+            </form>
         </div>
     </div>
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+        {{publication_data_by_id.description}}
+    </div>
+</div>
 </div>
 </div>
 </div>
 
 <hr>
-<h4>Comentarios:</h4>
+
+<h3 class="text-center">¡Agrega un comentario!</h3>
 <div class="comment-section">
     <div class="comment-question" ng-repeat="comment in comments">
-    
-        <p class="bg-primary">
-            {{comment.description}}
-            <br>
-            Comentado por: {{comment.user.name}}
-            El día: {{comment.created}}
-        </p>
-        <div class="comment-response" ng-if="comment.response">
-            <p class="bg-info">
-                <strong>Respuesta:</strong> 
-                {{comment.response}}
-                <br>
-            </p>
+        <div class="media bg-info">
+          <div class="media-body">
+            <h4 class="media-heading">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                {{comment.user.username}} dice:
+            </h4>
+            {{comment.description}} - {{comment.created | date: 'dd-MM-yy'}}
         </div>
     </div>
 </div>
 
-<form action="submit">
-<div class="form-group">
-  <label for="comment">Comment:</label>
-  <textarea class="form-control" rows="5" ng-model="comment" id="comment"></textarea>
-  <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click="post_comment(comment, publication_id)">PostComment</button>
-  </span>
+
+
+</div>
+
+<div class="comment-form" ng-if="user._id">
+    <form novalidate name="commentForm">
+        <div class="form-group">
+          <label for="comment">Agrega tu comentario: 
+              <small>(Ingresa un comentario de al menos 10 caracteres.)</small></label>
+
+              <textarea class="form-control" rows="5" 
+              ng-model="comment" id="comment"
+              ng-minlength="10", name="commentText"
+              required></textarea>
+              <div class="alert alert-danger" role="alert" 
+              ng-show="commentForm.commentText.$invalid && !commentForm.commentText.$pristine">
+              Por favor ingresa un comentario con más de 10 caracteres.
+          </div>
+      </div>
+
+      <div class="form-group text-center">
+        <button class="btn btn-success" type="button" ng-click="commentForm.$valid && post_comment(comment)">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+
+            Comentario
+        </button>
+    </div>
 </div>
 </form>
+</div>
 </div>
 </div>

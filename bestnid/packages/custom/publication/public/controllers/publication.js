@@ -55,23 +55,27 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 			});
 
 
+			// Comments
+			// Get comments
+			$scope.comments = null;
+			$scope.get_comments_promise = Publication.getComments($scope.publication_id('id'));
+			$scope.get_comments_promise.then(function(response){
+				$scope.comments = response.data.data;
+			});
+
 			// post_comment
 			$scope.post_comment = function(comment){
 				var commentData = {};
 				commentData.description = comment;
 				commentData.publication = $scope.publication_id('id');
 				$scope.post_comment_promise = Publication.postComment(commentData);
-				$scope.post_comment_promise.then(function(response){
-					$scope.post_comment = response.data.data;
+				$scope.post_comment_promise.then(function (response) {
+					$scope.get_comments_promise = Publication.getComments($scope.publication_id('id'));
+					$scope.get_comments_promise.then(function(response){
+						$scope.comments = response.data.data;
+					});
 				});
 			};
-
-			
-			$scope.get_comments_promise = Publication.getComments($scope.publication_id('id'));
-			$scope.get_comments_promise.then(function(response){
-				$scope.comments = response.data.data;
-			});
-			
 
 			// Submit offer
 			$scope.success_message_offer = false;

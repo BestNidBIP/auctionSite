@@ -60,3 +60,17 @@
 .comment-response p {
 	padding: 0.5em;
 }
+
+.space-before-button{
+	margin-top: 1em;
+}
+
+.comment-form{
+	padding: 1em;
+	border: 1px solid #FCF8E3;
+}
+
+.media{
+	margin: 1em;
+	padding: 1em;
+}
