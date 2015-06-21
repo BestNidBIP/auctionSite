@@ -48,38 +48,22 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
-                    <label for="images">Insertar hasta 3 imagenes:</label>
-                    
+                    <label for="images">Inserta hasta 3 imagenes:</label>
                     <div class="row">
-                      <div class="col-xs-6 col-md-3">
+                      <div ng-repeat="img in publication_pictures_preview" class="col-xs-6 col-md-4">
                         <a href="#" class="thumbnail">
-                          <img src="..." alt="...">
+                          <img data-ng-src="{{img.src}}" class="img-responsive" alt="">
                       </a>
                   </div>
-                  ...
               </div>                
-              
-
+            
               <mean-upload file-dest="'/files/photos/'"
               upload-callback="uploadFinished(files)"
-              upload-file-callback="upload_media(file)"></mean-upload>
-              <div data-ng-repeat="img in images">
-                <img data-ng-src="{{img.src}}" alt="">
-            </div>
+              upload-file-callback="upload_media(file)" 
+              ng-show="count != 3" 
+              ng-click="count = count + 1"
+              type="file"></mean-upload>
 
-            <mean-upload file-dest="'/files/photos/'"
-            upload-callback="uploadFinished(files)"
-            upload-file-callback="upload_media(file)"></mean-upload>
-            <div data-ng-repeat="img in images">
-                <img data-ng-src="{{img.src}}" alt="">
-            </div>
-
-            <mean-upload file-dest="'/files/photos/'"
-            upload-callback="uploadFinished(files)"
-            upload-file-callback="upload_media(file)"></mean-upload>
-            <div data-ng-repeat="img in images">
-                <img data-ng-src="{{img.src}}" alt="">
-            </div>
         </div>
         <div class="checkbox">
             <label>

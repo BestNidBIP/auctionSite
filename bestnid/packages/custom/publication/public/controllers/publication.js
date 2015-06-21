@@ -107,12 +107,13 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 			};
 
 			// Media
+			$scope.count = 0;
+			$scope.publication_pictures_preview = [];
 			$scope.upload_media = function(file){
-
 				$scope.upload_media_promise = Publication.uploadMediaPicture(file);
 				$scope.upload_media_promise.then(function (response) {
-					$scope.publication_pictures.push(response.data._id); 
-
+					$scope.publication_pictures.push(response.data._id);
+					$scope.publication_pictures_preview.push(response.data);
 				});
 
 			};
