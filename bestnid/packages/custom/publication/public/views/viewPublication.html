@@ -9,15 +9,19 @@
                     class="img-responsive" alt=""/>
                     <!-- When the publication has images -->
                     <div ng-if="publication_data_by_id.pictures != 0" style="height: 305px">
-                        <carousel interval="myInterval">
-                            <slide ng-repeat="publication_image in publication_data_by_id.pictures" active="slide.active">
+                        <!--<carousel interval="myInterval">
+                            <slide ng-repeat="publication_image.src in publication_data_by_id.pictures" active="slide.active">
                                 <img ng-src="{{slide.image}}" style="margin:auto;">
                                 <div class="carousel-caption">
                                     <h4>Slide {{$index}}</h4>
                                     <p>{{slide.text}}</p>
                                 </div>
                             </slide>
-                        </carousel>
+                        </carousel>-->
+                        <div ng-repeat="image in publication_data_by_id.pictures">
+                        <img ng-src="{{image.src}}">
+
+                        </div>
                     </div>
                 </div>
                 <!-- Publication details -->

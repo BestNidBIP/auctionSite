@@ -38,6 +38,7 @@ exports.all = function(req, res) {
  * Create publication
  */
 exports.create = function(req, res) {
+  console.log(req.body);
   var publication = new Publications(req.body);
   publication.user = req.user;
 
@@ -68,7 +69,7 @@ exports.get_publications = function(req, res) {
   var page = req.params.pageNumber - 1;
   var skip_publications = page * PUBLICATIONS_PER_PAGE;
   console.log(skip_publications);
-  Publications.find().lean().sort('-created').skip(skip_publications).limit(PUBLICATIONS_PER_PAGE).populate('user', 'name username').populate('category', 'name').exec(function(err, publications) {
+  Publications.find().lean().sort('-created').skip(skip_publications).limit(PUBLICATIONS_PER_PAGE).populate('user', 'name username').populate('pictures', 'src name').populate('category', 'name').exec(function(err, publications) {
     if (err) {
       return res.status(500).json({
         error: 'Cannot list the publications'
@@ -100,7 +101,7 @@ exports.get_publications = function(req, res) {
  */
 exports.get_user_publications = function(req, res) {
 
-  Publications.find({ user : req.user._id}).lean().sort('-created').populate('user', 'name username').populate('category', 'name').exec(function(err, publications) {
+  Publications.find({ user : req.user._id}).lean().sort('-created').populate('pictures', 'src name').populate('user', 'name username').populate('category', 'name').exec(function(err, publications) {
     if (err) {
       return res.status(500).json({
         error: 'Cannot list the publications'
@@ -169,7 +170,7 @@ exports.update_user_publication = function(req, res) {
  */
 exports.get_publication_by_id = function(req, res) {
 
-  Publications.findOne({ _id : req.params.publicationId}).lean().sort('-created').populate('user', 'name username').populate('category','name').exec(function(err, publications) {
+  Publications.findOne({ _id : req.params.publicationId}).lean().sort('-created').populate('pictures', 'src name').populate('user', 'name username').populate('category','name').exec(function(err, publications) {
     if (err) {
       return res.status(500).json({
         error: 'Cannot list the publications'

@@ -49,6 +49,20 @@
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
                     <label for="images">Insertar hasta 3 imagenes:</label>
+
+    <mean-upload file-dest="'/files/photos/'"
+    upload-callback="uploadFinished(files)"
+    upload-file-callback="upload_media(file)"></mean-upload>
+    <div data-ng-repeat="img in images">
+        <img data-ng-src="{{img.src}}" alt="">
+    </div>
+    
+    <mean-upload file-dest="'/files/photos/'"
+    upload-callback="uploadFinished(files)"
+    upload-file-callback="upload_media(file)"></mean-upload>
+    <div data-ng-repeat="img in images">
+        <img data-ng-src="{{img.src}}" alt="">
+    </div>
                     <input type="text" class="form-control" id="images"/>
                 </div>
                 <div class="checkbox">

@@ -7,9 +7,14 @@ angular.module('mean.publication').factory('Publication', [ '$http',
       return $http.get('/category');
     }
 
-      function _addNewPublication(publication_data){
-        return $http.post('/publication', publication_data);
-      }
+    function _addNewPublication(publication_data){
+      return $http.post('/publication', publication_data);
+    }
+
+    function _uploadMediaPicture(picture_data){
+      return $http.post('/media', {picture:picture_data});
+    }
+
 
     function _getPublication(publication_id){
       return $http.get('/publication/' + publication_id);
@@ -42,7 +47,9 @@ angular.module('mean.publication').factory('Publication', [ '$http',
       getOffers: _getOffers,
       addOffer: _addOffer,
       getComments: _getComments,
-      postComment: _postComment
+      postComment: _postComment,
+      uploadMediaPicture: _uploadMediaPicture
+
     };
   }
 ]);

@@ -10,7 +10,7 @@ angular.module('mean.profile').factory('Profile', ['$http', '$q',
         }
 
         function _updateUserProfile(user_profile_data) {
-            //return $http.post('users/me',{username: user_profile_data.name });
+            return $http.post('/users/me',user_profile_data);
         }
 
         function _addUserProfilePicture(media_id){

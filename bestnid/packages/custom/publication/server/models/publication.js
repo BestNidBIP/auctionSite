@@ -26,10 +26,7 @@ PublicationSchema = new Schema({
       type: String,
       required: true,
     },
-    pictures: {
-      type: [Schema.ObjectId],
-      ref: 'Media',
-    },
+    pictures: [{type: Schema.ObjectId, ref: 'Media'}],
     created: {
       type: Date,
       default: Date.now

@@ -8,6 +8,8 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 			name: 'publication'
 		};
 
+		$scope.publication_pictures = [];
+
 		// Get categories available
 		$scope.categories = null;
 		$scope.categories_promise = Publication.getCategories();
@@ -20,6 +22,7 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 			$scope.show_success_messsage = false;
 			$scope.submit_form = function(publication, isValid){
 				if (isValid){
+					publication.pictures = $scope.publication_pictures;
 					$scope.submit_form_promise = Publication.addNewPublication(publication);
 					$scope.submit_form_promise.then( function (response) {
 						$scope.response_form = response.data;
@@ -101,6 +104,20 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 					});
 				}
 			};
+
+
+
+			// Media
+			$scope.upload_media = function(file){
+
+				$scope.upload_media_promise = Publication.uploadMediaPicture(file);
+				$scope.upload_media_promise.then(function (response) {
+					$scope.publication_pictures.push(response.data._id); 
+
+				});
+
+            };
+
 
 		}
 		]);
