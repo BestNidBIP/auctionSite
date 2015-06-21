@@ -81,18 +81,22 @@ UserSchema = new Schema({
     },
     phone: {
         type: Number,
+        default: null,
         required: false
     },
     creditCardNumber: {
         type: Number,
+        default: null,
         required: false
     },
     creditCardSecCode: {
         type: Number,
+        default: null,
         required: false
     },
     creditCardExpDate: {
         type: Number,
+        default: null,
         required: false
     },
     image: {
