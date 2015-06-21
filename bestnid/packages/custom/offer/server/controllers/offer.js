@@ -125,3 +125,24 @@ exports.update = function(req, res) {
   
 };
 
+
+/**
+ * Sales betweeen two dates
+ */
+
+exports.get_sales = function(req, res) {
+
+  Offers.find({ accepted: true, 
+    'created': {'$gte': new Date(req.body.from.year, req.body.from.month-1, req.body.from.day), 
+        '$lt': new Date(req.body.to.year, req.body.to.month-1, req.body.to.day)}
+    } ).exec(function(err, sales){
+      if (err) return res.satus(500).json([{
+        error: true,
+        status: 300,
+        msg: err
+      }]);
+      return res.json(sales);       
+
+    });
+  
+};

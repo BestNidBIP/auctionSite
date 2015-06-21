@@ -295,7 +295,7 @@ exports.update = function(req, res) {
 
 
 /**
- * Update user profile
+ * User report between to dates
  */
 exports.report = function(req, res) {
   
