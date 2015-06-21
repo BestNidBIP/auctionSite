@@ -106,8 +106,6 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 				}
 			};
 
-
-
 			// Media
 			$scope.upload_media = function(file){
 
@@ -117,8 +115,11 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 
 				});
 
-            };
+			};
 
-
-		}
-		]);
+            // Carousel 
+            $scope.myInterval = 3000;
+            var slides = $scope.slides = [];
+            $scope.slides = [];
+        }
+        ]);

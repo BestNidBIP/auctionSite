@@ -9,9 +9,9 @@
         <div ng-repeat="publication in user_publications | filter: search_for_publications"
         class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
         <div class="thumbnail text-center">
-        <img ng-if="publication.pictures" ng-src="{{publication.pictures[0].src}}" alt="{{publication.title}}"
+        <img ng-if="publication.pictures.length > 0" ng-src="{{publication.pictures[0].src}}" alt="{{publication.title}}"
           class="img-responsive img-publication">
-          <img ng-if="!publication.pictures" src="/publication/assets/img/image-comming-soon.png"
+          <img ng-if="publication.pictures.length == 0" src="/publication/assets/img/image-comming-soon.png"
           alt="{{publication.title}}"
           class="img-responsive img-publication">
 

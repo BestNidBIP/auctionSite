@@ -74,3 +74,11 @@
 	margin: 1em;
 	padding: 1em;
 }
+
+.carousel-style{
+	max-height: 350px;	
+}
+
+.img-publication{
+	padding-top: 1em;
+}
