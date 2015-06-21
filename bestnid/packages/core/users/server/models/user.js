@@ -104,6 +104,10 @@ UserSchema = new Schema({
         ref: 'Media',
         default: null,
     },
+    created: {
+      type: Date,
+      default: Date.now
+    },
     salt: String,
     resetPasswordToken: String,
     resetPasswordExpires: Date,
