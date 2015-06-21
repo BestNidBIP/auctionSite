@@ -25,6 +25,9 @@
 			<td><span class="text-capitalize">{{publication.category.name}}</span></td>
 			<td class="text-center">{{publication.remaining_hours /24 | number:0}}</td>
 			<td>
+				<a class="btn btn-success" href="#!/publicacion?id={{publication._id}}">
+					<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+				</a>
 				<button class="btn btn-danger" ng-click="delete_publication(publication._id)">
 					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 				</button>
