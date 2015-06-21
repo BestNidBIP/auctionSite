@@ -1,29 +1,29 @@
-<section>
+<section data-ng-controller="OfferAdminController">
 	<h1>Ofertas</h1>
 	<div class="line-through"></div>
 	<div class="form-group">
 		<label for="">Buscar Oferta:</label>
-		<input type="text" class="form-control" placeholder="Buscar oferta por ID, descripción, monto, ID publicación">
+		<input ng-model="searchOffer" type="text" class="form-control" placeholder="Buscar oferta por ID, descripción, monto, ID publicación">
 	</div>
+
 	<table class="table table-striped">
 		<tr>
 			<th>ID Oferta</th>
 			<th>ID Publicación</th>
 			<th>Necesidad</th>
 			<th>Monto Ofertado</th>
-			<th>Usuario</th>
-			<th>Estado</th>
+			<th>Aceptado</th>
 			<th></th>
 		</tr>
-		<tr>
-			<td>Id oferta</td>
-			<td>Id publicación</td>
-			<td>Necesidad</td>
-			<td>$20 pesos</td>
-			<td>Pepe</td>
-			<td></td>
+		<tr ng-repeat="offer in get_offers | filter:searchOffer">
+		{{offer}}
+			<td>{{offer._id}}</td>
+			<td>{{offer.publication}}</td>
+			<td>{{offer.description}}</td>
+			<td>{{offer.offer | currency:'$ '}}</td>
+			<td>{{offer.accepted}}</td>
 			<td>
-				<button class="btn btn-danger" ng-click="">
+				<button class="btn btn-danger" ng-click="delete_offer(offer._id)">
 					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 				</button>
 			</td>

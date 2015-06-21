@@ -53,7 +53,7 @@
                             <div class="text-center">
                                 <button class="btn btn-success btn-lg btn-make-offer" 
                                 ng-click="display_offer_form = !display_offer_form" aria-label="Toggle ngShow"
-                                type="submit" ng-disabled="!user._id">Ofertar</button>
+                                type="submit">Ofertar</button>
                             </div>
 
                             <!-- Offer form -->
@@ -124,11 +124,9 @@
     </div>
 </div>
 
-
-
 </div>
 
-<div class="comment-form" ng-if="user._id">
+<div class="comment-form">
     <form novalidate name="commentForm">
         <div class="form-group">
           <label for="comment">Agrega tu comentario: 

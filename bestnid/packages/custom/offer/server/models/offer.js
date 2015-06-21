@@ -35,6 +35,10 @@ OfferSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    accepted : {
+        type: Boolean,
+        default: false
+    }
 });
 
 /**

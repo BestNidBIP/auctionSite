@@ -1,84 +1,100 @@
 <div ng-controller="PublicationController">
-<div class="container content-white">
-    <h3>Nueva Publicación</h3>
+    <div class="container content-white">
+        <h3>Nueva Publicación</h3>
 
-    <div class="line-bottom"></div>
+        <div class="line-bottom"></div>
 
-    <form name="newPublicationForm" novalidate>
-        <div ng-show="show_success_messsage" class="alert alert-success text-center" role="alert">
-            <h4 class="text-center">Tu publicación fue registrada con éxito</h4>
-            <a href="#!/perfil/mis-publicaciones" class="btn btn-warning">Ver mis publicaciones</a>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="form-group">
-                    <label for="title">Título:</label>
-                    <input type="text" class="form-control"
-                           id="title"
-                           name="title"
-                           placeholder="Título de la publicación"
-                            ng-model="publication.title"
-                            ng-maxlength="22"
-                            ng-minlength="1"
-                            required
-                            >
-                    <p ng-show="newPublicationForm.title.$invalid && !newPublicationForm.title.$pristine"
-                       class="alert alert-danger">Por favor, ingresa un título que tenga entre 3 y 22 caracteres.</p>
-                </div>
-                <div class="form-group">
-                    <label for="description">Descripción:</label>
-                    <textarea type="text" class="form-control" id="description"
-                            ng-model="publication.description" name="description" required></textarea>
-                    <p ng-show="newPublicationForm.description.$invalid && !newPublicationForm.description.$pristine"
-                       class="alert alert-danger">Por favor, ingresa una descripción.</p>
-                </div>
+        <form name="newPublicationForm" novalidate>
+            <div ng-show="show_success_messsage" class="alert alert-success text-center" role="alert">
+                <h4 class="text-center">Tu publicación fue registrada con éxito</h4>
+                <a href="#!/perfil/mis-publicaciones" class="btn btn-warning">Ver mis publicaciones</a>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="title">Título:</label>
+                        <input type="text" class="form-control"
+                        id="title"
+                        name="title"
+                        placeholder="Título de la publicación"
+                        ng-model="publication.title"
+                        ng-maxlength="22"
+                        ng-minlength="1"
+                        required
+                        >
+                        <p ng-show="newPublicationForm.title.$invalid && !newPublicationForm.title.$pristine"
+                        class="alert alert-danger">Por favor, ingresa un título que tenga entre 3 y 22 caracteres.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Descripción:</label>
+                        <textarea type="text" class="form-control" id="description"
+                        ng-model="publication.description" name="description" required></textarea>
+                        <p ng-show="newPublicationForm.description.$invalid && !newPublicationForm.description.$pristine"
+                        class="alert alert-danger">Por favor, ingresa una descripción.</p>
+                    </div>
 
-                <div class="form-group">
-                    <label for="category">Elige una categoría:</label>
+                    <div class="form-group">
+                        <label for="category">Elige una categoría:</label>
 
-                    <select ng-model="publication.category" class="form-control"
-                            id="category" name="category"
-                            ng-options="category._id as category.name for category in categories"
-                            required>
+                        <select ng-model="publication.category" class="form-control"
+                        id="category" name="category"
+                        ng-options="category._id as category.name for category in categories"
+                        required>
                     </select>
                     <p ng-show="newPublicationForm.category.$invalid && !newPublicationForm.category.$pristine"
-                       class="alert alert-danger">Por favor, selecciona una categoría.</p>
+                    class="alert alert-danger">Por favor, selecciona una categoría.</p>
 
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
                     <label for="images">Insertar hasta 3 imagenes:</label>
+                    
+                    <div class="row">
+                      <div class="col-xs-6 col-md-3">
+                        <a href="#" class="thumbnail">
+                          <img src="..." alt="...">
+                      </a>
+                  </div>
+                  ...
+              </div>                
+              
 
-    <mean-upload file-dest="'/files/photos/'"
-    upload-callback="uploadFinished(files)"
-    upload-file-callback="upload_media(file)"></mean-upload>
-    <div data-ng-repeat="img in images">
-        <img data-ng-src="{{img.src}}" alt="">
-    </div>
-    
-    <mean-upload file-dest="'/files/photos/'"
-    upload-callback="uploadFinished(files)"
-    upload-file-callback="upload_media(file)"></mean-upload>
-    <div data-ng-repeat="img in images">
-        <img data-ng-src="{{img.src}}" alt="">
-    </div>
-                    <input type="text" class="form-control" id="images"/>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="termsAndConditions" required ng-model="publication.accept">
-                        Acepto los <a href="#!/termsAndConditions">términos y condiciones</a>
-                    </label>
-                    <p ng-show="newPublicationForm.termsAndConditions.$invalid && !newPublicationForm.termsAndConditions.$pristine"
-                       class="alert alert-danger">Acepta los términos y condiciones.</p>
-                </div>
-                <button type="submit" class="btn btn-success"
-                       ng-disabled="newPublicationForm.$invalid"
-                       ng-click="submit_form(publication, newPublicationForm.$valid)">Enviar </button>
+              <mean-upload file-dest="'/files/photos/'"
+              upload-callback="uploadFinished(files)"
+              upload-file-callback="upload_media(file)"></mean-upload>
+              <div data-ng-repeat="img in images">
+                <img data-ng-src="{{img.src}}" alt="">
+            </div>
+
+            <mean-upload file-dest="'/files/photos/'"
+            upload-callback="uploadFinished(files)"
+            upload-file-callback="upload_media(file)"></mean-upload>
+            <div data-ng-repeat="img in images">
+                <img data-ng-src="{{img.src}}" alt="">
+            </div>
+
+            <mean-upload file-dest="'/files/photos/'"
+            upload-callback="uploadFinished(files)"
+            upload-file-callback="upload_media(file)"></mean-upload>
+            <div data-ng-repeat="img in images">
+                <img data-ng-src="{{img.src}}" alt="">
             </div>
         </div>
-    </form>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="termsAndConditions" required ng-model="publication.accept">
+                Acepto los <a href="#!/termsAndConditions">términos y condiciones</a>
+            </label>
+            <p ng-show="newPublicationForm.termsAndConditions.$invalid && !newPublicationForm.termsAndConditions.$pristine"
+            class="alert alert-danger">Acepta los términos y condiciones.</p>
+        </div>
+        <button type="submit" class="btn btn-success"
+        ng-disabled="newPublicationForm.$invalid"
+        ng-click="submit_form(publication, newPublicationForm.$valid)">Enviar </button>
+    </div>
+</div>
+</form>
 
 </div>
 </div>

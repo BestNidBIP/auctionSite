@@ -30,13 +30,7 @@ exports.all = function(req, res) {
  */
 exports.allOffers = function(req, res) {
   Offers.find({}, function(err, offers) {
-    var offerMap = {};
-
-    offers.forEach(function(offer) {
-      offerMap[offer._id] = offer;
-    });
-
-    res.send(offerMap);  
+    res.send(offers);  
   });
 };
 
