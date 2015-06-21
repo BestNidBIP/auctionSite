@@ -10,7 +10,7 @@ var mongoose = require('mongoose'),
 
 
 /**
- * Get all offers
+ * Get all offers from logger user
  */
 exports.all = function(req, res) {
   Offers.find({ user: req.user._id}, function(err, offers) {
@@ -23,6 +23,23 @@ exports.all = function(req, res) {
     res.send(offerMap);  
   });
 };
+
+
+/**
+ * Get all offers (ADMIN)
+ */
+exports.allOffers = function(req, res) {
+  Offers.find({}, function(err, offers) {
+    var offerMap = {};
+
+    offers.forEach(function(offer) {
+      offerMap[offer._id] = offer;
+    });
+
+    res.send(offerMap);  
+  });
+};
+
 
 /**
  * Create Offer

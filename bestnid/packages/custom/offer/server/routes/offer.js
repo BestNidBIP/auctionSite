@@ -13,6 +13,10 @@ module.exports = function(Offer, app, auth, database) {
     .post(offer.create)
     .put(offer.update);
 
+  app.route('/offer/all')
+    .get(offer.allOffers);
+
+
   app.route('/offer/:publicationID')
     .get(offer.get_offer_by_id);
 
