@@ -31,6 +31,7 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 				}
 			};
 
+			// Get Publication id from URL
 			$scope.publication_id = function(name){
 				name = name.replace(/[\[]/,'\\\[').replace(/[\]]/,'\\\]');
 				var regexS = '[\\?&]'+name+'=([^&#]*)';

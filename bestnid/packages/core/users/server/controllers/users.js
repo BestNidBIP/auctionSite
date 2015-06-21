@@ -132,8 +132,10 @@ exports.me = function(req, res) {
       if(err){
         res.json(null);
       }
+      else{
+        res.json(user);  
+      }
       
-      res.json(user || null);
     });
 };
 

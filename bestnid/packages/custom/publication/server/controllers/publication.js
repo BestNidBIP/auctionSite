@@ -13,7 +13,7 @@ var mongoose = require('mongoose'),
  * Get all user publications
  */
 exports.all = function(req, res) {
-  Publications.find({}).lean().sort('-created').populate('user', 'name username').populate('category', 'name').exec(function(err, publications) {
+  Publications.find({}).lean().sort('-created').populate('pictures', 'src name').populate('user', 'name username').populate('category', 'name').exec(function(err, publications) {
 
     
     var response = {};

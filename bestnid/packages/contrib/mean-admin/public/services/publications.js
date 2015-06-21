@@ -6,10 +6,14 @@ angular.module('mean.mean-admin').factory("PublicationsAdmin", ['$http',
       return $http.get('/publication');
     }
 
+    function _deletePublication(publication_id){
+    	return $http.delete('publication/'+publication_id);
+    }
 
     return {
       name: 'publication',
-      getPublication : _getPublication
+      getPublication : _getPublication,
+      deletePublication: _deletePublication
     };
   }
 ]);
