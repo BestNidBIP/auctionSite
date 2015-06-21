@@ -86,3 +86,9 @@ tr.disabled {
 span.editable-wrapper input {
     width: 80%;
 }
+
+.line-through {
+    background-color: #D9534F;
+    min-height: 0.5em;
+    margin-bottom: 2em;
+}

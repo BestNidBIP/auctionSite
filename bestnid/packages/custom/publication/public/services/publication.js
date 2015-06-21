@@ -15,7 +15,6 @@ angular.module('mean.publication').factory('Publication', [ '$http',
       return $http.post('/media', {picture:picture_data});
     }
 
-
     function _getPublication(publication_id){
       return $http.get('/publication/' + publication_id);
     }
@@ -35,9 +34,6 @@ angular.module('mean.publication').factory('Publication', [ '$http',
     function _postComment(commentData){
       return $http.post('/comment/', commentData);
     }
-
-
-
 
     return {
       name: 'publication',

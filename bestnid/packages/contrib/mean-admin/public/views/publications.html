@@ -1,1 +1,32 @@
-<h1>PUBLICACIONES</h1>
+<section data-ng-controller = "PublicationAdminController">
+	<h1>Publicaciones</h1>
+	<div class="line-through"></div>
+
+	<div class="form-group">
+		<label for="">Buscar Publicaciones</label>
+		<input type="text" class="form-control" 
+		placeholder="Buscar por ID, título, usuario, categoría."
+		ng-model="filterPublications">
+	</div>
+
+	<table class="table table-striped">
+		<tr>
+			<th>ID</th>
+			<th>Título</th>
+			<th>Usuario</th>
+			<th>Categoría</th>
+			<th>Finaliza en</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="publication in get_publications | filter: filterPublications">
+			<td>{{publication._id}}</td>
+			<td>{{publication.title}}</td>
+			<td>{{publication.user.username}}</td>
+			<td class="text-capitalize">{{publication.category.name}}</td>
+			<td>{{publication.remaining_hours}}</td>
+			<td>
+				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			</td>
+		</tr>
+	</table>
+</section>
