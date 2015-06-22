@@ -135,6 +135,7 @@ exports.update_user_publication = function(req, res) {
 
   Publications.findOne({ _id : req.params.publicationId}).exec(function(err, publication) {
     if (err) {
+      console.log(err);
       return res.status(500).json({
         error: 'Cannot find the publication to update'
       });

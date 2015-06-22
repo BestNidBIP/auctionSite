@@ -1,0 +1,28 @@
+<div data-ng-controller="PublicationController">
+	<h1>Terminar publicacion</h1>
+	<p class="text-center"><strong>Selecciona una oferta ganadora</strong></p>
+	<div class="line-bottom"></div>
+	
+	<div class="alert alert-success text-center" role="alert" ng-show="selectedOffer">
+		Felicitaciones! Has seleccionado una oferta para esta publicación.<br>
+		Se ha enviado a tu correo electrónico los datos de la transacción.<br>
+		<br/>
+		<a href="#!/perfil/mis-publicaciones" class="btn btn-warning">Volver a mis publicaciones</a>
+	</div>
+
+
+	{{offers}}
+	<table class="table table-striped">
+		<tr>
+			<th>Necesidad</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="offer in offers">
+			<td>{{offer.description}}</td>
+			<td class="text-right">
+				<button class="btn btn-success" ng-disabled="disableButtons"
+				ng-click="change_offer_actived_status(offer)">Seleccionar Oferta</button>
+			</td>
+		</tr>
+	</table>
+</div>

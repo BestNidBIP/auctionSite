@@ -44,12 +44,42 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 
 			};
 
+			// Update publication
+			$scope.update_user_publication = function(publication_data){
+				$scope.update_usr_pub = {};
+				$scope.update_usr_pub.promise = Publication.updatePublication(publication_data);
+				$scope.update_usr_pub.promise.then(function(response){
+					console.log('Updated');
+				});
+			};
+
 			// Get specific publication
 			$scope.publication_data_by_id = null;
 			$scope.publication_data_by_id_promise = Publication.getPublication($scope.publication_id('id'));
 			$scope.publication_data_by_id_promise.then(function (response){
 				$scope.publication_data_by_id = response.data.data;
 			});
+
+			// End publication
+			$scope.selectedOffer = false;
+			$scope.disableButtons = false;
+			$scope.change_offer_actived_status  = function(offer){
+				$scope.change_offer_status = {};
+				$scope.change_offer_status.promise = Publication.updateOfferToActivated(offer._id);
+				$scope.change_offer_status.promise.then(function(){
+					$scope.selectedOffer = true;
+					$scope.disableButtons = true;
+					var publication_object = {
+						"_id": offer.publication,
+						"activated": false
+					};
+					$scope.update_user_publication(publication_object);
+				});
+			};
+
+			$scope.show_sccess_message_offer = function(){
+				$scope.selectedOffer = true;
+			};
 
 			// Get Offers
 			$scope.offers = null;
@@ -122,5 +152,5 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
             $scope.myInterval = 3000;
             var slides = $scope.slides = [];
             $scope.slides = [];
-        }
-        ]);
+
+        }]);

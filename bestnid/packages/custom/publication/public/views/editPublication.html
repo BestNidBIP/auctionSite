@@ -3,68 +3,77 @@
 		<h3>Editar Publicación</h3>
 
 
-    <div class="line-bottom"></div>
+        <div class="line-bottom"></div>
 
-    <form name="newPublicationForm" novalidate>
-        <div ng-show="show_success_messsage" class="alert alert-success text-center" role="alert">
-            <h4 class="text-center">Tu publicación fue registrada con éxito</h4>
-            <a href="#!/perfil/mis-publicaciones" class="btn btn-warning">Ver mis publicaciones</a>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="form-group">
-                    <label for="title">Título:</label>
-                    <input type="text" class="form-control"
-                           id="title"
-                           name="title"
-                           placeholder="Título de la publicación"
-                            ng-model="publication.title"
-                            ng-maxlength="22"
-                            ng-minlength="1"
-                            required
-                            >
-                    <p ng-show="newPublicationForm.title.$invalid && !newPublicationForm.title.$pristine"
-                       class="alert alert-danger">Por favor, ingresa un título que tenga entre 3 y 22 caracteres.</p>
-                </div>
-                <div class="form-group">
-                    <label for="description">Descripción:</label>
-                    <textarea type="text" class="form-control" id="description"
-                            ng-model="publication.description" name="description" required></textarea>
-                    <p ng-show="newPublicationForm.description.$invalid && !newPublicationForm.description.$pristine"
-                       class="alert alert-danger">Por favor, ingresa una descripción.</p>
-                </div>
+        {{publication_data_by_id}}
 
-                <div class="form-group">
-                    <label for="category">Elige una categoría:</label>
+        <form name="editPublicationForm" novalidate>
+            <div ng-show="show_success_messsage" class="alert alert-success text-center" role="alert">
+                <h4 class="text-center">Tu publicación fue registrada con éxito</h4>
+                <a href="#!/perfil/mis-publicaciones" class="btn btn-warning">Ver mis publicaciones</a>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="title">Título:</label>
+                        <input type="text" class="form-control"
+                        id="title"
+                        name="title"
+                        placeholder="{{publication_data_by_id.title}}"
+                        ng-model="publication_data_by_id.title"
+                        ng-maxlength="22"
+                        ng-minlength="1"
+                        required
+                        >
+                        <p ng-show="editPublicationForm.title.$invalid && !editPublicationForm.title.$pristine"
+                        class="alert alert-danger">Por favor, ingresa un título que tenga entre 3 y 22 caracteres.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Descripción:</label>
+                        <textarea type="text" class="form-control" id="description"
+                        ng-model="publication_data_by_id.description" name="description" required></textarea>
+                        <p ng-show="editPublicationForm.description.$invalid && !editPublicationForm.description.$pristine"
+                        class="alert alert-danger">Por favor, ingresa una descripción.</p>
+                    </div>
 
-                    <select ng-model="publication.category" class="form-control"
-                            id="category" name="category"
-                            ng-options="category._id as category.name for category in categories"
-                            required>
+                    <div class="form-group">
+                        <label for="category">Elige una categoría:</label>
+
+                        <select ng-model="publication_data_by_id.category.name" class="form-control"
+                        id="category" name="category"
+                        ng-options="category._id as category.name for category in categories"
+                        required>
                     </select>
-                    <p ng-show="newPublicationForm.category.$invalid && !newPublicationForm.category.$pristine"
-                       class="alert alert-danger">Por favor, selecciona una categoría.</p>
+                    <p ng-show="editPublicationForm.category.$invalid && !editPublicationForm.category.$pristine"
+                    class="alert alert-danger">Por favor, selecciona una categoría.</p>
 
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
                     <label for="images">Insertar hasta 3 imagenes:</label>
-                    <input type="text" class="form-control" id="images"/>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="termsAndConditions" required ng-model="publication.accept">
-                        Acepto los <a href="#!/termsAndConditions">términos y condiciones</a>
-                    </label>
-                    <p ng-show="newPublicationForm.termsAndConditions.$invalid && !newPublicationForm.termsAndConditions.$pristine"
-                       class="alert alert-danger">Acepta los términos y condiciones.</p>
-                </div>
-                <button type="submit" class="btn btn-success"
-                       ng-disabled="newPublicationForm.$invalid"
-                       ng-click="submit_update_form(publication, newPublicationForm.$valid)">Enviar </button>
-            </div>
+                    <div class="row">
+                      <div ng-repeat="image in publication_data_by_id.pictures" class="col-xs-6 col-md-4">
+                        <div class="thumbnail">
+                          <img ng-src="{{image.src}}" alt="...">
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div class="checkbox">
+            <label>
+                <input type="checkbox" name="termsAndConditions" required ng-model="publication.accept">
+                Acepto los <a href="#!/termsAndConditions">términos y condiciones</a>
+            </label>
+            <p ng-show="editPublicationForm.termsAndConditions.$invalid && !editPublicationForm.termsAndConditions.$pristine"
+            class="alert alert-danger">Acepta los términos y condiciones.</p>
         </div>
-    </form>
-	</div>
+        {{editPublicationForm.$valid}}
+        <button type="submit" class="btn btn-success"
+        ng-disabled="editPublicationForm.$invalid"
+        ng-click="editPublicationForm.$valid && update_user_publication(publication_data_by_id)">Enviar </button>
+    </div>
+</div>
+</form>
+</div>
 </div>

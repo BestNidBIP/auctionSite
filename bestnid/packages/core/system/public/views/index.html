@@ -20,16 +20,19 @@
 
             <ul class="list-unstyled">
               <li><b><span class="glyphicon glyphicon-tag" aria-hidden="true"></span></b> {{publication.category.name}}</li>
-              <li>
+              <li ng-if="publication.remaining_hours / 24 > 0">
                 <b>
                   <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                   Quedan:
                 </b>
                 {{publication.remaining_hours /24 | number:0}} días
               </li>
+              <li ng-if="publication.remaining_hours / 24 < 1">
+                <span class="text-danger">Publicación finalizada</span>
+              </li>
             </ul>
             <p>
-              <a href="#!/publicacion?id={{publication._id}}" class="btn btn-success" role="button">Ver publicación</a>
+              <a href="#!/publicacion?id={{publication._id}}" ng-disabled="!publication.activated" class="btn btn-success" role="button">Ver publicación</a>
             </div>
           </div>
         </div>

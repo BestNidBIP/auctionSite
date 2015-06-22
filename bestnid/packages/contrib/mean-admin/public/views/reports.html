@@ -1,28 +1,62 @@
 <div ng-controller="reportsController">
-<h1>Reportes</h1>
-<div class="line-through"></div>
-	<h2>Usuario registrados</h2>
-	<h3>Desde</h3>
-	<form>
-	  Dia: <input type="text" name="day" ng-model="date_report.from.day"><br>
-	  Mes: <input type="text" name="month" ng-model="date_report.from.month"><br>
-	  Año: <input type="text" name="year" ng-model="date_report.from.year"><br>
-	</form>
-	<h3>Hasta</h3>
-	<form>
-	  Dia: <input type="text" name="day" ng-model="date_report.to.day"><br>
-	  Mes: <input type="text" name="month" ng-model="date_report.to.month"><br>
-	  Año: <input type="text" name="year" ng-model="date_report.to.year"><br>
-	</form>
-	<button type="button" class="btn btn-primary" ng-click="user_report(date_report)">Get Report!</button>
+	<h1>Reportes</h1>
+	<div class="line-through"></div>
 
-	{{users_report}}
+	<accordion>
+		<accordion-group heading="Usuarios registrados entre dos fechas.">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<form>
+					<h4>Desde: </h4>
+					<div class="form-group">
+						<input type="number" name="dayFrom" class="form-control" ng-model="date_report.from.day" placeholder="Día">
+					</div>
+					<div class="form-group">
+						<input type="number" name="monthFrom" class="form-control" ng-model="date_report.from.month" placeholder="Mes">
+					</div>
+					<div class="form-group">
+						<input type="number" name="fromYear" class="form-control" ng-model="date_report.from.year" placeholder="Año">
+					</div>
+				</form>
+				<h4>Hasta: </h4>
+				<form>
+					<div class="form-group">
+						<input type="number" name="toDay" class="form-control" ng-model="date_report.to.day"
+						placeholder="Día">
+					</div>
+					<div class="form-group">
+						<input type="number" name="toMonth" class="form-control" ng-model="date_report.to.month" placeholder="Mes">
+					</div>
+					<div class="form-group">
+						<input type="number" name="toYear" class="form-control" ng-model="date_report.to.year" placeholder="Año">
+					</div>
+				</form>
+				<div class="form-group">
+				<button type="button" class="btn btn-success" ng-click="user_report(date_report)">Obtener reporte</button>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-8">
+				{{users_report}}
+			</div>
+		</div>
+	</accordion-group>
+	<accordion-group heading="Reporte de ventas entre dos fechas.">
+	This content is straight in the template.
+</accordion-group>
+<accordion-group heading="Reporte de ventas por mes.">
+This content is straight in the template.
+</accordion-group>
+<accordion-group heading="Reporte de comisiones por mes.">
+This content is straight in the template.
+</accordion-group>
+</accordion>
 
-	
-	<h2>Reporte de ventas por mes</h2>
-	{{sales_report}}
 
-	<h2>Reporte de ventas entre dos fechas</h2>
+<h2>Reporte de ventas por mes</h2>
+{{sales_report_data}}
+<button ng-click="sales_report()"></button>
+
+<h2>Reporte de ventas entre dos fechas</h2>
 
 
 </div>
