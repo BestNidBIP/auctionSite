@@ -21,5 +21,30 @@ angular.module('mean.mean-admin').controller('reportsController',
           $scope.sales_report_data = response.data; 
         });
       };
+
+      $scope.total = 0;
+      $scope.calculateTotal = function(value){
+        $scope.total = $scope.total + value;
+      };
+
+      $scope.sales = function(date_from_month) {
+        $scope.total = 0;
+        var date_complete = {
+          'from': {
+            'day': 1,
+            'month': date_from_month.from.month,
+            'year' : date_from_month.from.year
+          },
+          "to": {
+            'day' : 31,
+            'month' : date_from_month.from.month,
+            'year' : date_from_month.from.year
+          }
+        };
+        $scope.sales_report_promise = reports.getSalesByDate(date_complete);
+        $scope.sales_report_promise.then(function(response){
+          $scope.sales_per_month_report = response.data;
+        });
+      };
       
-     } ]);
+    } ]);

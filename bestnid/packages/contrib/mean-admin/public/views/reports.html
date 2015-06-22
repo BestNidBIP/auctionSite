@@ -5,7 +5,7 @@
 	<accordion>
 
 		<!-- Usuarios registrados entre dos fechas -->
-	<accordion-group heading="Usuarios registrados entre dos fechas">
+		<accordion-group heading="Usuarios registrados entre dos fechas">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-3">
 				<form name="userRegistered">
@@ -14,151 +14,194 @@
 						<input type="number" name="dayFrom" class="form-control" ng-model="date_report.from.day" placeholder="Día (1..30)" min=1 max=30 required>
 						<div class="alert alert-danger" role="alert" 
 						ng-show="!userRegistered.dayFrom.$valid && !userRegistered.dayFrom.$pristine">
-							Por favor ingresa un día comprendido entre 1 y 30.
-						</div>
+						Por favor ingresa un día comprendido entre 1 y 30.
 					</div>
-					<div class="form-group">
-						<input type="number" name="monthFrom" class="form-control" ng-model="date_report.from.month" placeholder="Mes (1..12)" min=1 max=12 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!userRegistered.monthFrom.$valid && !userRegistered.monthFrom.$pristine">
-							Por favor ingresa un mes comprendido entre 1 y 12.
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="number" name="fromYear" class="form-control" ng-model="date_report.from.year" placeholder="Año (2015..2050)" min=2015 max=2050 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!userRegistered.fromYear.$valid && !userRegistered.fromYear.$pristine">
-							Por favor ingresa un año comprendido entre 2015 y 2050.
-						</div>
-					</div>
-				
-					<h4>Hasta: </h4>
-				
-					<div class="form-group">
-						<input type="number" name="toDay" class="form-control" ng-model="date_report.to.day"
-						placeholder="Día (1..30)" min=1 max=30 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!userRegistered.toDay.$valid && !userRegistered.toDay.$pristine">
-							Por favor ingresa un día comprendido entre 1 y 30.
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="number" name="toMonth" class="form-control" ng-model="date_report.to.month" placeholder="Mes (1..12)" min=1 max=12 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!userRegistered.toMonth.$valid && !userRegistered.toMonth.$pristine">
-							Por favor ingresa un mes comprendido entre 1 y 12.
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="number" name="toYear" class="form-control" ng-model="date_report.to.year" placeholder="Año (2015..2050)" min=2015 max=2050 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!userRegistered.toYear.$valid && !userRegistered.toYear.$pristine">
-							Por favor ingresa un año comprendido entre 2015 y 2050.
-						</div>
-					</div>
-				</form>
+				</div>
 				<div class="form-group">
-					<button type="button" class="btn btn-success" ng-disabled="!userRegistered.$valid" ng-click="
-					userRegistered.$valid &&user_report(date_report)">Obtener reporte</button>
+					<input type="number" name="monthFrom" class="form-control" ng-model="date_report.from.month" placeholder="Mes (1..12)" min=1 max=12 required>
+					<div class="alert alert-danger" role="alert" 
+					ng-show="!userRegistered.monthFrom.$valid && !userRegistered.monthFrom.$pristine">
+					Por favor ingresa un mes comprendido entre 1 y 12.
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-9">
-				<table class="table table-striped">
-					<tr>
-						<th>ID Usuario</th>
-						<th>Nombre</th>
-						<th>Apellido</th>
-						<th>Correo electrónico</th>
-					</tr>
-					<tr ng-repeat="user in users_report">
-						<td>{{user._id}}</td>
-						<td>{{user.name}}</td>
-						<td>{{user.lastname}}</td>
-						<td>{{user.email}}</td>
-					</tr>
-				</table>
+			<div class="form-group">
+				<input type="number" name="fromYear" class="form-control" ng-model="date_report.from.year" placeholder="Año (2015..2050)" min=2015 max=2050 required>
+				<div class="alert alert-danger" role="alert" 
+				ng-show="!userRegistered.fromYear.$valid && !userRegistered.fromYear.$pristine">
+				Por favor ingresa un año comprendido entre 2015 y 2050.
 			</div>
 		</div>
-	</accordion-group>
 
-	<!-- Reporte de ventas entre dos fechas -->
-	<accordion-group heading="Reporte de ventas entre dos fechas">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-3">
-				<form name="salesBetweenDates">
-					<h4>Desde: </h4>
-					<div class="form-group">
-						<input type="number" name="dayFrom" class="form-control" ng-model="sales_between_dates.from.day" placeholder="Día (1..30)" min=1 max=30 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!salesBetweenDates.dayFrom.$valid && !salesBetweenDates.dayFrom.$pristine">
-							Por favor ingresa un día comprendido entre 1 y 30.
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="number" name="monthFrom" class="form-control" ng-model="sales_between_dates.from.month" placeholder="Mes (1..12)" min=1 max=12 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!salesBetweenDates.monthFrom.$valid && !salesBetweenDates.monthFrom.$pristine">
-							Por favor ingresa un mes comprendido entre 1 y 12.
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="number" name="fromYear" class="form-control" ng-model="sales_between_dates.from.year" placeholder="Año (2015..2050)" min=2015 max=2050 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!salesBetweenDates.fromYear.$valid && !salesBetweenDates.fromYear.$pristine">
-							Por favor ingresa un año comprendido entre 2015 y 2050.
-						</div>
-					</div>
-				
-					<h4>Hasta: </h4>
-				
-					<div class="form-group">
-						<input type="number" name="toDay" class="form-control" ng-model="sales_between_dates.to.day"
-						placeholder="Día (1..30)" min=1 max=30 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!salesBetweenDates.toDay.$valid && !salesBetweenDates.toDay.$pristine">
-							Por favor ingresa un día comprendido entre 1 y 30.
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="number" name="toMonth" class="form-control" ng-model="sales_between_dates.to.month" placeholder="Mes (1..12)" min=1 max=12 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!salesBetweenDates.toMonth.$valid && !salesBetweenDates.toMonth.$pristine">
-							Por favor ingresa un mes comprendido entre 1 y 12.
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="number" name="toYear" class="form-control" ng-model="sales_between_dates.to.year" placeholder="Año (2015..2050)" min=2015 max=2050 required>
-						<div class="alert alert-danger" role="alert" 
-						ng-show="!salesBetweenDates.toYear.$valid && !salesBetweenDates.toYear.$pristine">
-							Por favor ingresa un año comprendido entre 2015 y 2050.
-						</div>
-					</div>
-				</form>
-				<div class="form-group">
-					<button type="button" class="btn btn-success" ng-disabled="!salesBetweenDates.$valid" ng-click="
-					salesBetweenDates.$valid && sales_report(sales_between_dates)">Obtener reporte</button>
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-9">
-				{{sales_report_data}}
-				<table class="table table-striped">
-					<tr>
-						<th>ID Oferta</th>
-						<th>Necesidad</th>
-						<th>Monto ofertado</th>
-					</tr>
-					<tr ng-repeat="offer in sales_report_data">
-						<td>{{offer._id}}</td>
-						<td>{{offer.description}}</td>
-						<td>{{offer.offer | currency: "$ "}}</td>
-					</tr>
-				</table>
+		<h4>Hasta: </h4>
+
+		<div class="form-group">
+			<input type="number" name="toDay" class="form-control" ng-model="date_report.to.day"
+			placeholder="Día (1..30)" min=1 max=30 required>
+			<div class="alert alert-danger" role="alert" 
+			ng-show="!userRegistered.toDay.$valid && !userRegistered.toDay.$pristine">
+			Por favor ingresa un día comprendido entre 1 y 30.
+		</div>
+	</div>
+	<div class="form-group">
+		<input type="number" name="toMonth" class="form-control" ng-model="date_report.to.month" placeholder="Mes (1..12)" min=1 max=12 required>
+		<div class="alert alert-danger" role="alert" 
+		ng-show="!userRegistered.toMonth.$valid && !userRegistered.toMonth.$pristine">
+		Por favor ingresa un mes comprendido entre 1 y 12.
+	</div>
+</div>
+<div class="form-group">
+	<input type="number" name="toYear" class="form-control" ng-model="date_report.to.year" placeholder="Año (2015..2050)" min=2015 max=2050 required>
+	<div class="alert alert-danger" role="alert" 
+	ng-show="!userRegistered.toYear.$valid && !userRegistered.toYear.$pristine">
+	Por favor ingresa un año comprendido entre 2015 y 2050.
+</div>
+</div>
+</form>
+<div class="form-group">
+	<button type="button" class="btn btn-success" ng-disabled="!userRegistered.$valid" ng-click="
+	userRegistered.$valid &&user_report(date_report)">Obtener reporte</button>
+</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-9">
+	<table class="table table-striped">
+		<tr>
+			<th>ID Usuario</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Correo electrónico</th>
+		</tr>
+		<tr ng-repeat="user in users_report">
+			<td>{{user._id}}</td>
+			<td>{{user.name}}</td>
+			<td>{{user.lastname}}</td>
+			<td>{{user.email}}</td>
+		</tr>
+	</table>
+</div>
+</div>
+</accordion-group>
+
+<!-- Reporte de ventas entre dos fechas -->
+<accordion-group heading="Reporte de ventas entre dos fechas">
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-3">
+		<form name="salesBetweenDates">
+			<h4>Desde: </h4>
+			<div class="form-group">
+				<input type="number" name="dayFrom" class="form-control" ng-model="sales_between_dates.from.day" placeholder="Día (1..30)" min=1 max=30 required>
+				<div class="alert alert-danger" role="alert" 
+				ng-show="!salesBetweenDates.dayFrom.$valid && !salesBetweenDates.dayFrom.$pristine">
+				Por favor ingresa un día comprendido entre 1 y 30.
 			</div>
 		</div>
-	</accordion-group>
+		<div class="form-group">
+			<input type="number" name="monthFrom" class="form-control" ng-model="sales_between_dates.from.month" placeholder="Mes (1..12)" min=1 max=12 required>
+			<div class="alert alert-danger" role="alert" 
+			ng-show="!salesBetweenDates.monthFrom.$valid && !salesBetweenDates.monthFrom.$pristine">
+			Por favor ingresa un mes comprendido entre 1 y 12.
+		</div>
+	</div>
+	<div class="form-group">
+		<input type="number" name="fromYear" class="form-control" ng-model="sales_between_dates.from.year" placeholder="Año (2015..2050)" min=2015 max=2050 required>
+		<div class="alert alert-danger" role="alert" 
+		ng-show="!salesBetweenDates.fromYear.$valid && !salesBetweenDates.fromYear.$pristine">
+		Por favor ingresa un año comprendido entre 2015 y 2050.
+	</div>
+</div>
 
+<h4>Hasta: </h4>
+
+<div class="form-group">
+	<input type="number" name="toDay" class="form-control" ng-model="sales_between_dates.to.day"
+	placeholder="Día (1..30)" min=1 max=30 required>
+	<div class="alert alert-danger" role="alert" 
+	ng-show="!salesBetweenDates.toDay.$valid && !salesBetweenDates.toDay.$pristine">
+	Por favor ingresa un día comprendido entre 1 y 30.
+</div>
+</div>
+<div class="form-group">
+	<input type="number" name="toMonth" class="form-control" ng-model="sales_between_dates.to.month" placeholder="Mes (1..12)" min=1 max=12 required>
+	<div class="alert alert-danger" role="alert" 
+	ng-show="!salesBetweenDates.toMonth.$valid && !salesBetweenDates.toMonth.$pristine">
+	Por favor ingresa un mes comprendido entre 1 y 12.
+</div>
+</div>
+<div class="form-group">
+	<input type="number" name="toYear" class="form-control" ng-model="sales_between_dates.to.year" placeholder="Año (2015..2050)" min=2015 max=2050 required>
+	<div class="alert alert-danger" role="alert" 
+	ng-show="!salesBetweenDates.toYear.$valid && !salesBetweenDates.toYear.$pristine">
+	Por favor ingresa un año comprendido entre 2015 y 2050.
+</div>
+</div>
+</form>
+<div class="form-group">
+	<button type="button" class="btn btn-success" ng-disabled="!salesBetweenDates.$valid" ng-click="
+	salesBetweenDates.$valid && sales_report(sales_between_dates)">Obtener reporte</button>
+</div>
+</div>
+<div class="col-xs-12 col-md-9">
+	{{sales_report_data}}
+	<table class="table table-striped">
+		<tr>
+			<th>ID Oferta</th>
+			<th>Necesidad</th>
+			<th>Monto ofertado</th>
+		</tr>
+		<tr ng-repeat="offer in sales_report_data">
+			<td>{{offer._id}}</td>
+			<td>{{offer.description}}</td>
+			<td>{{offer.offer | currency: "$ "}}</td>
+		</tr>
+	</table>
+</div>
+</div>
+</accordion-group>
+
+
+<!-- Reporte por mes -->
 <accordion-group heading="Reporte de ventas por mes">
-This content is straight in the template.
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-3">
+		<form name="salesPerMonth">
+			<h4>Selecciona el mes: </h4>
+			<div class="form-group">
+				<input type="number" name="monthFrom" class="form-control" ng-model="sales_in_month.from.month" placeholder="Mes (1..12)" min=1 max=12 required>
+				<div class="alert alert-danger" role="alert" 
+				ng-show="!salesPerMonth.monthFrom.$valid && !salesPerMonth.monthFrom.$pristine">
+				Por favor ingresa un mes comprendido entre 1 y 12.
+			</div>
+		</div>
+		<div class="form-group">
+			<input type="number" name="fromYear" class="form-control" ng-model="sales_in_month.from.year" placeholder="Año (2015..2050)" min=2015 max=2050 required>
+			<div class="alert alert-danger" role="alert" 
+			ng-show="!salesPerMonth.fromYear.$valid && !salesPerMonth.fromYear.$pristine">
+			Por favor ingresa un año comprendido entre 2015 y 2050.
+		</div>
+	</div>
+	<div class="form-group">
+	<button type="button" class="btn btn-success" ng-disabled="!salesPerMonth.$valid" 
+	ng-click="sales(sales_in_month)">Obtener reporte</button>
+</div>
+</form>
+
+</div>
+<div class="col-xs-12 col-md-9">
+	{{sales_per_month_report}}
+	<table class="table table-striped">
+		<tr>
+			<th>ID Oferta</th>
+			<th>Necesidad</th>
+			<th>Monto ofertado</th>
+		</tr>
+		<tr ng-repeat="offer in sales_per_month_report" ng-init="calculateTotal(offer.offer)">
+			<td>{{offer._id}}</td>
+			<td>{{offer.description}}</td>
+			<td>{{offer.offer | currency: "$ "}}</td>
+		</tr>
+	</table>
+	<p class="text-center"><strong>Total : {{total | currency: "$ "}}</strong></p>
+</div>
+</div>
 </accordion-group>
 <accordion-group heading="Reporte de comisiones por mes">
 This content is straight in the template.

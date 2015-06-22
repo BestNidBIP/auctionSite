@@ -70,8 +70,8 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 					$scope.selectedOffer = true;
 					$scope.disableButtons = true;
 					var publication_object = {
-						"_id": offer.publication,
-						"activated": false
+						'_id': offer.publication,
+						'activated': false
 					};
 					$scope.update_user_publication(publication_object);
 				});
