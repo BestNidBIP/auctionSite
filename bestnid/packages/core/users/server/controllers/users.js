@@ -292,3 +292,22 @@ exports.update = function(req, res) {
           }]);
     });
 };
+
+
+/**
+ * User report between to dates
+ */
+exports.report = function(req, res) {
+  
+  User
+    .find( {'created': {'$gte': new Date(req.body.from.year, req.body.from.month-1, req.body.from.day), 
+        '$lt': new Date(req.body.to.year, req.body.to.month-1, req.body.to.day)}})
+    .exec(function(err, users){
+      if (err) return res.satus(500).json([{
+        error: true,
+        status: 300,
+        msg: err
+      }]);
+      return res.json(users); 
+    });
+};

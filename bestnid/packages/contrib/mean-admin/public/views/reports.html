@@ -1,1 +1,28 @@
-<h1>Reporters</h1>
+<div ng-controller="reportsController">
+<h1>Reportes</h1>
+<div class="line-through"></div>
+	<h2>Usuario registrados</h2>
+	<h3>Desde</h3>
+	<form>
+	  Dia: <input type="text" name="day" ng-model="date_report.from.day"><br>
+	  Mes: <input type="text" name="month" ng-model="date_report.from.month"><br>
+	  Año: <input type="text" name="year" ng-model="date_report.from.year"><br>
+	</form>
+	<h3>Hasta</h3>
+	<form>
+	  Dia: <input type="text" name="day" ng-model="date_report.to.day"><br>
+	  Mes: <input type="text" name="month" ng-model="date_report.to.month"><br>
+	  Año: <input type="text" name="year" ng-model="date_report.to.year"><br>
+	</form>
+	<button type="button" class="btn btn-primary" ng-click="user_report(date_report)">Get Report!</button>
+
+	{{users_report}}
+
+	
+	<h2>Reporte de ventas por mes</h2>
+	{{sales_report}}
+
+	<h2>Reporte de ventas entre dos fechas</h2>
+
+
+</div>
