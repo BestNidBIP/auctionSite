@@ -46,5 +46,30 @@ angular.module('mean.mean-admin').controller('reportsController',
           $scope.sales_per_month_report = response.data;
         });
       };
+
+      $scope.total_commission = 0;
+      $scope.commision_per_month = function(date_from_month) {
+        $scope.total = 0;
+        var date_complete = {
+          'from': {
+            'day': 1,
+            'month': date_from_month.from.month,
+            'year' : date_from_month.from.year
+          },
+          "to": {
+            'day' : 31,
+            'month' : date_from_month.from.month,
+            'year' : date_from_month.from.year
+          }
+        };
+        $scope.sales_report_promise = reports.getSalesByDate(date_complete);
+        $scope.sales_report_promise.then(function(response){
+          $scope.commision_per_month_report = response.data;
+        });
+
+        $scope.calculateCommisionTotal = function(value){
+          $scope.total_commission = $scope.total_commission + value;
+        };
+      };
       
     } ]);

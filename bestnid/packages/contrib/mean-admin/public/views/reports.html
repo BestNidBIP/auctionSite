@@ -183,7 +183,6 @@
 	ng-click="sales(sales_in_month)">Obtener reporte</button>
 </div>
 </form>
-
 </div>
 <div class="col-xs-12 col-md-9">
 	{{sales_per_month_report}}
@@ -203,17 +202,50 @@
 </div>
 </div>
 </accordion-group>
+
+<!-- Reporte comisiones por mes -->
 <accordion-group heading="Reporte de comisiones por mes">
-This content is straight in the template.
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-3">
+		<form name="comissionPerMonth">
+			<h4>Selecciona el mes: </h4>
+			<div class="form-group">
+				<input type="number" name="monthFrom" class="form-control" ng-model="commision_per_month.from.month" placeholder="Mes (1..12)" min=1 max=12 required>
+				<div class="alert alert-danger" role="alert" 
+				ng-show="!comissionPerMonth.monthFrom.$valid && !comissionPerMonth.monthFrom.$pristine">
+				Por favor ingresa un mes comprendido entre 1 y 12.
+			</div>
+		</div>
+		<div class="form-group">
+			<input type="number" name="fromYear" class="form-control" ng-model="commision_per_month.from.year" placeholder="Año (2015..2050)" min=2015 max=2050 required>
+			<div class="alert alert-danger" role="alert" 
+			ng-show="!comissionPerMonth.fromYear.$valid && !comissionPerMonth.fromYear.$pristine">
+			Por favor ingresa un año comprendido entre 2015 y 2050.
+		</div>
+	</div>
+	<div class="form-group">
+	<button type="button" class="btn btn-success" ng-disabled="!comissionPerMonth.$valid" 
+	ng-click="commision_per_month(commision_per_month)">Obtener reporte</button>
+</div>
+</form>
+</div>
+<div class="col-xs-12 col-md-9">
+	{{commision_per_month_report}}
+	<table class="table table-striped">
+		<tr>
+			<th>ID Oferta</th>
+			<th>Necesidad</th>
+			<th>Monto ofertado</th>
+		</tr>
+		<tr ng-repeat="offer in commision_per_month_report" ng-init="calculateCommisionTotal(offer.offer)">
+			<td>{{offer._id}}</td>
+			<td>{{offer.description}}</td>
+			<td>{{offer.offer * 0.3 | currency: "$ "}}</td>
+		</tr>
+	</table>
+	<p class="text-center"><strong>Total : {{total_commission * 0.3 | currency: "$ "}}</strong></p>
+</div>
+</div>
 </accordion-group>
 </accordion>
-
-
-<h2>Reporte de ventas por mes</h2>
-{{sales_report_data}}
-<button ng-click="sales_report()"></button>
-
-<h2>Reporte de ventas entre dos fechas</h2>
-
-
 </div>
