@@ -43,7 +43,7 @@
             ng-pattern="/[a-zA-Z0-9^ ]/"
             ng-class="{highlight: userData.name.$error.required}"
             value="{{user_data.name}}"
-            ng-blur="innerForm.$valid && update_user_information(user_data)"
+            ng-blur="update_user_information(user_data)"
             required/>
             <div class="alert alert-danger" role="alert" 
             ng-show="innerForm.name.$error.required">

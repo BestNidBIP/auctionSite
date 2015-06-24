@@ -1,0 +1,1850 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/belen/opt/node/0.12/bin/node',
+1 verbose cli   '/home/belen/opt/node/0.12/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'mean-cli' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose install initial load of /home/belen/opt/node/0.12/lib/package.json
+5 verbose readDependencies loading dependencies from /home/belen/opt/node/0.12/lib/package.json
+6 silly cache add args [ 'mean-cli', null ]
+7 verbose cache add spec mean-cli
+8 silly cache add parsed spec { raw: 'mean-cli',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'mean-cli',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed mean-cli@*
+10 verbose addNamed "*" is a valid semver range for mean-cli
+11 silly addNameRange { name: 'mean-cli', range: '*', hasData: false }
+12 silly mapToRegistry name mean-cli
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/mean-cli
+16 verbose addNameRange registry:https://registry.npmjs.org/mean-cli not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/mean-cli
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 8:54:22 AM
+20 verbose request id 847e7ff05847dfae
+21 verbose etag "2WKJG98KW6HOWIWMXZPKST66Q"
+22 http request GET https://registry.npmjs.org/mean-cli
+23 http 304 https://registry.npmjs.org/mean-cli
+24 silly get cb [ 304,
+24 silly get   { date: 'Sat, 20 Jun 2015 11:54:23 GMT',
+24 silly get     via: '1.1 varnish',
+24 silly get     'cache-control': 'max-age=60',
+24 silly get     etag: '"2WKJG98KW6HOWIWMXZPKST66Q"',
+24 silly get     age: '0',
+24 silly get     connection: 'keep-alive',
+24 silly get     'x-served-by': 'cache-atl6233-ATL',
+24 silly get     'x-cache': 'HIT',
+24 silly get     'x-cache-hits': '1',
+24 silly get     'x-timer': 'S1434801263.423244,VS0,VE110',
+24 silly get     vary: 'Accept' } ]
+25 verbose etag https://registry.npmjs.org/mean-cli from cache
+26 verbose get saving mean-cli to /home/belen/.npm/registry.npmjs.org/mean-cli/.cache.json
+27 silly addNameRange number 2 { name: 'mean-cli', range: '*', hasData: true }
+28 silly addNameRange versions [ 'mean-cli',
+28 silly addNameRange   [ '0.0.0',
+28 silly addNameRange     '0.0.1',
+28 silly addNameRange     '0.0.2',
+28 silly addNameRange     '0.0.3',
+28 silly addNameRange     '0.0.4',
+28 silly addNameRange     '0.5.25',
+28 silly addNameRange     '0.5.26',
+28 silly addNameRange     '0.5.27',
+28 silly addNameRange     '0.5.31',
+28 silly addNameRange     '0.5.34',
+28 silly addNameRange     '0.9.0',
+28 silly addNameRange     '0.9.1',
+28 silly addNameRange     '0.0.9',
+28 silly addNameRange     '0.0.10',
+28 silly addNameRange     '0.0.11',
+28 silly addNameRange     '0.0.12',
+28 silly addNameRange     '0.9.2',
+28 silly addNameRange     '0.9.3',
+28 silly addNameRange     '0.9.4',
+28 silly addNameRange     '0.9.5',
+28 silly addNameRange     '0.9.6',
+28 silly addNameRange     '0.9.7',
+28 silly addNameRange     '0.9.8',
+28 silly addNameRange     '0.9.9',
+28 silly addNameRange     '0.9.10',
+28 silly addNameRange     '0.9.11',
+28 silly addNameRange     '0.9.12',
+28 silly addNameRange     '0.9.13',
+28 silly addNameRange     '0.9.14',
+28 silly addNameRange     '0.9.15',
+28 silly addNameRange     '0.9.16',
+28 silly addNameRange     '0.9.17',
+28 silly addNameRange     '0.9.18',
+28 silly addNameRange     '0.9.19',
+28 silly addNameRange     '0.9.20',
+28 silly addNameRange     '0.9.21',
+28 silly addNameRange     '0.9.22',
+28 silly addNameRange     '0.9.23',
+28 silly addNameRange     '0.9.24',
+28 silly addNameRange     '0.9.25',
+28 silly addNameRange     '0.9.26',
+28 silly addNameRange     '0.9.27',
+28 silly addNameRange     '0.9.28',
+28 silly addNameRange     '0.9.29',
+28 silly addNameRange     '0.10.1',
+28 silly addNameRange     '0.10.2',
+28 silly addNameRange     '0.10.3',
+28 silly addNameRange     '0.10.4',
+28 silly addNameRange     '0.10.5',
+28 silly addNameRange     '0.10.6',
+28 silly addNameRange     '0.10.7',
+28 silly addNameRange     '0.10.8',
+28 silly addNameRange     '0.10.9',
+28 silly addNameRange     '0.10.10',
+28 silly addNameRange     '0.10.11',
+28 silly addNameRange     '0.10.12',
+28 silly addNameRange     '0.10.13' ] ]
+29 silly addNamed mean-cli@0.10.13
+30 verbose addNamed "0.10.13" is a plain semver version for mean-cli
+31 silly cache afterAdd mean-cli@0.10.13
+32 verbose afterAdd /home/belen/.npm/mean-cli/0.10.13/package/package.json not in flight; writing
+33 verbose afterAdd /home/belen/.npm/mean-cli/0.10.13/package/package.json written
+34 silly install resolved [ { name: 'mean-cli',
+34 silly install resolved     description: 'Simple command line interface for installing and managing MEAN apps',
+34 silly install resolved     version: '0.10.13',
+34 silly install resolved     author: { name: 'https://github.com/linnovate/mean-cli/graphs/contributors' },
+34 silly install resolved     bin:
+34 silly install resolved      { mean: './bin/mean',
+34 silly install resolved        'mean-init': './bin/mean-init',
+34 silly install resolved        'mean-authorize': './bin/mean-authorize',
+34 silly install resolved        'mean-whoami': './bin/mean-whoami',
+34 silly install resolved        'mean-login': './bin/mean-login',
+34 silly install resolved        'mean-addKey': './bin/mean-addKey',
+34 silly install resolved        'mean-publish': './bin/mean-publish',
+34 silly install resolved        'mean-search': './bin/mean-search',
+34 silly install resolved        'mean-deploy': './bin/mean-deploy',
+34 silly install resolved        'mean-logs': './bin/mean-logs',
+34 silly install resolved        'mean-register': './bin/mean-register',
+34 silly install resolved        'mean-postinstall': './bin/mean-postinstall',
+34 silly install resolved        'mean-preinstall': './bin/mean-preinstall',
+34 silly install resolved        'mean-install': './bin/mean-install',
+34 silly install resolved        'mean-uninstall': './bin/mean-uninstall',
+34 silly install resolved        'mean-docs': './bin/mean-docs',
+34 silly install resolved        'mean-package': './bin/mean-package',
+34 silly install resolved        'mean-list': './bin/mean-list',
+34 silly install resolved        'mean-status': './bin/mean-status',
+34 silly install resolved        'mean-user': './bin/mean-user',
+34 silly install resolved        'mean-logout': './bin/mean-logout',
+34 silly install resolved        'mean-disable': './bin/mean-disable',
+34 silly install resolved        'mean-enable': './bin/mean-enable' },
+34 silly install resolved     contributors: 'https://github.com/linnovate/mean-cli/graphs/contributors',
+34 silly install resolved     dependencies:
+34 silly install resolved      { bower: '^1.3.8',
+34 silly install resolved        chalk: '^0.5.1',
+34 silly install resolved        commander: '^2.4.0',
+34 silly install resolved        inquirer: '^0.8.0',
+34 silly install resolved        'json-file-plus': '^2.0.0',
+34 silly install resolved        lodash: '^2.4.1',
+34 silly install resolved        'mean-health': '~0.1.3',
+34 silly install resolved        mongoose: '~4.0.2',
+34 silly install resolved        npm: '^2.1.0',
+34 silly install resolved        opener: '^1.3.0',
+34 silly install resolved        progress: '^1.1.8',
+34 silly install resolved        prompt: '^0.2.13',
+34 silly install resolved        request: 'latest',
+34 silly install resolved        shelljs: '^0.3.0',
+34 silly install resolved        'async-series': 'latest',
+34 silly install resolved        crypto: 'latest' },
+34 silly install resolved     devDependencies:
+34 silly install resolved      { jshint: '^2.5.10',
+34 silly install resolved        mocha: '^1.18.2',
+34 silly install resolved        'precommit-hook': '^1.0.7',
+34 silly install resolved        should: '^3.2.0' },
+34 silly install resolved     keywords: [ 'mean', 'meanio', 'mean.io', 'mean-cli' ],
+34 silly install resolved     license: 'MIT',
+34 silly install resolved     main: 'index',
+34 silly install resolved     preferGlobal: true,
+34 silly install resolved     repository:
+34 silly install resolved      { type: 'git',
+34 silly install resolved        url: 'git+https://github.com/linnovate/mean-cli.git' },
+34 silly install resolved     scripts:
+34 silly install resolved      { preinstall: 'node ./scripts/preinstall',
+34 silly install resolved        test: 'node node_modules/.bin/mocha test/**/*.js -R spec' },
+34 silly install resolved     gitHead: 'b69033320dc93e2e29f8b45fed8ef752b882e56f',
+34 silly install resolved     bugs: { url: 'https://github.com/linnovate/mean-cli/issues' },
+34 silly install resolved     homepage: 'https://github.com/linnovate/mean-cli',
+34 silly install resolved     _id: 'mean-cli@0.10.13',
+34 silly install resolved     _shasum: '4fa4f76e395d9d1f22ace7cef4422f26836c38d7',
+34 silly install resolved     _from: 'mean-cli@*',
+34 silly install resolved     _npmVersion: '2.1.18',
+34 silly install resolved     _nodeVersion: '1.3.0',
+34 silly install resolved     _npmUser: { name: 'oritpersik', email: 'orit@linnovate.net' },
+34 silly install resolved     dist:
+34 silly install resolved      { shasum: '4fa4f76e395d9d1f22ace7cef4422f26836c38d7',
+34 silly install resolved        tarball: 'http://registry.npmjs.org/mean-cli/-/mean-cli-0.10.13.tgz' },
+34 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+34 silly install resolved     directories: {},
+34 silly install resolved     _resolved: 'https://registry.npmjs.org/mean-cli/-/mean-cli-0.10.13.tgz',
+34 silly install resolved     readme: 'ERROR: No README data found!' } ]
+35 info install mean-cli@0.10.13 into /home/belen/opt/node/0.12/lib
+36 info installOne mean-cli@0.10.13
+37 verbose installOne of mean-cli to /home/belen/opt/node/0.12/lib not in flight; installing
+38 verbose lock using /home/belen/.npm/_locks/mean-cli-a162f1eb826990e1.lock for /home/belen/opt/node/0.12/lib/node_modules/mean-cli
+39 silly install write writing mean-cli 0.10.13 to /home/belen/opt/node/0.12/lib/node_modules/mean-cli
+40 verbose unbuild lib/node_modules/mean-cli
+41 silly gentlyRm /home/belen/opt/node/0.12/lib/node_modules/mean-cli is being purged from base /home/belen/opt/node/0.12
+42 verbose gentlyRm don't care about contents; nuking /home/belen/opt/node/0.12/lib/node_modules/mean-cli
+43 verbose tar unpack /home/belen/.npm/mean-cli/0.10.13/package.tgz
+44 verbose tar unpacking to /home/belen/opt/node/0.12/lib/node_modules/mean-cli
+45 silly gentlyRm /home/belen/opt/node/0.12/lib/node_modules/mean-cli is being purged
+46 verbose gentlyRm don't care about contents; nuking /home/belen/opt/node/0.12/lib/node_modules/mean-cli
+47 silly gunzTarPerm modes [ '775', '664' ]
+48 silly gunzTarPerm extractEntry package.json
+49 silly gunzTarPerm extractEntry .npmignore
+50 silly gunzTarPerm extractEntry README.md
+51 silly gunzTarPerm extractEntry LICENSE
+52 silly gunzTarPerm extractEntry config.js
+53 silly gunzTarPerm extractEntry index.js
+54 silly gunzTarPerm extractEntry circle.yml
+55 silly gunzTarPerm extractEntry bin/mean-logout
+56 silly gunzTarPerm extractEntry bin/mean
+57 silly gunzTarPerm extractEntry bin/mean-authorize
+58 silly gunzTarPerm extractEntry bin/mean-deploy
+59 silly gunzTarPerm extractEntry bin/mean-disable
+60 silly gunzTarPerm extractEntry bin/mean-docs
+61 silly gunzTarPerm extractEntry bin/mean-enable
+62 silly gunzTarPerm extractEntry bin/mean-init
+63 silly gunzTarPerm extractEntry bin/mean-install
+64 silly gunzTarPerm extractEntry bin/mean-list
+65 silly gunzTarPerm extractEntry bin/mean-login
+66 silly gunzTarPerm extractEntry bin/mean-addKey
+67 silly gunzTarPerm extractEntry bin/mean-logs
+68 silly gunzTarPerm extractEntry bin/mean-package
+69 silly gunzTarPerm extractEntry bin/mean-postinstall
+70 silly gunzTarPerm extractEntry bin/mean-preinstall
+71 silly gunzTarPerm extractEntry bin/mean-publish
+72 silly gunzTarPerm extractEntry bin/mean-register
+73 silly gunzTarPerm extractEntry bin/mean-search
+74 silly gunzTarPerm extractEntry bin/mean-status
+75 silly gunzTarPerm extractEntry bin/mean-uninstall
+76 silly gunzTarPerm extractEntry bin/mean-user
+77 silly gunzTarPerm extractEntry bin/mean-whoami
+78 silly gunzTarPerm extractEntry .jshintignore
+79 silly gunzTarPerm extractEntry .jshintrc
+80 silly gunzTarPerm extractEntry img/logo.txt
+81 silly gunzTarPerm extractEntry img/meanlogo.png
+82 silly gunzTarPerm extractEntry .travis.yml
+83 silly gunzTarPerm extractEntry lib/cli.js
+84 silly gunzTarPerm extractEntry lib/install.js
+85 silly gunzTarPerm extractEntry lib/scaffold.js
+86 silly gunzTarPerm extractEntry lib/utils.js
+87 silly gunzTarPerm extractEntry lib/wizard.js
+88 silly gunzTarPerm extractEntry lib/controllers/anonymized-data.js
+89 silly gunzTarPerm extractEntry lib/controllers/mongo.js
+90 silly gunzTarPerm extractEntry lib/controllers/users.js
+91 silly gunzTarPerm extractEntry lib/models/user.js
+92 silly gunzTarPerm extractEntry lib/templates/package.json
+93 silly gunzTarPerm extractEntry lib/templates/app.js
+94 silly gunzTarPerm extractEntry lib/templates/.bowerrc
+95 silly gunzTarPerm extractEntry lib/templates/assets.css
+96 silly gunzTarPerm extractEntry lib/templates/bower.json
+97 silly gunzTarPerm extractEntry lib/templates/client/controller.js
+98 silly gunzTarPerm extractEntry lib/templates/client/routes.js
+99 silly gunzTarPerm extractEntry lib/templates/client/service.js
+100 silly gunzTarPerm extractEntry lib/templates/client/view.html
+101 silly gunzTarPerm extractEntry lib/templates/server/routes.js
+102 silly gunzTarPerm extractEntry lib/templates/server/view.html
+103 silly gunzTarPerm extractEntry start.sh
+104 silly gunzTarPerm extractEntry CONTRIBUTING.md
+105 silly gunzTarPerm extractEntry scripts/preinstall.js
+106 silly gunzTarPerm extractEntry test/bin/mean_test.js
+107 silly gunzTarPerm extractEntry test/sh/capture.sh
+108 silly gunzTarPerm extractEntry test/sh/config.cfg
+109 verbose write writing to /home/belen/opt/node/0.12/lib/node_modules/mean-cli/package.json
+110 info preinstall mean-cli@0.10.13
+111 verbose unsafe-perm in lifecycle true
+112 verbose readDependencies loading dependencies from /home/belen/opt/node/0.12/lib/node_modules/mean-cli/package.json
+113 silly prepareForInstallMany adding bower@^1.3.8 from mean-cli dependencies
+114 silly prepareForInstallMany adding chalk@^0.5.1 from mean-cli dependencies
+115 silly prepareForInstallMany adding commander@^2.4.0 from mean-cli dependencies
+116 silly prepareForInstallMany adding inquirer@^0.8.0 from mean-cli dependencies
+117 silly prepareForInstallMany adding json-file-plus@^2.0.0 from mean-cli dependencies
+118 silly prepareForInstallMany adding lodash@^2.4.1 from mean-cli dependencies
+119 silly prepareForInstallMany adding mean-health@~0.1.3 from mean-cli dependencies
+120 silly prepareForInstallMany adding mongoose@~4.0.2 from mean-cli dependencies
+121 silly prepareForInstallMany adding npm@^2.1.0 from mean-cli dependencies
+122 silly prepareForInstallMany adding opener@^1.3.0 from mean-cli dependencies
+123 silly prepareForInstallMany adding progress@^1.1.8 from mean-cli dependencies
+124 silly prepareForInstallMany adding prompt@^0.2.13 from mean-cli dependencies
+125 silly prepareForInstallMany adding request@latest from mean-cli dependencies
+126 silly prepareForInstallMany adding shelljs@^0.3.0 from mean-cli dependencies
+127 silly prepareForInstallMany adding async-series@latest from mean-cli dependencies
+128 silly prepareForInstallMany adding crypto@latest from mean-cli dependencies
+129 verbose readDependencies loading dependencies from /home/belen/opt/node/0.12/lib/node_modules/mean-cli/package.json
+130 silly cache add args [ 'bower@^1.3.8', null ]
+131 verbose cache add spec bower@^1.3.8
+132 silly cache add args [ 'chalk@^0.5.1', null ]
+133 verbose cache add spec chalk@^0.5.1
+134 silly cache add parsed spec { raw: 'bower@^1.3.8',
+134 silly cache add   scope: null,
+134 silly cache add   name: 'bower',
+134 silly cache add   rawSpec: '^1.3.8',
+134 silly cache add   spec: '>=1.3.8 <2.0.0',
+134 silly cache add   type: 'range' }
+135 silly addNamed bower@>=1.3.8 <2.0.0
+136 verbose addNamed ">=1.3.8 <2.0.0" is a valid semver range for bower
+137 silly addNameRange { name: 'bower', range: '>=1.3.8 <2.0.0', hasData: false }
+138 silly mapToRegistry name bower
+139 silly mapToRegistry using default registry
+140 silly mapToRegistry registry https://registry.npmjs.org/
+141 silly mapToRegistry uri https://registry.npmjs.org/bower
+142 verbose addNameRange registry:https://registry.npmjs.org/bower not in flight; fetching
+143 silly cache add parsed spec { raw: 'chalk@^0.5.1',
+143 silly cache add   scope: null,
+143 silly cache add   name: 'chalk',
+143 silly cache add   rawSpec: '^0.5.1',
+143 silly cache add   spec: '>=0.5.1 <0.6.0',
+143 silly cache add   type: 'range' }
+144 silly addNamed chalk@>=0.5.1 <0.6.0
+145 verbose addNamed ">=0.5.1 <0.6.0" is a valid semver range for chalk
+146 silly addNameRange { name: 'chalk', range: '>=0.5.1 <0.6.0', hasData: false }
+147 silly mapToRegistry name chalk
+148 silly mapToRegistry using default registry
+149 silly mapToRegistry registry https://registry.npmjs.org/
+150 silly mapToRegistry uri https://registry.npmjs.org/chalk
+151 verbose addNameRange registry:https://registry.npmjs.org/chalk not in flight; fetching
+152 silly cache add args [ 'commander@^2.4.0', null ]
+153 verbose cache add spec commander@^2.4.0
+154 silly cache add parsed spec { raw: 'commander@^2.4.0',
+154 silly cache add   scope: null,
+154 silly cache add   name: 'commander',
+154 silly cache add   rawSpec: '^2.4.0',
+154 silly cache add   spec: '>=2.4.0 <3.0.0',
+154 silly cache add   type: 'range' }
+155 silly addNamed commander@>=2.4.0 <3.0.0
+156 verbose addNamed ">=2.4.0 <3.0.0" is a valid semver range for commander
+157 silly addNameRange { name: 'commander', range: '>=2.4.0 <3.0.0', hasData: false }
+158 silly mapToRegistry name commander
+159 silly mapToRegistry using default registry
+160 silly mapToRegistry registry https://registry.npmjs.org/
+161 silly mapToRegistry uri https://registry.npmjs.org/commander
+162 verbose addNameRange registry:https://registry.npmjs.org/commander not in flight; fetching
+163 silly cache add args [ 'inquirer@^0.8.0', null ]
+164 verbose cache add spec inquirer@^0.8.0
+165 silly cache add parsed spec { raw: 'inquirer@^0.8.0',
+165 silly cache add   scope: null,
+165 silly cache add   name: 'inquirer',
+165 silly cache add   rawSpec: '^0.8.0',
+165 silly cache add   spec: '>=0.8.0 <0.9.0',
+165 silly cache add   type: 'range' }
+166 silly addNamed inquirer@>=0.8.0 <0.9.0
+167 verbose addNamed ">=0.8.0 <0.9.0" is a valid semver range for inquirer
+168 silly addNameRange { name: 'inquirer', range: '>=0.8.0 <0.9.0', hasData: false }
+169 silly mapToRegistry name inquirer
+170 silly mapToRegistry using default registry
+171 silly mapToRegistry registry https://registry.npmjs.org/
+172 silly mapToRegistry uri https://registry.npmjs.org/inquirer
+173 verbose addNameRange registry:https://registry.npmjs.org/inquirer not in flight; fetching
+174 silly cache add args [ 'json-file-plus@^2.0.0', null ]
+175 verbose cache add spec json-file-plus@^2.0.0
+176 silly cache add parsed spec { raw: 'json-file-plus@^2.0.0',
+176 silly cache add   scope: null,
+176 silly cache add   name: 'json-file-plus',
+176 silly cache add   rawSpec: '^2.0.0',
+176 silly cache add   spec: '>=2.0.0 <3.0.0',
+176 silly cache add   type: 'range' }
+177 silly addNamed json-file-plus@>=2.0.0 <3.0.0
+178 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for json-file-plus
+179 silly addNameRange { name: 'json-file-plus',
+179 silly addNameRange   range: '>=2.0.0 <3.0.0',
+179 silly addNameRange   hasData: false }
+180 silly mapToRegistry name json-file-plus
+181 silly mapToRegistry using default registry
+182 silly mapToRegistry registry https://registry.npmjs.org/
+183 silly mapToRegistry uri https://registry.npmjs.org/json-file-plus
+184 verbose addNameRange registry:https://registry.npmjs.org/json-file-plus not in flight; fetching
+185 silly cache add args [ 'lodash@^2.4.1', null ]
+186 verbose cache add spec lodash@^2.4.1
+187 silly cache add parsed spec { raw: 'lodash@^2.4.1',
+187 silly cache add   scope: null,
+187 silly cache add   name: 'lodash',
+187 silly cache add   rawSpec: '^2.4.1',
+187 silly cache add   spec: '>=2.4.1 <3.0.0',
+187 silly cache add   type: 'range' }
+188 silly addNamed lodash@>=2.4.1 <3.0.0
+189 verbose addNamed ">=2.4.1 <3.0.0" is a valid semver range for lodash
+190 silly addNameRange { name: 'lodash', range: '>=2.4.1 <3.0.0', hasData: false }
+191 silly mapToRegistry name lodash
+192 silly mapToRegistry using default registry
+193 silly mapToRegistry registry https://registry.npmjs.org/
+194 silly mapToRegistry uri https://registry.npmjs.org/lodash
+195 verbose addNameRange registry:https://registry.npmjs.org/lodash not in flight; fetching
+196 silly cache add args [ 'mean-health@~0.1.3', null ]
+197 verbose cache add spec mean-health@~0.1.3
+198 silly cache add parsed spec { raw: 'mean-health@~0.1.3',
+198 silly cache add   scope: null,
+198 silly cache add   name: 'mean-health',
+198 silly cache add   rawSpec: '~0.1.3',
+198 silly cache add   spec: '>=0.1.3 <0.2.0',
+198 silly cache add   type: 'range' }
+199 silly addNamed mean-health@>=0.1.3 <0.2.0
+200 verbose addNamed ">=0.1.3 <0.2.0" is a valid semver range for mean-health
+201 silly addNameRange { name: 'mean-health', range: '>=0.1.3 <0.2.0', hasData: false }
+202 silly mapToRegistry name mean-health
+203 silly mapToRegistry using default registry
+204 silly mapToRegistry registry https://registry.npmjs.org/
+205 silly mapToRegistry uri https://registry.npmjs.org/mean-health
+206 verbose addNameRange registry:https://registry.npmjs.org/mean-health not in flight; fetching
+207 silly cache add args [ 'mongoose@~4.0.2', null ]
+208 verbose cache add spec mongoose@~4.0.2
+209 silly cache add parsed spec { raw: 'mongoose@~4.0.2',
+209 silly cache add   scope: null,
+209 silly cache add   name: 'mongoose',
+209 silly cache add   rawSpec: '~4.0.2',
+209 silly cache add   spec: '>=4.0.2 <4.1.0',
+209 silly cache add   type: 'range' }
+210 silly addNamed mongoose@>=4.0.2 <4.1.0
+211 verbose addNamed ">=4.0.2 <4.1.0" is a valid semver range for mongoose
+212 silly addNameRange { name: 'mongoose', range: '>=4.0.2 <4.1.0', hasData: false }
+213 silly mapToRegistry name mongoose
+214 silly mapToRegistry using default registry
+215 silly mapToRegistry registry https://registry.npmjs.org/
+216 silly mapToRegistry uri https://registry.npmjs.org/mongoose
+217 verbose addNameRange registry:https://registry.npmjs.org/mongoose not in flight; fetching
+218 silly cache add args [ 'npm@^2.1.0', null ]
+219 verbose cache add spec npm@^2.1.0
+220 silly cache add parsed spec { raw: 'npm@^2.1.0',
+220 silly cache add   scope: null,
+220 silly cache add   name: 'npm',
+220 silly cache add   rawSpec: '^2.1.0',
+220 silly cache add   spec: '>=2.1.0 <3.0.0',
+220 silly cache add   type: 'range' }
+221 silly addNamed npm@>=2.1.0 <3.0.0
+222 verbose addNamed ">=2.1.0 <3.0.0" is a valid semver range for npm
+223 silly addNameRange { name: 'npm', range: '>=2.1.0 <3.0.0', hasData: false }
+224 silly mapToRegistry name npm
+225 silly mapToRegistry using default registry
+226 silly mapToRegistry registry https://registry.npmjs.org/
+227 silly mapToRegistry uri https://registry.npmjs.org/npm
+228 verbose addNameRange registry:https://registry.npmjs.org/npm not in flight; fetching
+229 silly cache add args [ 'opener@^1.3.0', null ]
+230 verbose cache add spec opener@^1.3.0
+231 silly cache add parsed spec { raw: 'opener@^1.3.0',
+231 silly cache add   scope: null,
+231 silly cache add   name: 'opener',
+231 silly cache add   rawSpec: '^1.3.0',
+231 silly cache add   spec: '>=1.3.0 <2.0.0',
+231 silly cache add   type: 'range' }
+232 silly addNamed opener@>=1.3.0 <2.0.0
+233 verbose addNamed ">=1.3.0 <2.0.0" is a valid semver range for opener
+234 silly addNameRange { name: 'opener', range: '>=1.3.0 <2.0.0', hasData: false }
+235 silly mapToRegistry name opener
+236 silly mapToRegistry using default registry
+237 silly mapToRegistry registry https://registry.npmjs.org/
+238 silly mapToRegistry uri https://registry.npmjs.org/opener
+239 verbose addNameRange registry:https://registry.npmjs.org/opener not in flight; fetching
+240 silly cache add args [ 'progress@^1.1.8', null ]
+241 verbose cache add spec progress@^1.1.8
+242 silly cache add parsed spec { raw: 'progress@^1.1.8',
+242 silly cache add   scope: null,
+242 silly cache add   name: 'progress',
+242 silly cache add   rawSpec: '^1.1.8',
+242 silly cache add   spec: '>=1.1.8 <2.0.0',
+242 silly cache add   type: 'range' }
+243 silly addNamed progress@>=1.1.8 <2.0.0
+244 verbose addNamed ">=1.1.8 <2.0.0" is a valid semver range for progress
+245 silly addNameRange { name: 'progress', range: '>=1.1.8 <2.0.0', hasData: false }
+246 silly mapToRegistry name progress
+247 silly mapToRegistry using default registry
+248 silly mapToRegistry registry https://registry.npmjs.org/
+249 silly mapToRegistry uri https://registry.npmjs.org/progress
+250 verbose addNameRange registry:https://registry.npmjs.org/progress not in flight; fetching
+251 silly cache add args [ 'prompt@^0.2.13', null ]
+252 verbose cache add spec prompt@^0.2.13
+253 silly cache add parsed spec { raw: 'prompt@^0.2.13',
+253 silly cache add   scope: null,
+253 silly cache add   name: 'prompt',
+253 silly cache add   rawSpec: '^0.2.13',
+253 silly cache add   spec: '>=0.2.13 <0.3.0',
+253 silly cache add   type: 'range' }
+254 silly addNamed prompt@>=0.2.13 <0.3.0
+255 verbose addNamed ">=0.2.13 <0.3.0" is a valid semver range for prompt
+256 silly addNameRange { name: 'prompt', range: '>=0.2.13 <0.3.0', hasData: false }
+257 silly mapToRegistry name prompt
+258 silly mapToRegistry using default registry
+259 silly mapToRegistry registry https://registry.npmjs.org/
+260 silly mapToRegistry uri https://registry.npmjs.org/prompt
+261 verbose addNameRange registry:https://registry.npmjs.org/prompt not in flight; fetching
+262 silly cache add args [ 'request@latest', null ]
+263 verbose cache add spec request@latest
+264 silly cache add args [ 'shelljs@^0.3.0', null ]
+265 verbose cache add spec shelljs@^0.3.0
+266 silly cache add parsed spec { raw: 'shelljs@^0.3.0',
+266 silly cache add   scope: null,
+266 silly cache add   name: 'shelljs',
+266 silly cache add   rawSpec: '^0.3.0',
+266 silly cache add   spec: '>=0.3.0 <0.4.0',
+266 silly cache add   type: 'range' }
+267 silly addNamed shelljs@>=0.3.0 <0.4.0
+268 verbose addNamed ">=0.3.0 <0.4.0" is a valid semver range for shelljs
+269 silly addNameRange { name: 'shelljs', range: '>=0.3.0 <0.4.0', hasData: false }
+270 silly mapToRegistry name shelljs
+271 silly mapToRegistry using default registry
+272 silly mapToRegistry registry https://registry.npmjs.org/
+273 silly mapToRegistry uri https://registry.npmjs.org/shelljs
+274 verbose addNameRange registry:https://registry.npmjs.org/shelljs not in flight; fetching
+275 silly cache add args [ 'async-series@latest', null ]
+276 verbose cache add spec async-series@latest
+277 silly cache add args [ 'crypto@latest', null ]
+278 verbose cache add spec crypto@latest
+279 silly cache add parsed spec { raw: 'request@latest',
+279 silly cache add   scope: null,
+279 silly cache add   name: 'request',
+279 silly cache add   rawSpec: 'latest',
+279 silly cache add   spec: 'latest',
+279 silly cache add   type: 'tag' }
+280 silly addNamed request@latest
+281 verbose addNamed "latest" is being treated as a dist-tag for request
+282 info addNameTag [ 'request', 'latest' ]
+283 silly mapToRegistry name request
+284 silly mapToRegistry using default registry
+285 silly mapToRegistry registry https://registry.npmjs.org/
+286 silly mapToRegistry uri https://registry.npmjs.org/request
+287 verbose addNameTag registry:https://registry.npmjs.org/request not in flight; fetching
+288 silly cache add parsed spec { raw: 'async-series@latest',
+288 silly cache add   scope: null,
+288 silly cache add   name: 'async-series',
+288 silly cache add   rawSpec: 'latest',
+288 silly cache add   spec: 'latest',
+288 silly cache add   type: 'tag' }
+289 silly addNamed async-series@latest
+290 verbose addNamed "latest" is being treated as a dist-tag for async-series
+291 info addNameTag [ 'async-series', 'latest' ]
+292 silly mapToRegistry name async-series
+293 silly mapToRegistry using default registry
+294 silly mapToRegistry registry https://registry.npmjs.org/
+295 silly mapToRegistry uri https://registry.npmjs.org/async-series
+296 verbose addNameTag registry:https://registry.npmjs.org/async-series not in flight; fetching
+297 silly cache add parsed spec { raw: 'crypto@latest',
+297 silly cache add   scope: null,
+297 silly cache add   name: 'crypto',
+297 silly cache add   rawSpec: 'latest',
+297 silly cache add   spec: 'latest',
+297 silly cache add   type: 'tag' }
+298 silly addNamed crypto@latest
+299 verbose addNamed "latest" is being treated as a dist-tag for crypto
+300 info addNameTag [ 'crypto', 'latest' ]
+301 silly mapToRegistry name crypto
+302 silly mapToRegistry using default registry
+303 silly mapToRegistry registry https://registry.npmjs.org/
+304 silly mapToRegistry uri https://registry.npmjs.org/crypto
+305 verbose addNameTag registry:https://registry.npmjs.org/crypto not in flight; fetching
+306 verbose request uri https://registry.npmjs.org/bower
+307 verbose request no auth needed
+308 info attempt registry request try #1 at 8:54:24 AM
+309 verbose etag "1AE25NKL6A92DE8G589L8HBU"
+310 http request GET https://registry.npmjs.org/bower
+311 verbose request uri https://registry.npmjs.org/chalk
+312 verbose request no auth needed
+313 info attempt registry request try #1 at 8:54:24 AM
+314 verbose etag "6XLDLDJF615CCD4MCBHDL0UH1"
+315 http request GET https://registry.npmjs.org/chalk
+316 verbose request uri https://registry.npmjs.org/commander
+317 verbose request no auth needed
+318 info attempt registry request try #1 at 8:54:24 AM
+319 verbose etag "7O9PQ2GUA9K2WTHMAP4BL0JSN"
+320 http request GET https://registry.npmjs.org/commander
+321 verbose request uri https://registry.npmjs.org/inquirer
+322 verbose request no auth needed
+323 info attempt registry request try #1 at 8:54:24 AM
+324 verbose etag "ANEB18OE38HT9BG4QKCWVQF0H"
+325 http request GET https://registry.npmjs.org/inquirer
+326 verbose request uri https://registry.npmjs.org/json-file-plus
+327 verbose request no auth needed
+328 info attempt registry request try #1 at 8:54:24 AM
+329 verbose etag "EVUD3QEZMF4KHHYUWD5CWRDHE"
+330 http request GET https://registry.npmjs.org/json-file-plus
+331 verbose request uri https://registry.npmjs.org/mongoose
+332 verbose request no auth needed
+333 info attempt registry request try #1 at 8:54:24 AM
+334 verbose etag "1ZIQFQZ9EPM3IDXXDQZP8711A"
+335 http request GET https://registry.npmjs.org/mongoose
+336 verbose request uri https://registry.npmjs.org/mean-health
+337 verbose request no auth needed
+338 info attempt registry request try #1 at 8:54:24 AM
+339 verbose etag "3NNGCLSF8SXYYOK6YBIZQCKSV"
+340 http request GET https://registry.npmjs.org/mean-health
+341 verbose request uri https://registry.npmjs.org/npm
+342 verbose request no auth needed
+343 info attempt registry request try #1 at 8:54:24 AM
+344 verbose etag "6LLVFC62VJZ5VTJXBA6L0LKQ4"
+345 http request GET https://registry.npmjs.org/npm
+346 verbose request uri https://registry.npmjs.org/opener
+347 verbose request no auth needed
+348 info attempt registry request try #1 at 8:54:24 AM
+349 verbose etag "3IB3SOS8HCEKRYYO0CGIHYJXT"
+350 http request GET https://registry.npmjs.org/opener
+351 verbose request uri https://registry.npmjs.org/progress
+352 verbose request no auth needed
+353 info attempt registry request try #1 at 8:54:24 AM
+354 verbose etag "29OFJ186C7SOLRXC0TC27FMNG"
+355 http request GET https://registry.npmjs.org/progress
+356 verbose request uri https://registry.npmjs.org/prompt
+357 verbose request no auth needed
+358 info attempt registry request try #1 at 8:54:24 AM
+359 verbose etag "AXHUO5Z8F9OXM5FQUGABFQX8P"
+360 http request GET https://registry.npmjs.org/prompt
+361 verbose request uri https://registry.npmjs.org/lodash
+362 verbose request no auth needed
+363 info attempt registry request try #1 at 8:54:24 AM
+364 verbose etag "DC8GC4OGENYNJJK8ZSLS57N1E"
+365 http request GET https://registry.npmjs.org/lodash
+366 verbose request uri https://registry.npmjs.org/shelljs
+367 verbose request no auth needed
+368 info attempt registry request try #1 at 8:54:24 AM
+369 verbose etag "EZONSXOR2AKRX9U6N29SLAR49"
+370 http request GET https://registry.npmjs.org/shelljs
+371 verbose request uri https://registry.npmjs.org/request
+372 verbose request no auth needed
+373 info attempt registry request try #1 at 8:54:24 AM
+374 verbose etag "CXGSRHUX1JZ7SELY7YQ1QTZDZ"
+375 http request GET https://registry.npmjs.org/request
+376 verbose request uri https://registry.npmjs.org/async-series
+377 verbose request no auth needed
+378 info attempt registry request try #1 at 8:54:24 AM
+379 verbose etag "E84IR2CE6L6PNZTNIJHQ15VUD"
+380 http request GET https://registry.npmjs.org/async-series
+381 verbose request uri https://registry.npmjs.org/crypto
+382 verbose request no auth needed
+383 info attempt registry request try #1 at 8:54:24 AM
+384 verbose etag "RUG8JRUXOU59SCO3H5517BUY"
+385 http request GET https://registry.npmjs.org/crypto
+386 http 304 https://registry.npmjs.org/bower
+387 silly get cb [ 304,
+387 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+387 silly get     via: '1.1 varnish',
+387 silly get     'cache-control': 'max-age=60',
+387 silly get     etag: '"1AE25NKL6A92DE8G589L8HBU"',
+387 silly get     age: '39',
+387 silly get     connection: 'keep-alive',
+387 silly get     'x-served-by': 'cache-atl6233-ATL',
+387 silly get     'x-cache': 'HIT',
+387 silly get     'x-cache-hits': '1',
+387 silly get     'x-timer': 'S1434801265.309320,VS0,VE1',
+387 silly get     vary: 'Accept' } ]
+388 verbose etag https://registry.npmjs.org/bower from cache
+389 verbose get saving bower to /home/belen/.npm/registry.npmjs.org/bower/.cache.json
+390 silly addNameRange number 2 { name: 'bower', range: '>=1.3.8 <2.0.0', hasData: true }
+391 silly addNameRange versions [ 'bower',
+391 silly addNameRange   [ '0.1.0',
+391 silly addNameRange     '0.1.2',
+391 silly addNameRange     '0.1.3',
+391 silly addNameRange     '0.2.0',
+391 silly addNameRange     '0.3.0',
+391 silly addNameRange     '0.3.1',
+391 silly addNameRange     '0.3.2',
+391 silly addNameRange     '0.4.0',
+391 silly addNameRange     '0.5.0',
+391 silly addNameRange     '0.5.1',
+391 silly addNameRange     '0.6.0',
+391 silly addNameRange     '0.6.1',
+391 silly addNameRange     '0.6.2',
+391 silly addNameRange     '0.6.3',
+391 silly addNameRange     '0.6.4',
+391 silly addNameRange     '0.6.5',
+391 silly addNameRange     '0.6.6',
+391 silly addNameRange     '0.6.7',
+391 silly addNameRange     '0.6.8',
+391 silly addNameRange     '0.7.0',
+391 silly addNameRange     '0.7.1',
+391 silly addNameRange     '0.8.0',
+391 silly addNameRange     '0.8.1',
+391 silly addNameRange     '0.8.2',
+391 silly addNameRange     '0.8.3',
+391 silly addNameRange     '0.8.4',
+391 silly addNameRange     '0.8.5',
+391 silly addNameRange     '0.8.6',
+391 silly addNameRange     '0.9.0',
+391 silly addNameRange     '0.9.1',
+391 silly addNameRange     '0.9.2',
+391 silly addNameRange     '0.10.0',
+391 silly addNameRange     '1.0.0',
+391 silly addNameRange     '1.0.1',
+391 silly addNameRange     '1.0.2',
+391 silly addNameRange     '1.0.3',
+391 silly addNameRange     '1.1.0',
+391 silly addNameRange     '1.1.1',
+391 silly addNameRange     '1.1.2',
+391 silly addNameRange     '1.2.0',
+391 silly addNameRange     '1.2.1',
+391 silly addNameRange     '1.2.2',
+391 silly addNameRange     '1.2.3',
+391 silly addNameRange     '1.2.4',
+391 silly addNameRange     '1.2.5',
+391 silly addNameRange     '1.2.6',
+391 silly addNameRange     '1.2.7',
+391 silly addNameRange     '1.2.8',
+391 silly addNameRange     '1.3.0',
+391 silly addNameRange     '1.3.1',
+391 silly addNameRange     '1.3.2',
+391 silly addNameRange     '1.3.3',
+391 silly addNameRange     '1.3.4',
+391 silly addNameRange     '1.3.5',
+391 silly addNameRange     '1.3.6',
+391 silly addNameRange     '1.3.7',
+391 silly addNameRange     '1.3.8',
+391 silly addNameRange     '1.3.9',
+391 silly addNameRange     '1.3.10',
+391 silly addNameRange     '1.3.11',
+391 silly addNameRange     '1.3.12',
+391 silly addNameRange     '1.4.0',
+391 silly addNameRange     '1.4.1' ] ]
+392 silly addNamed bower@1.4.1
+393 verbose addNamed "1.4.1" is a plain semver version for bower
+394 http 304 https://registry.npmjs.org/opener
+395 silly get cb [ 304,
+395 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+395 silly get     via: '1.1 varnish',
+395 silly get     'cache-control': 'max-age=60',
+395 silly get     etag: '"3IB3SOS8HCEKRYYO0CGIHYJXT"',
+395 silly get     age: '0',
+395 silly get     connection: 'keep-alive',
+395 silly get     'x-served-by': 'cache-atl6221-ATL',
+395 silly get     'x-cache': 'HIT',
+395 silly get     'x-cache-hits': '1',
+395 silly get     'x-timer': 'S1434801265.296579,VS0,VE26',
+395 silly get     vary: 'Accept' } ]
+396 verbose etag https://registry.npmjs.org/opener from cache
+397 verbose get saving opener to /home/belen/.npm/registry.npmjs.org/opener/.cache.json
+398 silly cache afterAdd bower@1.4.1
+399 verbose afterAdd /home/belen/.npm/bower/1.4.1/package/package.json not in flight; writing
+400 http 304 https://registry.npmjs.org/shelljs
+401 silly get cb [ 304,
+401 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+401 silly get     via: '1.1 varnish',
+401 silly get     'cache-control': 'max-age=60',
+401 silly get     etag: '"EZONSXOR2AKRX9U6N29SLAR49"',
+401 silly get     age: '25',
+401 silly get     connection: 'keep-alive',
+401 silly get     'x-served-by': 'cache-atl6232-ATL',
+401 silly get     'x-cache': 'HIT',
+401 silly get     'x-cache-hits': '1',
+401 silly get     'x-timer': 'S1434801265.327103,VS0,VE0',
+401 silly get     vary: 'Accept' } ]
+402 verbose etag https://registry.npmjs.org/shelljs from cache
+403 verbose get saving shelljs to /home/belen/.npm/registry.npmjs.org/shelljs/.cache.json
+404 http 304 https://registry.npmjs.org/chalk
+405 silly get cb [ 304,
+405 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+405 silly get     via: '1.1 varnish',
+405 silly get     'cache-control': 'max-age=60',
+405 silly get     etag: '"6XLDLDJF615CCD4MCBHDL0UH1"',
+405 silly get     age: '3',
+405 silly get     connection: 'keep-alive',
+405 silly get     'x-served-by': 'cache-atl6225-ATL',
+405 silly get     'x-cache': 'HIT',
+405 silly get     'x-cache-hits': '1',
+405 silly get     'x-timer': 'S1434801265.326904,VS0,VE0',
+405 silly get     vary: 'Accept' } ]
+406 verbose etag https://registry.npmjs.org/chalk from cache
+407 verbose get saving chalk to /home/belen/.npm/registry.npmjs.org/chalk/.cache.json
+408 http 304 https://registry.npmjs.org/commander
+409 silly get cb [ 304,
+409 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+409 silly get     via: '1.1 varnish',
+409 silly get     'cache-control': 'max-age=60',
+409 silly get     etag: '"7O9PQ2GUA9K2WTHMAP4BL0JSN"',
+409 silly get     age: '34',
+409 silly get     connection: 'keep-alive',
+409 silly get     'x-served-by': 'cache-atl6232-ATL',
+409 silly get     'x-cache': 'HIT',
+409 silly get     'x-cache-hits': '2',
+409 silly get     'x-timer': 'S1434801265.326996,VS0,VE0',
+409 silly get     vary: 'Accept' } ]
+410 verbose etag https://registry.npmjs.org/commander from cache
+411 verbose get saving commander to /home/belen/.npm/registry.npmjs.org/commander/.cache.json
+412 http 304 https://registry.npmjs.org/progress
+413 silly get cb [ 304,
+413 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+413 silly get     via: '1.1 varnish',
+413 silly get     'cache-control': 'max-age=60',
+413 silly get     etag: '"29OFJ186C7SOLRXC0TC27FMNG"',
+413 silly get     age: '1',
+413 silly get     connection: 'keep-alive',
+413 silly get     'x-served-by': 'cache-atl6233-ATL',
+413 silly get     'x-cache': 'HIT',
+413 silly get     'x-cache-hits': '22',
+413 silly get     'x-timer': 'S1434801265.326947,VS0,VE0',
+413 silly get     vary: 'Accept' } ]
+414 verbose etag https://registry.npmjs.org/progress from cache
+415 verbose get saving progress to /home/belen/.npm/registry.npmjs.org/progress/.cache.json
+416 http 304 https://registry.npmjs.org/lodash
+417 silly get cb [ 304,
+417 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+417 silly get     via: '1.1 varnish',
+417 silly get     'cache-control': 'max-age=60',
+417 silly get     etag: '"DC8GC4OGENYNJJK8ZSLS57N1E"',
+417 silly get     age: '5',
+417 silly get     connection: 'keep-alive',
+417 silly get     'x-served-by': 'cache-atl6231-ATL',
+417 silly get     'x-cache': 'HIT',
+417 silly get     'x-cache-hits': '2',
+417 silly get     'x-timer': 'S1434801265.327018,VS0,VE0',
+417 silly get     vary: 'Accept' } ]
+418 verbose etag https://registry.npmjs.org/lodash from cache
+419 verbose get saving lodash to /home/belen/.npm/registry.npmjs.org/lodash/.cache.json
+420 http 304 https://registry.npmjs.org/prompt
+421 silly get cb [ 304,
+421 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+421 silly get     via: '1.1 varnish',
+421 silly get     'cache-control': 'max-age=60',
+421 silly get     etag: '"AXHUO5Z8F9OXM5FQUGABFQX8P"',
+421 silly get     age: '54',
+421 silly get     connection: 'keep-alive',
+421 silly get     'x-served-by': 'cache-atl6222-ATL',
+421 silly get     'x-cache': 'HIT',
+421 silly get     'x-cache-hits': '2',
+421 silly get     'x-timer': 'S1434801265.327102,VS0,VE0',
+421 silly get     vary: 'Accept' } ]
+422 verbose etag https://registry.npmjs.org/prompt from cache
+423 verbose get saving prompt to /home/belen/.npm/registry.npmjs.org/prompt/.cache.json
+424 http 304 https://registry.npmjs.org/inquirer
+425 silly get cb [ 304,
+425 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+425 silly get     via: '1.1 varnish',
+425 silly get     'cache-control': 'max-age=60',
+425 silly get     etag: '"ANEB18OE38HT9BG4QKCWVQF0H"',
+425 silly get     age: '9',
+425 silly get     connection: 'keep-alive',
+425 silly get     'x-served-by': 'cache-atl6233-ATL',
+425 silly get     'x-cache': 'HIT',
+425 silly get     'x-cache-hits': '1',
+425 silly get     'x-timer': 'S1434801265.327027,VS0,VE1',
+425 silly get     vary: 'Accept' } ]
+426 verbose etag https://registry.npmjs.org/inquirer from cache
+427 verbose get saving inquirer to /home/belen/.npm/registry.npmjs.org/inquirer/.cache.json
+428 http 304 https://registry.npmjs.org/npm
+429 silly get cb [ 304,
+429 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+429 silly get     via: '1.1 varnish',
+429 silly get     'cache-control': 'max-age=60',
+429 silly get     etag: '"6LLVFC62VJZ5VTJXBA6L0LKQ4"',
+429 silly get     age: '16',
+429 silly get     connection: 'keep-alive',
+429 silly get     'x-served-by': 'cache-atl6220-ATL',
+429 silly get     'x-cache': 'HIT',
+429 silly get     'x-cache-hits': '2',
+429 silly get     'x-timer': 'S1434801265.328922,VS0,VE0',
+429 silly get     vary: 'Accept' } ]
+430 verbose etag https://registry.npmjs.org/npm from cache
+431 verbose get saving npm to /home/belen/.npm/registry.npmjs.org/npm/.cache.json
+432 verbose afterAdd /home/belen/.npm/bower/1.4.1/package/package.json written
+433 http 304 https://registry.npmjs.org/mongoose
+434 silly get cb [ 304,
+434 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+434 silly get     via: '1.1 varnish',
+434 silly get     'cache-control': 'max-age=60',
+434 silly get     etag: '"1ZIQFQZ9EPM3IDXXDQZP8711A"',
+434 silly get     age: '0',
+434 silly get     connection: 'keep-alive',
+434 silly get     'x-served-by': 'cache-atl6231-ATL',
+434 silly get     'x-cache': 'HIT',
+434 silly get     'x-cache-hits': '1',
+434 silly get     'x-timer': 'S1434801265.326900,VS0,VE36',
+434 silly get     vary: 'Accept' } ]
+435 verbose etag https://registry.npmjs.org/mongoose from cache
+436 verbose get saving mongoose to /home/belen/.npm/registry.npmjs.org/mongoose/.cache.json
+437 silly addNameRange number 2 { name: 'opener', range: '>=1.3.0 <2.0.0', hasData: true }
+438 silly addNameRange versions [ 'opener',
+438 silly addNameRange   [ '1.0.0', '1.0.1', '1.1.0', '1.2.0', '1.3.0', '1.4.0', '1.4.1' ] ]
+439 silly addNamed opener@1.4.1
+440 verbose addNamed "1.4.1" is a plain semver version for opener
+441 silly addNameRange number 2 { name: 'shelljs', range: '>=0.3.0 <0.4.0', hasData: true }
+442 silly addNameRange versions [ 'shelljs',
+442 silly addNameRange   [ '0.0.1',
+442 silly addNameRange     '0.0.2',
+442 silly addNameRange     '0.0.3',
+442 silly addNameRange     '0.0.4',
+442 silly addNameRange     '0.0.5',
+442 silly addNameRange     '0.0.6',
+442 silly addNameRange     '0.0.7',
+442 silly addNameRange     '0.0.8',
+442 silly addNameRange     '0.0.9',
+442 silly addNameRange     '0.1.0',
+442 silly addNameRange     '0.1.1',
+442 silly addNameRange     '0.1.2',
+442 silly addNameRange     '0.1.3',
+442 silly addNameRange     '0.1.4',
+442 silly addNameRange     '0.2.0',
+442 silly addNameRange     '0.2.1',
+442 silly addNameRange     '0.2.2',
+442 silly addNameRange     '0.2.3',
+442 silly addNameRange     '0.2.4',
+442 silly addNameRange     '0.2.5',
+442 silly addNameRange     '0.2.6',
+442 silly addNameRange     '0.3.0',
+442 silly addNameRange     '0.4.0',
+442 silly addNameRange     '0.5.0',
+442 silly addNameRange     '0.5.1',
+442 silly addNameRange     '0.0.1-alpha1',
+442 silly addNameRange     '0.0.2-pre1',
+442 silly addNameRange     '0.0.4-pre1',
+442 silly addNameRange     '0.0.5-pre1',
+442 silly addNameRange     '0.0.5-pre2',
+442 silly addNameRange     '0.0.5-pre3',
+442 silly addNameRange     '0.0.5-pre4',
+442 silly addNameRange     '0.0.6-pre1',
+442 silly addNameRange     '0.0.6-pre2' ] ]
+443 silly addNamed shelljs@0.3.0
+444 verbose addNamed "0.3.0" is a plain semver version for shelljs
+445 silly addNameRange number 2 { name: 'chalk', range: '>=0.5.1 <0.6.0', hasData: true }
+446 silly addNameRange versions [ 'chalk',
+446 silly addNameRange   [ '0.1.0',
+446 silly addNameRange     '0.1.1',
+446 silly addNameRange     '0.2.0',
+446 silly addNameRange     '0.2.1',
+446 silly addNameRange     '0.3.0',
+446 silly addNameRange     '0.4.0',
+446 silly addNameRange     '0.5.0',
+446 silly addNameRange     '0.5.1',
+446 silly addNameRange     '1.0.0' ] ]
+447 silly addNamed chalk@0.5.1
+448 verbose addNamed "0.5.1" is a plain semver version for chalk
+449 silly addNameRange number 2 { name: 'progress', range: '>=1.1.8 <2.0.0', hasData: true }
+450 silly addNameRange versions [ 'progress',
+450 silly addNameRange   [ '0.0.1',
+450 silly addNameRange     '0.0.2',
+450 silly addNameRange     '0.0.3',
+450 silly addNameRange     '0.0.4',
+450 silly addNameRange     '0.0.5',
+450 silly addNameRange     '0.1.0',
+450 silly addNameRange     '1.0.0',
+450 silly addNameRange     '1.0.1',
+450 silly addNameRange     '1.1.0',
+450 silly addNameRange     '1.1.2',
+450 silly addNameRange     '1.1.3',
+450 silly addNameRange     '1.1.4',
+450 silly addNameRange     '1.1.5',
+450 silly addNameRange     '1.1.6',
+450 silly addNameRange     '1.1.7',
+450 silly addNameRange     '1.1.8' ] ]
+451 silly addNamed progress@1.1.8
+452 verbose addNamed "1.1.8" is a plain semver version for progress
+453 silly addNameRange number 2 { name: 'commander', range: '>=2.4.0 <3.0.0', hasData: true }
+454 silly addNameRange versions [ 'commander',
+454 silly addNameRange   [ '0.0.1',
+454 silly addNameRange     '0.0.3',
+454 silly addNameRange     '0.0.4',
+454 silly addNameRange     '0.0.5',
+454 silly addNameRange     '0.1.0',
+454 silly addNameRange     '0.2.0',
+454 silly addNameRange     '0.2.1',
+454 silly addNameRange     '0.3.0',
+454 silly addNameRange     '0.3.1',
+454 silly addNameRange     '0.3.2',
+454 silly addNameRange     '0.3.3',
+454 silly addNameRange     '0.4.0',
+454 silly addNameRange     '0.4.1',
+454 silly addNameRange     '0.4.2',
+454 silly addNameRange     '0.4.3',
+454 silly addNameRange     '0.5.0',
+454 silly addNameRange     '0.5.1',
+454 silly addNameRange     '0.6.0',
+454 silly addNameRange     '0.6.1',
+454 silly addNameRange     '0.5.2',
+454 silly addNameRange     '1.0.0',
+454 silly addNameRange     '1.0.1',
+454 silly addNameRange     '1.0.2',
+454 silly addNameRange     '1.0.3',
+454 silly addNameRange     '1.0.4',
+454 silly addNameRange     '1.0.5',
+454 silly addNameRange     '1.1.0',
+454 silly addNameRange     '1.1.1',
+454 silly addNameRange     '1.2.0',
+454 silly addNameRange     '1.3.0',
+454 silly addNameRange     '1.3.1',
+454 silly addNameRange     '1.3.2',
+454 silly addNameRange     '2.0.0',
+454 silly addNameRange     '2.1.0',
+454 silly addNameRange     '2.2.0',
+454 silly addNameRange     '2.3.0',
+454 silly addNameRange     '2.4.0',
+454 silly addNameRange     '2.5.0',
+454 silly addNameRange     '2.5.1',
+454 silly addNameRange     '2.6.0',
+454 silly addNameRange     '2.7.0',
+454 silly addNameRange     '2.7.1',
+454 silly addNameRange     '2.8.0',
+454 silly addNameRange     '2.8.1' ] ]
+455 silly addNamed commander@2.8.1
+456 verbose addNamed "2.8.1" is a plain semver version for commander
+457 silly addNameRange number 2 { name: 'prompt', range: '>=0.2.13 <0.3.0', hasData: true }
+458 silly addNameRange versions [ 'prompt',
+458 silly addNameRange   [ '0.0.1',
+458 silly addNameRange     '0.0.2',
+458 silly addNameRange     '0.0.3',
+458 silly addNameRange     '0.0.4',
+458 silly addNameRange     '0.1.0',
+458 silly addNameRange     '0.1.1',
+458 silly addNameRange     '0.1.2',
+458 silly addNameRange     '0.1.3',
+458 silly addNameRange     '0.1.4',
+458 silly addNameRange     '0.1.5',
+458 silly addNameRange     '0.1.7',
+458 silly addNameRange     '0.1.8',
+458 silly addNameRange     '0.1.9',
+458 silly addNameRange     '0.1.10',
+458 silly addNameRange     '0.1.11',
+458 silly addNameRange     '0.1.12',
+458 silly addNameRange     '0.2.0',
+458 silly addNameRange     '0.2.1',
+458 silly addNameRange     '0.2.2',
+458 silly addNameRange     '0.2.3',
+458 silly addNameRange     '0.2.4',
+458 silly addNameRange     '0.2.5',
+458 silly addNameRange     '0.2.6',
+458 silly addNameRange     '0.2.7',
+458 silly addNameRange     '0.2.8',
+458 silly addNameRange     '0.2.9',
+458 silly addNameRange     '0.2.10',
+458 silly addNameRange     '0.2.11',
+458 silly addNameRange     '0.2.12',
+458 silly addNameRange     '0.2.13',
+458 silly addNameRange     '0.2.14' ] ]
+459 silly addNamed prompt@0.2.14
+460 verbose addNamed "0.2.14" is a plain semver version for prompt
+461 silly addNameRange number 2 { name: 'lodash', range: '>=2.4.1 <3.0.0', hasData: true }
+462 silly addNameRange versions [ 'lodash',
+462 silly addNameRange   [ '0.1.0',
+462 silly addNameRange     '0.2.0',
+462 silly addNameRange     '0.2.1',
+462 silly addNameRange     '0.2.2',
+462 silly addNameRange     '0.3.0',
+462 silly addNameRange     '0.3.1',
+462 silly addNameRange     '0.3.2',
+462 silly addNameRange     '0.4.0',
+462 silly addNameRange     '0.4.1',
+462 silly addNameRange     '0.4.2',
+462 silly addNameRange     '0.5.0-rc.1',
+462 silly addNameRange     '0.5.0',
+462 silly addNameRange     '0.5.1',
+462 silly addNameRange     '0.5.2',
+462 silly addNameRange     '0.6.0',
+462 silly addNameRange     '0.6.1',
+462 silly addNameRange     '0.7.0',
+462 silly addNameRange     '0.8.0',
+462 silly addNameRange     '0.8.1',
+462 silly addNameRange     '0.8.2',
+462 silly addNameRange     '0.9.0',
+462 silly addNameRange     '0.9.1',
+462 silly addNameRange     '0.9.2',
+462 silly addNameRange     '0.10.0',
+462 silly addNameRange     '1.0.0-rc.1',
+462 silly addNameRange     '1.0.0-rc.2',
+462 silly addNameRange     '1.0.0-rc.3',
+462 silly addNameRange     '1.0.0',
+462 silly addNameRange     '1.0.1',
+462 silly addNameRange     '1.1.0',
+462 silly addNameRange     '1.1.1',
+462 silly addNameRange     '1.2.0',
+462 silly addNameRange     '1.2.1',
+462 silly addNameRange     '1.3.0',
+462 silly addNameRange     '1.3.1',
+462 silly addNameRange     '2.0.0',
+462 silly addNameRange     '2.1.0',
+462 silly addNameRange     '2.2.0',
+462 silly addNameRange     '2.2.1',
+462 silly addNameRange     '2.3.0',
+462 silly addNameRange     '2.4.0',
+462 silly addNameRange     '2.4.1',
+462 silly addNameRange     '3.0.0',
+462 silly addNameRange     '3.0.1',
+462 silly addNameRange     '3.1.0',
+462 silly addNameRange     '3.2.0',
+462 silly addNameRange     '3.3.0',
+462 silly addNameRange     '3.3.1',
+462 silly addNameRange     '3.4.0',
+462 silly addNameRange     '3.5.0',
+462 silly addNameRange     '3.6.0',
+462 silly addNameRange     '1.0.2',
+462 silly addNameRange     '3.7.0',
+462 silly addNameRange     '2.4.2',
+462 silly addNameRange     '3.8.0',
+462 silly addNameRange     '3.9.0',
+462 silly addNameRange     '3.9.1',
+462 silly addNameRange     '3.9.2',
+462 silly addNameRange     '3.9.3' ] ]
+463 silly addNamed lodash@2.4.2
+464 verbose addNamed "2.4.2" is a plain semver version for lodash
+465 silly addNameRange number 2 { name: 'inquirer', range: '>=0.8.0 <0.9.0', hasData: true }
+466 silly addNameRange versions [ 'inquirer',
+466 silly addNameRange   [ '0.1.0',
+466 silly addNameRange     '0.1.1',
+466 silly addNameRange     '0.1.2',
+466 silly addNameRange     '0.1.3',
+466 silly addNameRange     '0.1.4',
+466 silly addNameRange     '0.1.5',
+466 silly addNameRange     '0.1.6',
+466 silly addNameRange     '0.1.7',
+466 silly addNameRange     '0.1.8',
+466 silly addNameRange     '0.1.9',
+466 silly addNameRange     '0.2.0',
+466 silly addNameRange     '0.2.1',
+466 silly addNameRange     '0.1.11',
+466 silly addNameRange     '0.1.12',
+466 silly addNameRange     '0.2.2',
+466 silly addNameRange     '0.2.3',
+466 silly addNameRange     '0.2.4',
+466 silly addNameRange     '0.2.5',
+466 silly addNameRange     '0.3.0',
+466 silly addNameRange     '0.3.1',
+466 silly addNameRange     '0.3.2',
+466 silly addNameRange     '0.3.3',
+466 silly addNameRange     '0.3.4',
+466 silly addNameRange     '0.3.5',
+466 silly addNameRange     '0.4.0',
+466 silly addNameRange     '0.4.1',
+466 silly addNameRange     '0.5.0',
+466 silly addNameRange     '0.5.1',
+466 silly addNameRange     '0.6.0',
+466 silly addNameRange     '0.7.1',
+466 silly addNameRange     '0.7.2',
+466 silly addNameRange     '0.7.3',
+466 silly addNameRange     '0.8.0',
+466 silly addNameRange     '0.8.2',
+466 silly addNameRange     '0.8.3',
+466 silly addNameRange     '0.8.4',
+466 silly addNameRange     '0.8.5' ] ]
+467 silly addNamed inquirer@0.8.5
+468 verbose addNamed "0.8.5" is a plain semver version for inquirer
+469 silly mapToRegistry name inquirer
+470 silly mapToRegistry using default registry
+471 silly mapToRegistry registry https://registry.npmjs.org/
+472 silly mapToRegistry uri https://registry.npmjs.org/inquirer
+473 verbose addRemoteTarball https://registry.npmjs.org/inquirer/-/inquirer-0.8.5.tgz not in flight; adding
+474 verbose addRemoteTarball [ 'https://registry.npmjs.org/inquirer/-/inquirer-0.8.5.tgz',
+474 verbose addRemoteTarball   'dbd740cf6ca3b731296a63ce6f6d961851f336df' ]
+475 http 304 https://registry.npmjs.org/request
+476 silly get cb [ 304,
+476 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+476 silly get     via: '1.1 varnish',
+476 silly get     'cache-control': 'max-age=60',
+476 silly get     etag: '"CXGSRHUX1JZ7SELY7YQ1QTZDZ"',
+476 silly get     age: '20',
+476 silly get     connection: 'keep-alive',
+476 silly get     'x-served-by': 'cache-atl6231-ATL',
+476 silly get     'x-cache': 'HIT',
+476 silly get     'x-cache-hits': '1',
+476 silly get     'x-timer': 'S1434801265.376276,VS0,VE1',
+476 silly get     vary: 'Accept' } ]
+477 verbose etag https://registry.npmjs.org/request from cache
+478 verbose get saving request to /home/belen/.npm/registry.npmjs.org/request/.cache.json
+479 http 304 https://registry.npmjs.org/crypto
+480 silly get cb [ 304,
+480 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+480 silly get     via: '1.1 varnish',
+480 silly get     'cache-control': 'max-age=60',
+480 silly get     etag: '"RUG8JRUXOU59SCO3H5517BUY"',
+480 silly get     age: '0',
+480 silly get     connection: 'keep-alive',
+480 silly get     'x-served-by': 'cache-atl6230-ATL',
+480 silly get     'x-cache': 'HIT',
+480 silly get     'x-cache-hits': '1',
+480 silly get     'x-timer': 'S1434801265.357280,VS0,VE25',
+480 silly get     vary: 'Accept' } ]
+481 verbose etag https://registry.npmjs.org/crypto from cache
+482 verbose get saving crypto to /home/belen/.npm/registry.npmjs.org/crypto/.cache.json
+483 silly addNameRange number 2 { name: 'npm', range: '>=2.1.0 <3.0.0', hasData: true }
+484 silly addNameRange versions [ 'npm',
+484 silly addNameRange   [ '1.1.25',
+484 silly addNameRange     '1.2.32',
+484 silly addNameRange     '1.3.2',
+484 silly addNameRange     '1.3.4',
+484 silly addNameRange     '1.2.20',
+484 silly addNameRange     '1.2.21',
+484 silly addNameRange     '1.2.22',
+484 silly addNameRange     '1.2.23',
+484 silly addNameRange     '1.2.24',
+484 silly addNameRange     '1.2.25',
+484 silly addNameRange     '1.2.27',
+484 silly addNameRange     '1.2.28',
+484 silly addNameRange     '1.2.30',
+484 silly addNameRange     '1.2.31',
+484 silly addNameRange     '1.3.0',
+484 silly addNameRange     '1.3.1',
+484 silly addNameRange     '1.2.19',
+484 silly addNameRange     '1.1.70',
+484 silly addNameRange     '1.1.71',
+484 silly addNameRange     '1.3.5',
+484 silly addNameRange     '1.3.6',
+484 silly addNameRange     '1.3.7',
+484 silly addNameRange     '1.3.8',
+484 silly addNameRange     '1.3.9',
+484 silly addNameRange     '1.3.10',
+484 silly addNameRange     '1.3.11',
+484 silly addNameRange     '1.3.12',
+484 silly addNameRange     '1.3.13',
+484 silly addNameRange     '1.3.14',
+484 silly addNameRange     '1.3.15',
+484 silly addNameRange     '1.3.16',
+484 silly addNameRange     '1.3.17',
+484 silly addNameRange     '1.3.18',
+484 silly addNameRange     '1.3.20',
+484 silly addNameRange     '1.3.21',
+484 silly addNameRange     '1.3.22',
+484 silly addNameRange     '1.3.23',
+484 silly addNameRange     '1.3.24',
+484 silly addNameRange     '1.3.25',
+484 silly addNameRange     '1.3.26',
+484 silly addNameRange     '1.4.0',
+484 silly addNameRange     '1.4.1',
+484 silly addNameRange     '1.4.2',
+484 silly addNameRange     '1.4.3',
+484 silly addNameRange     '1.4.4',
+484 silly addNameRange     '1.4.5',
+484 silly addNameRange     '1.4.6',
+484 silly addNameRange     '1.4.7',
+484 silly addNameRange     '1.4.8',
+484 silly addNameRange     '1.4.9',
+484 silly addNameRange     '1.4.10',
+484 silly addNameRange     '1.4.11',
+484 silly addNameRange     '1.4.12',
+484 silly addNameRange     '1.4.13',
+484 silly addNameRange     '1.4.14',
+484 silly addNameRange     '1.4.15',
+484 silly addNameRange     '1.4.16',
+484 silly addNameRange     '1.2.8000',
+484 silly addNameRange     '1.4.17',
+484 silly addNameRange     '1.4.18',
+484 silly addNameRange     '1.4.19',
+484 silly addNameRange     '1.5.0-alpha-0',
+484 silly addNameRange     '1.5.0-alpha-1',
+484 silly addNameRange     '1.4.20',
+484 silly addNameRange     '1.5.0-alpha-2',
+484 silly addNameRange     '1.4.21',
+484 silly addNameRange     '1.5.0-alpha-3',
+484 silly addNameRange     '1.5.0-alpha-4',
+484 silly addNameRange     '2.0.0-alpha-5',
+484 silly addNameRange     '1.4.22',
+484 silly addNameRange     '1.4.23',
+484 silly addNameRange     '2.0.0-alpha.6.0',
+484 silly addNameRange     '1.4.24',
+484 silly addNameRange     '2.0.0-alpha.6',
+484 silly addNameRange     '2.0.0-alpha.7',
+484 silly addNameRange     '2.0.0-beta.0',
+484 silly addNameRange     '1.4.25',
+484 silly addNameRange     '2.0.0-beta.1',
+484 silly addNameRange     '1.4.26',
+484 silly addNameRange     '2.0.0-beta.2',
+484 silly addNameRange     '1.4.27',
+484 silly addNameRange     '2.0.0-beta.3',
+484 silly addNameRange     '1.4.28',
+484 silly addNameRange     '2.0.0',
+484 silly addNameRange     '2.0.1',
+484 silly addNameRange     '2.0.2',
+484 silly addNameRange     '2.1.0',
+484 silly addNameRange     '2.1.1',
+484 silly addNameRange     '2.1.2',
+484 silly addNameRange     '2.1.3',
+484 silly addNameRange     '2.1.4',
+484 silly addNameRange     '2.1.5',
+484 silly addNameRange     '2.1.6',
+484 silly addNameRange     '2.1.7',
+484 silly addNameRange     '2.1.8',
+484 silly addNameRange     '2.1.9',
+484 silly addNameRange     '2.1.10',
+484 silly addNameRange     '2.1.11',
+484 silly addNameRange     '2.1.12',
+484 silly addNameRange     '2.1.13',
+484 silly addNameRange     '2.1.14',
+484 silly addNameRange     '2.1.15',
+484 silly addNameRange     '2.1.16',
+484 silly addNameRange     '2.1.17',
+484 silly addNameRange     '2.1.18',
+484 silly addNameRange     '2.2.0',
+484 silly addNameRange     '2.3.0',
+484 silly addNameRange     '2.4.0',
+484 silly addNameRange     '2.4.1',
+484 silly addNameRange     '2.5.0',
+484 silly addNameRange     '2.5.1',
+484 silly addNameRange     '2.6.0',
+484 silly addNameRange     '2.6.1',
+484 silly addNameRange     '2.7.0',
+484 silly addNameRange     '2.7.1',
+484 silly addNameRange     '2.7.2',
+484 silly addNameRange     '2.7.3',
+484 silly addNameRange     '2.7.4',
+484 silly addNameRange     '2.7.5',
+484 silly addNameRange     '2.7.6',
+484 silly addNameRange     '2.8.0',
+484 silly addNameRange     '2.8.1',
+484 silly addNameRange     '2.8.2',
+484 silly addNameRange     '2.8.3',
+484 silly addNameRange     '2.8.4',
+484 silly addNameRange     '2.9.0',
+484 silly addNameRange     '2.9.1',
+484 silly addNameRange     '2.10.0',
+484 silly addNameRange     '2.10.1',
+484 silly addNameRange     '2.11.0',
+484 silly addNameRange     '2.11.1',
+484 silly addNameRange     '2.11.2',
+484 silly addNameRange     '2.11.3',
+484 silly addNameRange     '2.12.0' ] ]
+485 silly addNamed npm@2.11.3
+486 verbose addNamed "2.11.3" is a plain semver version for npm
+487 http 304 https://registry.npmjs.org/json-file-plus
+488 silly get cb [ 304,
+488 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+488 silly get     via: '1.1 varnish',
+488 silly get     'cache-control': 'max-age=60',
+488 silly get     etag: '"EVUD3QEZMF4KHHYUWD5CWRDHE"',
+488 silly get     age: '0',
+488 silly get     connection: 'keep-alive',
+488 silly get     'x-served-by': 'cache-atl6229-ATL',
+488 silly get     'x-cache': 'HIT',
+488 silly get     'x-cache-hits': '1',
+488 silly get     'x-timer': 'S1434801265.315534,VS0,VE86',
+488 silly get     vary: 'Accept' } ]
+489 verbose etag https://registry.npmjs.org/json-file-plus from cache
+490 verbose get saving json-file-plus to /home/belen/.npm/registry.npmjs.org/json-file-plus/.cache.json
+491 silly cache afterAdd progress@1.1.8
+492 verbose afterAdd /home/belen/.npm/progress/1.1.8/package/package.json not in flight; writing
+493 silly cache afterAdd chalk@0.5.1
+494 verbose afterAdd /home/belen/.npm/chalk/0.5.1/package/package.json not in flight; writing
+495 silly cache afterAdd commander@2.8.1
+496 verbose afterAdd /home/belen/.npm/commander/2.8.1/package/package.json not in flight; writing
+497 silly cache afterAdd prompt@0.2.14
+498 verbose afterAdd /home/belen/.npm/prompt/0.2.14/package/package.json not in flight; writing
+499 silly cache afterAdd lodash@2.4.2
+500 verbose afterAdd /home/belen/.npm/lodash/2.4.2/package/package.json not in flight; writing
+501 silly cache afterAdd opener@1.4.1
+502 verbose afterAdd /home/belen/.npm/opener/1.4.1/package/package.json not in flight; writing
+503 silly addNameRange number 2 { name: 'mongoose', range: '>=4.0.2 <4.1.0', hasData: true }
+504 silly addNameRange versions [ 'mongoose',
+504 silly addNameRange   [ '0.0.1',
+504 silly addNameRange     '0.0.2',
+504 silly addNameRange     '0.0.3',
+504 silly addNameRange     '0.0.4',
+504 silly addNameRange     '0.0.5',
+504 silly addNameRange     '1.0.0',
+504 silly addNameRange     '1.0.1',
+504 silly addNameRange     '1.0.2',
+504 silly addNameRange     '0.0.6',
+504 silly addNameRange     '1.0.3',
+504 silly addNameRange     '1.0.4',
+504 silly addNameRange     '1.0.5',
+504 silly addNameRange     '1.0.6',
+504 silly addNameRange     '1.0.7',
+504 silly addNameRange     '1.0.8',
+504 silly addNameRange     '1.0.10',
+504 silly addNameRange     '1.0.11',
+504 silly addNameRange     '1.0.12',
+504 silly addNameRange     '1.0.13',
+504 silly addNameRange     '1.0.14',
+504 silly addNameRange     '1.0.15',
+504 silly addNameRange     '1.0.16',
+504 silly addNameRange     '1.1.0',
+504 silly addNameRange     '1.1.1',
+504 silly addNameRange     '1.1.2',
+504 silly addNameRange     '1.1.3',
+504 silly addNameRange     '1.1.4',
+504 silly addNameRange     '1.1.5',
+504 silly addNameRange     '1.1.6',
+504 silly addNameRange     '1.1.7',
+504 silly addNameRange     '1.1.8',
+504 silly addNameRange     '1.1.9',
+504 silly addNameRange     '1.1.10',
+504 silly addNameRange     '1.1.11',
+504 silly addNameRange     '1.1.12',
+504 silly addNameRange     '1.1.13',
+504 silly addNameRange     '1.1.14',
+504 silly addNameRange     '1.1.15',
+504 silly addNameRange     '1.1.16',
+504 silly addNameRange     '1.1.17',
+504 silly addNameRange     '1.1.18',
+504 silly addNameRange     '1.1.19',
+504 silly addNameRange     '1.1.20',
+504 silly addNameRange     '1.1.21',
+504 silly addNameRange     '1.1.22',
+504 silly addNameRange     '1.1.23',
+504 silly addNameRange     '1.1.24',
+504 silly addNameRange     '1.1.25',
+504 silly addNameRange     '1.2.0',
+504 silly addNameRange     '1.3.0',
+504 silly addNameRange     '1.3.1',
+504 silly addNameRange     '1.3.2',
+504 silly addNameRange     '1.3.3',
+504 silly addNameRange     '1.3.4',
+504 silly addNameRange     '1.3.5',
+504 silly addNameRange     '1.3.6',
+504 silly addNameRange     '1.3.7',
+504 silly addNameRange     '1.4.0',
+504 silly addNameRange     '1.5.0',
+504 silly addNameRange     '1.6.0',
+504 silly addNameRange     '1.7.2',
+504 silly addNameRange     '1.7.3',
+504 silly addNameRange     '1.7.4',
+504 silly addNameRange     '1.8.0',
+504 silly addNameRange     '1.8.1',
+504 silly addNameRange     '1.8.2',
+504 silly addNameRange     '1.8.3',
+504 silly addNameRange     '1.8.4',
+504 silly addNameRange     '2.0.0',
+504 silly addNameRange     '2.0.1',
+504 silly addNameRange     '2.0.2',
+504 silly addNameRange     '2.0.3',
+504 silly addNameRange     '2.0.4',
+504 silly addNameRange     '2.1.0',
+504 silly addNameRange     '2.1.1',
+504 silly addNameRange     '2.1.2',
+504 silly addNameRange     '2.1.3',
+504 silly addNameRange     '2.1.4',
+504 silly addNameRange     '2.2.0',
+504 silly addNameRange     '2.2.1',
+504 silly addNameRange     '2.2.2',
+504 silly addNameRange     '2.2.3',
+504 silly addNameRange     '2.2.4',
+504 silly addNameRange     '2.3.0',
+504 silly addNameRange     '2.3.1',
+504 silly addNameRange     '2.3.2',
+504 silly addNameRange     '2.3.3',
+504 silly addNameRange     '2.3.4',
+504 silly addNameRange     '2.3.5',
+504 silly addNameRange     '2.3.6',
+504 silly addNameRange     '2.3.7',
+504 silly addNameRange     '2.3.8',
+504 silly addNameRange     '2.3.9',
+504 silly addNameRange     '2.3.10',
+504 silly addNameRange     '2.3.11',
+504 silly addNameRange     '2.3.12',
+504 silly addNameRange     '2.3.13',
+504 silly addNameRange     '2.4.0',
+504 silly addNameRange     '2.4.1',
+504 silly addNameRange     '2.4.2',
+504 silly addNameRange     '2.4.3',
+504 silly addNameRange     '2.4.4',
+504 silly addNameRange     '2.4.5',
+504 silly addNameRange     '2.4.6',
+504 silly addNameRange     '2.4.7',
+504 silly addNameRange     '2.4.8',
+504 silly addNameRange     '2.4.9',
+504 silly addNameRange     '2.4.10',
+504 silly addNameRange     '2.5.0',
+504 silly addNameRange     '2.5.1',
+504 silly addNameRange     '2.5.2',
+504 silly addNameRange     '2.5.3',
+504 silly addNameRange     '2.5.4',
+504 silly addNameRange     '2.5.5',
+504 silly addNameRange     '2.5.6',
+504 silly addNameRange     '2.5.7',
+504 silly addNameRange     '2.5.8',
+504 silly addNameRange     '2.5.9',
+504 silly addNameRange     '2.5.10',
+504 silly addNameRange     '2.5.11',
+504 silly addNameRange     '2.5.12',
+504 silly addNameRange     '2.5.13',
+504 silly addNameRange     '2.5.14',
+504 silly addNameRange     '2.6.0',
+504 silly addNameRange     '2.6.1',
+504 silly addNameRange     '2.6.2',
+504 silly addNameRange     '2.6.3',
+504 silly addNameRange     '2.6.4',
+504 silly addNameRange     '2.6.5',
+504 silly addNameRange     '2.6.6',
+504 silly addNameRange     '2.6.7',
+504 silly addNameRange     '2.6.8',
+504 silly addNameRange     '2.7.0',
+504 silly addNameRange     '2.7.1',
+504 silly addNameRange     '2.7.2',
+504 silly addNameRange     '2.7.4',
+504 silly addNameRange     '2.7.3',
+504 silly addNameRange     '3.0.0',
+504 silly addNameRange     '3.0.1',
+504 silly addNameRange     '3.0.2',
+504 silly addNameRange     '2.8.0',
+504 silly addNameRange     '3.0.3',
+504 silly addNameRange     '3.1.0',
+504 silly addNameRange     '2.8.1',
+504 silly addNameRange     '3.1.1',
+504 silly addNameRange     '2.8.2',
+504 silly addNameRange     '2.8.3',
+504 silly addNameRange     '2.9.0',
+504 silly addNameRange     '3.2.0',
+504 silly addNameRange     '2.9.1',
+504 silly addNameRange     '3.2.1',
+504 silly addNameRange     '2.9.2',
+504 silly addNameRange     '3.2.2',
+504 silly addNameRange     '3.3.0',
+504 silly addNameRange     '3.3.1',
+504 silly addNameRange     '2.9.3',
+504 silly addNameRange     '3.4.0',
+504 silly addNameRange     '2.9.4',
+504 silly addNameRange     '2.9.5',
+504 silly addNameRange     '3.5.0',
+504 silly addNameRange     '3.5.1',
+504 silly addNameRange     '3.5.2',
+504 silly addNameRange     '3.5.3',
+504 silly addNameRange     '2.9.6',
+504 silly addNameRange     '2.9.7',
+504 silly addNameRange     '3.5.4',
+504 silly addNameRange     '3.5.5',
+504 silly addNameRange     '2.9.8',
+504 silly addNameRange     '2.9.9',
+504 silly addNameRange     '3.5.6',
+504 silly addNameRange     '3.5.7',
+504 silly addNameRange     '3.5.8',
+504 silly addNameRange     '2.9.10',
+504 silly addNameRange     '3.5.9',
+504 silly addNameRange     '3.6.2',
+504 silly addNameRange     '3.5.10',
+504 silly addNameRange     '3.6.3',
+504 silly addNameRange     '3.5.11',
+504 silly addNameRange     '3.6.4',
+504 silly addNameRange     '3.6.5',
+504 silly addNameRange     '3.6.6',
+504 silly addNameRange     '3.6.7',
+504 silly addNameRange     '3.5.12',
+504 silly addNameRange     '3.6.8',
+504 silly addNameRange     '3.6.9',
+504 silly addNameRange     '3.6.10',
+504 silly addNameRange     '3.5.13',
+504 silly addNameRange     '3.5.14',
+504 silly addNameRange     '3.6.11',
+504 silly addNameRange     '3.6.12',
+504 silly addNameRange     '3.6.13',
+504 silly addNameRange     '3.6.14',
+504 silly addNameRange     '3.6.15',
+504 silly addNameRange     '3.5.15',
+504 silly addNameRange     '3.7.0',
+504 silly addNameRange     '3.6.16',
+504 silly addNameRange     '3.5.16',
+504 silly addNameRange     '3.6.17',
+504 silly addNameRange     '3.7.2',
+504 silly addNameRange     '3.0.0-alpha1',
+504 silly addNameRange     '3.0.0-alpha2',
+504 silly addNameRange     '3.0.0-rc0',
+504 silly addNameRange     '3.6.0-rc0',
+504 silly addNameRange     '3.6.0-rc1',
+504 silly addNameRange     '3.6.18',
+504 silly addNameRange     '3.7.3',
+504 silly addNameRange     '3.6.19',
+504 silly addNameRange     '3.6.20',
+504 silly addNameRange     '3.7.4',
+504 silly addNameRange     '3.8.0',
+504 silly addNameRange     '3.8.1',
+504 silly addNameRange     '3.8.2',
+504 silly addNameRange     '3.8.3',
+504 silly addNameRange     '3.8.4',
+504 silly addNameRange     '3.8.5',
+504 silly addNameRange     '3.8.6',
+504 silly addNameRange     '3.8.7',
+504 silly addNameRange     '3.8.8',
+504 silly addNameRange     '3.8.9',
+504 silly addNameRange     '3.8.10',
+504 silly addNameRange     '3.8.11',
+504 silly addNameRange     '3.9.0',
+504 silly addNameRange     '3.8.12',
+504 silly addNameRange     '3.8.13',
+504 silly addNameRange     '3.8.14',
+504 silly addNameRange     '3.8.15',
+504 silly addNameRange     '3.9.1',
+504 silly addNameRange     '3.8.16',
+504 silly addNameRange     '3.9.2',
+504 silly addNameRange     '3.8.17',
+504 silly addNameRange     '3.9.3',
+504 silly addNameRange     '3.8.18',
+504 silly addNameRange     '3.9.4',
+504 silly addNameRange     '3.8.19',
+504 silly addNameRange     '3.9.5',
+504 silly addNameRange     '3.8.20',
+504 silly addNameRange     '3.9.6',
+504 silly addNameRange     '3.8.21',
+504 silly addNameRange     '3.9.7',
+504 silly addNameRange     '3.8.22',
+504 silly addNameRange     '4.0.0-rc0',
+504 silly addNameRange     '4.0.0-rc1',
+504 silly addNameRange     '3.8.23',
+504 silly addNameRange     '4.0.0-rc2',
+504 silly addNameRange     '3.8.24',
+504 silly addNameRange     '4.0.0-rc3',
+504 silly addNameRange     '3.8.25',
+504 silly addNameRange     '4.0.0-rc4',
+504 silly addNameRange     '4.0.0',
+504 silly addNameRange     '4.0.1',
+504 silly addNameRange     '3.8.26',
+504 silly addNameRange     '3.8.27',
+504 silly addNameRange     '4.0.2',
+504 silly addNameRange     '3.8.28',
+504 silly addNameRange     '4.0.3',
+504 silly addNameRange     '3.8.29',
+504 silly addNameRange     '4.0.4',
+504 silly addNameRange     '3.8.30',
+504 silly addNameRange     '4.0.5' ] ]
+505 silly addNamed mongoose@4.0.5
+506 verbose addNamed "4.0.5" is a plain semver version for mongoose
+507 silly cache afterAdd shelljs@0.3.0
+508 verbose afterAdd /home/belen/.npm/shelljs/0.3.0/package/package.json not in flight; writing
+509 http 304 https://registry.npmjs.org/async-series
+510 silly get cb [ 304,
+510 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+510 silly get     via: '1.1 varnish',
+510 silly get     'cache-control': 'max-age=60',
+510 silly get     etag: '"E84IR2CE6L6PNZTNIJHQ15VUD"',
+510 silly get     age: '0',
+510 silly get     connection: 'keep-alive',
+510 silly get     'x-served-by': 'cache-atl6232-ATL',
+510 silly get     'x-cache': 'MISS',
+510 silly get     'x-cache-hits': '0',
+510 silly get     'x-timer': 'S1434801265.383662,VS0,VE26',
+510 silly get     vary: 'Accept' } ]
+511 verbose etag https://registry.npmjs.org/async-series from cache
+512 verbose get saving async-series to /home/belen/.npm/registry.npmjs.org/async-series/.cache.json
+513 http 304 https://registry.npmjs.org/mean-health
+514 silly get cb [ 304,
+514 silly get   { date: 'Sat, 20 Jun 2015 11:54:25 GMT',
+514 silly get     via: '1.1 varnish',
+514 silly get     'cache-control': 'max-age=60',
+514 silly get     etag: '"3NNGCLSF8SXYYOK6YBIZQCKSV"',
+514 silly get     age: '0',
+514 silly get     connection: 'keep-alive',
+514 silly get     'x-served-by': 'cache-atl6229-ATL',
+514 silly get     'x-cache': 'MISS',
+514 silly get     'x-cache-hits': '0',
+514 silly get     'x-timer': 'S1434801265.326849,VS0,VE88',
+514 silly get     vary: 'Accept' } ]
+515 verbose etag https://registry.npmjs.org/mean-health from cache
+516 verbose get saving mean-health to /home/belen/.npm/registry.npmjs.org/mean-health/.cache.json
+517 info retry fetch attempt 1 at 8:54:25 AM
+518 info attempt registry request try #1 at 8:54:25 AM
+519 http fetch GET https://registry.npmjs.org/inquirer/-/inquirer-0.8.5.tgz
+520 silly addNameTag next cb for request with tag latest
+521 silly addNamed request@2.58.0
+522 verbose addNamed "2.58.0" is a plain semver version for request
+523 silly addNameTag next cb for crypto with tag latest
+524 silly addNamed crypto@0.0.3
+525 verbose addNamed "0.0.3" is a plain semver version for crypto
+526 silly cache afterAdd npm@2.11.3
+527 verbose afterAdd /home/belen/.npm/npm/2.11.3/package/package.json not in flight; writing
+528 verbose afterAdd /home/belen/.npm/progress/1.1.8/package/package.json written
+529 verbose afterAdd /home/belen/.npm/chalk/0.5.1/package/package.json written
+530 verbose afterAdd /home/belen/.npm/commander/2.8.1/package/package.json written
+531 verbose afterAdd /home/belen/.npm/prompt/0.2.14/package/package.json written
+532 verbose afterAdd /home/belen/.npm/lodash/2.4.2/package/package.json written
+533 verbose afterAdd /home/belen/.npm/opener/1.4.1/package/package.json written
+534 verbose afterAdd /home/belen/.npm/shelljs/0.3.0/package/package.json written
+535 silly cache afterAdd mongoose@4.0.5
+536 verbose afterAdd /home/belen/.npm/mongoose/4.0.5/package/package.json not in flight; writing
+537 silly addNameRange number 2 { name: 'json-file-plus',
+537 silly addNameRange   range: '>=2.0.0 <3.0.0',
+537 silly addNameRange   hasData: true }
+538 silly addNameRange versions [ 'json-file-plus',
+538 silly addNameRange   [ '0.0.1',
+538 silly addNameRange     '0.0.2',
+538 silly addNameRange     '0.0.3',
+538 silly addNameRange     '0.0.4',
+538 silly addNameRange     '0.0.5',
+538 silly addNameRange     '0.0.6',
+538 silly addNameRange     '0.0.7',
+538 silly addNameRange     '0.0.8',
+538 silly addNameRange     '0.1.0',
+538 silly addNameRange     '0.1.1',
+538 silly addNameRange     '0.2.0',
+538 silly addNameRange     '0.2.1',
+538 silly addNameRange     '0.2.2',
+538 silly addNameRange     '0.2.3',
+538 silly addNameRange     '1.0.0',
+538 silly addNameRange     '1.0.1',
+538 silly addNameRange     '1.0.2',
+538 silly addNameRange     '1.0.3',
+538 silly addNameRange     '1.0.4',
+538 silly addNameRange     '1.0.5',
+538 silly addNameRange     '1.0.6',
+538 silly addNameRange     '1.0.7',
+538 silly addNameRange     '2.0.0',
+538 silly addNameRange     '3.0.0' ] ]
+539 silly addNamed json-file-plus@2.0.0
+540 verbose addNamed "2.0.0" is a plain semver version for json-file-plus
+541 warn deprecated json-file-plus@2.0.0: Before v3.0.0, errors in fs.writeFile would not be propagated
+542 verbose afterAdd /home/belen/.npm/npm/2.11.3/package/package.json written
+543 silly cache afterAdd request@2.58.0
+544 verbose afterAdd /home/belen/.npm/request/2.58.0/package/package.json not in flight; writing
+545 silly cache afterAdd crypto@0.0.3
+546 verbose afterAdd /home/belen/.npm/crypto/0.0.3/package/package.json not in flight; writing
+547 silly addNameRange number 2 { name: 'mean-health', range: '>=0.1.3 <0.2.0', hasData: true }
+548 silly addNameRange versions [ 'mean-health',
+548 silly addNameRange   [ '0.0.0',
+548 silly addNameRange     '0.1.0',
+548 silly addNameRange     '0.1.2',
+548 silly addNameRange     '0.1.3',
+548 silly addNameRange     '0.1.4',
+548 silly addNameRange     '0.1.5',
+548 silly addNameRange     '0.1.6',
+548 silly addNameRange     '0.2.0',
+548 silly addNameRange     '0.2.1',
+548 silly addNameRange     '0.1.7' ] ]
+549 silly addNamed mean-health@0.1.7
+550 verbose addNamed "0.1.7" is a plain semver version for mean-health
+551 silly addNameTag next cb for async-series with tag latest
+552 silly addNamed async-series@0.0.1
+553 verbose addNamed "0.0.1" is a plain semver version for async-series
+554 verbose afterAdd /home/belen/.npm/mongoose/4.0.5/package/package.json written
+555 silly cache afterAdd json-file-plus@2.0.0
+556 verbose afterAdd /home/belen/.npm/json-file-plus/2.0.0/package/package.json not in flight; writing
+557 verbose afterAdd /home/belen/.npm/request/2.58.0/package/package.json written
+558 verbose afterAdd /home/belen/.npm/crypto/0.0.3/package/package.json written
+559 silly cache afterAdd mean-health@0.1.7
+560 verbose afterAdd /home/belen/.npm/mean-health/0.1.7/package/package.json not in flight; writing
+561 silly cache afterAdd async-series@0.0.1
+562 verbose afterAdd /home/belen/.npm/async-series/0.0.1/package/package.json not in flight; writing
+563 verbose afterAdd /home/belen/.npm/json-file-plus/2.0.0/package/package.json written
+564 verbose afterAdd /home/belen/.npm/mean-health/0.1.7/package/package.json written
+565 verbose afterAdd /home/belen/.npm/async-series/0.0.1/package/package.json written
+566 http fetch 200 https://registry.npmjs.org/inquirer/-/inquirer-0.8.5.tgz
+567 silly fetchAndShaCheck shasum dbd740cf6ca3b731296a63ce6f6d961851f336df
+568 verbose addTmpTarball /tmp/npm-15505-5e00e988/registry.npmjs.org/inquirer/-/inquirer-0.8.5.tgz not in flight; adding
+569 verbose addTmpTarball already have metadata; skipping unpack for inquirer@0.8.5
+570 verbose about to build /home/belen/opt/node/0.12/lib/node_modules/mean-cli
+571 verbose unlock done using /home/belen/.npm/_locks/mean-cli-a162f1eb826990e1.lock for /home/belen/opt/node/0.12/lib/node_modules/mean-cli
+572 verbose stack Error: EACCES, mkdir '/home/belen/.npm/inquirer/0.8.5'
+572 verbose stack     at Error (native)
+573 verbose cwd /home/belen/Documents/auctionSite/bestnid
+574 error Linux 3.19.0-21-generic
+575 error argv "/home/belen/opt/node/0.12/bin/node" "/home/belen/opt/node/0.12/bin/npm" "install" "-g" "mean-cli"
+576 error node v0.12.4
+577 error npm  v2.10.1
+578 error path /home/belen/.npm/inquirer/0.8.5
+579 error code EACCES
+580 error errno -13
+581 error Error: EACCES, mkdir '/home/belen/.npm/inquirer/0.8.5'
+581 error     at Error (native)
+581 error  { [Error: EACCES, mkdir '/home/belen/.npm/inquirer/0.8.5']
+581 error   errno: -13,
+581 error   code: 'EACCES',
+581 error   path: '/home/belen/.npm/inquirer/0.8.5',
+581 error   parent: 'mean-cli' }
+582 error Please try running this command again as root/Administrator.
+583 verbose exit [ -13, true ]
+584 verbose unbuild lib/node_modules/mean-cli
+585 info preuninstall mean-cli@0.10.13
+586 info uninstall mean-cli@0.10.13
+587 verbose unbuild rmStuff mean-cli@0.10.13 from /home/belen/opt/node/0.12/lib/node_modules
+588 silly gentlyRm /home/belen/opt/node/0.12/bin/mean is being gently removed
+589 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+590 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-init is being gently removed
+591 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+592 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-authorize is being gently removed
+593 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+594 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-whoami is being gently removed
+595 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+596 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-login is being gently removed
+597 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+598 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-addKey is being gently removed
+599 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+600 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-publish is being gently removed
+601 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+602 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-search is being gently removed
+603 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+604 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-deploy is being gently removed
+605 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+606 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-logs is being gently removed
+607 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+608 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-register is being gently removed
+609 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+610 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-postinstall is being gently removed
+611 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+612 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-preinstall is being gently removed
+613 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+614 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-install is being gently removed
+615 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+616 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-uninstall is being gently removed
+617 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+618 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-docs is being gently removed
+619 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+620 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-package is being gently removed
+621 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+622 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-list is being gently removed
+623 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+624 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-status is being gently removed
+625 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+626 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-user is being gently removed
+627 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+628 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-logout is being gently removed
+629 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+630 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-disable is being gently removed
+631 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+632 silly gentlyRm /home/belen/opt/node/0.12/bin/mean-enable is being gently removed
+633 silly gentlyRm verifying /home/belen/opt/node/0.12 is an npm working directory
+634 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+635 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean is under /home/belen/opt/node/0.12
+636 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean up to /home/belen/opt/node/0.12
+637 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+638 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-init is under /home/belen/opt/node/0.12
+639 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-init up to /home/belen/opt/node/0.12
+640 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+641 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-authorize is under /home/belen/opt/node/0.12
+642 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-authorize up to /home/belen/opt/node/0.12
+643 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+644 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-whoami is under /home/belen/opt/node/0.12
+645 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-whoami up to /home/belen/opt/node/0.12
+646 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+647 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-login is under /home/belen/opt/node/0.12
+648 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-login up to /home/belen/opt/node/0.12
+649 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+650 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-addKey is under /home/belen/opt/node/0.12
+651 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-addKey up to /home/belen/opt/node/0.12
+652 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+653 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-publish is under /home/belen/opt/node/0.12
+654 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-publish up to /home/belen/opt/node/0.12
+655 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+656 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-search is under /home/belen/opt/node/0.12
+657 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-search up to /home/belen/opt/node/0.12
+658 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+659 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-deploy is under /home/belen/opt/node/0.12
+660 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-deploy up to /home/belen/opt/node/0.12
+661 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+662 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-logs is under /home/belen/opt/node/0.12
+663 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-logs up to /home/belen/opt/node/0.12
+664 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+665 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-register is under /home/belen/opt/node/0.12
+666 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-register up to /home/belen/opt/node/0.12
+667 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+668 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-postinstall is under /home/belen/opt/node/0.12
+669 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-postinstall up to /home/belen/opt/node/0.12
+670 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+671 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-preinstall is under /home/belen/opt/node/0.12
+672 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-preinstall up to /home/belen/opt/node/0.12
+673 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+674 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-install is under /home/belen/opt/node/0.12
+675 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-install up to /home/belen/opt/node/0.12
+676 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+677 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-uninstall is under /home/belen/opt/node/0.12
+678 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-uninstall up to /home/belen/opt/node/0.12
+679 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+680 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-docs is under /home/belen/opt/node/0.12
+681 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-docs up to /home/belen/opt/node/0.12
+682 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+683 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-package is under /home/belen/opt/node/0.12
+684 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-package up to /home/belen/opt/node/0.12
+685 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+686 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-list is under /home/belen/opt/node/0.12
+687 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-list up to /home/belen/opt/node/0.12
+688 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+689 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-status is under /home/belen/opt/node/0.12
+690 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-status up to /home/belen/opt/node/0.12
+691 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+692 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-user is under /home/belen/opt/node/0.12
+693 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-user up to /home/belen/opt/node/0.12
+694 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+695 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-logout is under /home/belen/opt/node/0.12
+696 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-logout up to /home/belen/opt/node/0.12
+697 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+698 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-disable is under /home/belen/opt/node/0.12
+699 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-disable up to /home/belen/opt/node/0.12
+700 silly gentlyRm containing path /home/belen/opt/node/0.12 is under npm's control, in /home/belen/opt/node/0.12
+701 silly gentlyRm deletion target /home/belen/opt/node/0.12/bin/mean-enable is under /home/belen/opt/node/0.12
+702 verbose gentlyRm vacuuming from /home/belen/opt/node/0.12/bin/mean-enable up to /home/belen/opt/node/0.12
+703 info postuninstall mean-cli@0.10.13
+704 silly gentlyRm /home/belen/opt/node/0.12/lib/node_modules/mean-cli is being purged from base /home/belen/opt/node/0.12
+705 verbose gentlyRm don't care about contents; nuking /home/belen/opt/node/0.12/lib/node_modules/mean-cli
+706 silly vacuum-fs purging /home/belen/opt/node/0.12/lib/node_modules/mean-cli
+707 silly vacuum-fs quitting because other entries in /home/belen/opt/node/0.12/lib/node_modules
