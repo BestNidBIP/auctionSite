@@ -1,0 +1,44 @@
+<section data-ng-controller="CategoryAdminController">
+	<h1>Categorias</h1>
+	<div class="line-through"></div>
+	<div class="row">
+		<div class="col-xs-6"><div class="form-group">
+			<label for="">Buscar Categoria:</label>
+			<input ng-model="searchCategory" type="text" class="form-control" placeholder="Buscar categoría">
+		</div></div>
+		<div class="col-xs-6">
+			<div class="form-group">
+				<form name="addCategory">
+					<div class="row">
+						<div class="col-xs-10">
+							<label for="">Agregar Categoria:</label>
+							<input type="text" class="form-control" placeholder="Escribe el nombre de la categoría y apreta enter" ng-model="newCategoryName" name="cateName" required >
+						</div>
+						<div class="col-xs-2">
+							<label for="">&nbsp;</label>
+							<button class="btn btn-success" type="submit" ng-disabled="!addCategory.$valid" ng-click="add_new_category(newCategoryName)">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar
+							</button>
+						</div>
+					</div>
+					
+					
+					<div class="alert alert-danger" role="alert" ng-show="addCategory.cateName.$invalid && !addCategory.cateName.$pristine">
+						Por favor ingresa una categoría.
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	<table class="table">
+		<tr>
+			<th class="warning">Nombre de la categoría</th>
+		</tr>
+		<tr ng-repeat="category in get_categories | filter:searchCategory | orderBy:'name'">
+			<td>{{category.name}}</td>
+		</tr>
+	</table>
+
+</section>
+
