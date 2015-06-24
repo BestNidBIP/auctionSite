@@ -49,9 +49,10 @@
                             </div>
                         </div>
                         <div class="text-center">
+                            <p class="text-danger btn-make-offer" ng-if="!global.user.name">Debes estar registrado para poder realizar una oferta.</p>
                             <button class="btn btn-success btn-lg btn-make-offer" 
                             ng-click="display_offer_form = !display_offer_form" aria-label="Toggle ngShow"
-                            type="submit">Ofertar</button>
+                            type="submit" ng-if="global.user.name">Ofertar</button>
                         </div>
 
                         <!-- Offer form -->
@@ -105,9 +106,7 @@
 </div>
 </div>
 </div>
-
 <hr>
-
 <h3 class="text-center">¡Agrega un comentario!</h3>
 <div class="comment-section">
     <div class="comment-question" ng-repeat="comment in comments | orderBy:'comment.created'">
