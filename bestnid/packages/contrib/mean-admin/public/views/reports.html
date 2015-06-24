@@ -11,10 +11,10 @@
 				<form name="userRegistered">
 					<h4>Desde: </h4>
 					<div class="form-group">
-						<input type="number" name="dayFrom" class="form-control" ng-model="date_report.from.day" placeholder="Día (1..30)" min=1 max=30 required>
+						<input type="number" name="dayFrom" class="form-control" ng-model="date_report.from.day" placeholder="Día (1..31)" min=1 max=31 required>
 						<div class="alert alert-danger" role="alert" 
 						ng-show="!userRegistered.dayFrom.$valid && !userRegistered.dayFrom.$pristine">
-						Por favor ingresa un día comprendido entre 1 y 30.
+						Por favor ingresa un día comprendido entre 1 y 31.
 					</div>
 				</div>
 				<div class="form-group">
@@ -36,10 +36,10 @@
 
 		<div class="form-group">
 			<input type="number" name="toDay" class="form-control" ng-model="date_report.to.day"
-			placeholder="Día (1..30)" min=1 max=30 required>
+			placeholder="Día (1..31)" min=1 max=31 required>
 			<div class="alert alert-danger" role="alert" 
 			ng-show="!userRegistered.toDay.$valid && !userRegistered.toDay.$pristine">
-			Por favor ingresa un día comprendido entre 1 y 30.
+			Por favor ingresa un día comprendido entre 1 y 31.
 		</div>
 	</div>
 	<div class="form-group">
@@ -70,13 +70,14 @@
 			<th>Apellido</th>
 			<th>Correo electrónico</th>
 		</tr>
-		<tr ng-repeat="user in users_report">
+		<tr ng-repeat="user in users_report" ng-init="count_number_of_users()">
 			<td>{{user._id}}</td>
 			<td>{{user.name}}</td>
 			<td>{{user.lastname}}</td>
 			<td>{{user.email}}</td>
 		</tr>
 	</table>
+	<p class="text-center"><strong>Total : {{total_usuarios_registrados}}</strong></p>
 </div>
 </div>
 </accordion-group>
@@ -88,10 +89,10 @@
 		<form name="salesBetweenDates">
 			<h4>Desde: </h4>
 			<div class="form-group">
-				<input type="number" name="dayFrom" class="form-control" ng-model="sales_between_dates.from.day" placeholder="Día (1..30)" min=1 max=30 required>
+				<input type="number" name="dayFrom" class="form-control" ng-model="sales_between_dates.from.day" placeholder="Día (1..31)" min=1 max=31 required>
 				<div class="alert alert-danger" role="alert" 
 				ng-show="!salesBetweenDates.dayFrom.$valid && !salesBetweenDates.dayFrom.$pristine">
-				Por favor ingresa un día comprendido entre 1 y 30.
+				Por favor ingresa un día comprendido entre 1 y 31.
 			</div>
 		</div>
 		<div class="form-group">
@@ -113,10 +114,10 @@
 
 <div class="form-group">
 	<input type="number" name="toDay" class="form-control" ng-model="sales_between_dates.to.day"
-	placeholder="Día (1..30)" min=1 max=30 required>
+	placeholder="Día (1..31)" min=1 max=31 required>
 	<div class="alert alert-danger" role="alert" 
 	ng-show="!salesBetweenDates.toDay.$valid && !salesBetweenDates.toDay.$pristine">
-	Por favor ingresa un día comprendido entre 1 y 30.
+	Por favor ingresa un día comprendido entre 1 y 31.
 </div>
 </div>
 <div class="form-group">
@@ -140,19 +141,19 @@
 </div>
 </div>
 <div class="col-xs-12 col-md-9">
-	{{sales_report_data}}
 	<table class="table table-striped">
 		<tr>
 			<th>ID Oferta</th>
 			<th>Necesidad</th>
 			<th>Monto ofertado</th>
 		</tr>
-		<tr ng-repeat="offer in sales_report_data">
+		<tr ng-repeat="offer in sales_report_data" ng-init="count_number_of_sales_between_dates()">
 			<td>{{offer._id}}</td>
 			<td>{{offer.description}}</td>
 			<td>{{offer.offer | currency: "$ "}}</td>
 		</tr>
 	</table>
+	<p class="text-center"><strong>Total : {{total_sales_between_dates}}</strong></p>
 </div>
 </div>
 </accordion-group>
@@ -179,13 +180,12 @@
 		</div>
 	</div>
 	<div class="form-group">
-	<button type="button" class="btn btn-success" ng-disabled="!salesPerMonth.$valid" 
-	ng-click="sales(sales_in_month)">Obtener reporte</button>
-</div>
+		<button type="button" class="btn btn-success" ng-disabled="!salesPerMonth.$valid" 
+		ng-click="sales(sales_in_month)">Obtener reporte</button>
+	</div>
 </form>
 </div>
 <div class="col-xs-12 col-md-9">
-	{{sales_per_month_report}}
 	<table class="table table-striped">
 		<tr>
 			<th>ID Oferta</th>
@@ -224,18 +224,17 @@
 		</div>
 	</div>
 	<div class="form-group">
-	<button type="button" class="btn btn-success" ng-disabled="!comissionPerMonth.$valid" 
-	ng-click="commision_per_month(commision_per_month)">Obtener reporte</button>
-</div>
+		<button type="button" class="btn btn-success" ng-disabled="!comissionPerMonth.$valid" 
+		ng-click="commision_per_month(commision_per_month)">Obtener reporte</button>
+	</div>
 </form>
 </div>
 <div class="col-xs-12 col-md-9">
-	{{commision_per_month_report}}
 	<table class="table table-striped">
 		<tr>
 			<th>ID Oferta</th>
 			<th>Necesidad</th>
-			<th>Monto ofertado</th>
+			<th>Comisión Ganada</th>
 		</tr>
 		<tr ng-repeat="offer in commision_per_month_report" ng-init="calculateCommisionTotal(offer.offer)">
 			<td>{{offer._id}}</td>

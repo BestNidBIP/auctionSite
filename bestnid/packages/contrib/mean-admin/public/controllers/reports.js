@@ -7,7 +7,7 @@ angular.module('mean.mean-admin').controller('reportsController',
       $scope.date_report.from = {};
       $scope.date_report.to = {};
 
-
+      // Users registered
       $scope.user_report = function(date){
         $scope.users_report_promise = reports.getRegisterUsersByDate(date);
         $scope.users_report_promise.then(function(response){
@@ -15,11 +15,24 @@ angular.module('mean.mean-admin').controller('reportsController',
        });
       };
 
+      // Count the number of users registered
+      $scope.total_usuarios_registrados = 0;
+      $scope.count_number_of_users = function (){
+        $scope.total_usuarios_registrados = $scope.total_usuarios_registrados + 1;
+      };
+
+      // Sales between two dates
       $scope.sales_report = function(date) {
         $scope.sales_report_promise = reports.getSalesByDate(date);
         $scope.sales_report_promise.then(function(response){
           $scope.sales_report_data = response.data; 
         });
+      };
+
+      // Total sales between two dates
+      $scope.total_sales_between_dates = 0;
+      $scope.count_number_of_sales_between_dates = function () {
+        $scope.total_sales_between_dates =  $scope.total_sales_between_dates + 1;
       };
 
       $scope.total = 0;
