@@ -279,7 +279,17 @@ exports.update = function(req, res) {
         msg: err
       }]);
       _.forIn(req.body, function(value, key){
-        user[key] = value;
+        if(key === 'image'){
+          if(value._id){
+            user[key] = value._id;
+          }
+          else{
+           user[key] = value; 
+          }
+        }
+        else{
+          user[key] = value;
+        }
       });
       
     
