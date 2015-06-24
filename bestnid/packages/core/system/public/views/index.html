@@ -32,7 +32,9 @@
               </li>
             </ul>
             <p>
-              <a href="#!/publicacion?id={{publication._id}}" ng-disabled="!publication.activated" class="btn btn-success" role="button">Ver publicación</a>
+              <a href="#!/publicacion?id={{publication._id}}" 
+              ng-disabled="publication.remaining_hours / 24 < 0" 
+              class="btn btn-success" role="button">Ver publicación</a>
             </div>
           </div>
         </div>

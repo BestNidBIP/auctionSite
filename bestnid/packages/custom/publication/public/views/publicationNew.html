@@ -38,7 +38,7 @@
 
                         <select ng-model="publication.category" class="form-control"
                         id="category" name="category"
-                        ng-options="category._id as category.name for category in categories"
+                        ng-options="category._id as category.name for category in categories | orderBy:'name'"
                         required>
                     </select>
                     <p ng-show="newPublicationForm.category.$invalid && !newPublicationForm.category.$pristine"
