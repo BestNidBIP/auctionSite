@@ -35,7 +35,7 @@
           </div>
 
           <!-- User name -->
-          <div class="form-group" ng-form name="innerForm">
+          <div class="form-group" ng-form name="NameForm">
             <label for="name">Nombre:</label>
             <input type="text" class="form-control" name="name" id="name"
             placeholder="{{user_data.name}}"
@@ -43,10 +43,10 @@
             ng-pattern="/[a-zA-Z0-9^ ]/"
             ng-class="{highlight: userData.name.$error.required}"
             value="{{user_data.name}}"
-            ng-blur="innerForm.$valid && update_user_information(user_data)"
+            ng-blur="NameForm.$valid && update_user_information(user_data)"
             required/>
             <div class="alert alert-danger" role="alert" 
-            ng-show="innerForm.name.$error.required">
+            ng-show="NameForm.name.$error.required">
             <span class="text-danger text-center">
               Por favor ingrese su nombre.
             </span>
@@ -54,16 +54,16 @@
         </div>
 
         <!-- Last name -->
-        <div class="form-group" ng-form name="innerForm">
+        <div class="form-group" ng-form name="LastNameForm">
           <label for="lastname">Apellido:</label>
           <input type="text" class="form-control"
           name="lastname" id="lastname"
           placeholder="{{user_data.lastname}}"
           ng-model="user_data.lastname"
           ng-pattern="/[a-zA-Z0-9^ ]/"
-          ng-blur="innerForm.$valid && update_user_information(user_data)" required/>
+          ng-blur="LastNameForm.$valid && update_user_information(user_data)" required/>
 
-          <div class="alert alert-danger" role="alert" ng-show="innerForm.lastname.$error.required">
+          <div class="alert alert-danger" role="alert" ng-show="LastNameForm.lastname.$error.required">
             <span class="text-danger text-center">
               Por favor ingrese su apellido.
             </span>
@@ -71,7 +71,7 @@
         </div>
 
         <!-- User phone number -->
-        <div class="form-group" ng-form name="innerForm">
+        <div class="form-group" ng-form name="PhoneForm">
           <label for="phone">Teléfono:</label>
           <input type="tel"
           class="form-control"
@@ -81,18 +81,18 @@
           ng-model="user_data.phone"
           ng-minlength="8"
           ng-maxlength="13"
-          ng-blur="innerForm.$valid && update_user_information(user_data)"
+          ng-blur="PhoneForm.$valid && update_user_information(user_data)"
           required/>
 
           <div class="alert alert-danger" role="alert"
-          ng-show="innerForm.phone.$error.required">
+          ng-show="PhoneForm.phone.$error.required">
           <span class="text-danger text-center">
             Por favor ingrese su número de teléfono.
           </span>
         </div>
         <div class="alert alert-danger" role="alert"
-        ng-show="innerForm.phone.$error.maxlength ||
-        innerForm.phone.$error.minlength">
+        ng-show="PhoneForm.phone.$error.maxlength ||
+        PhoneForm.phone.$error.minlength">
         <span class="text-danger text-center">
           Por favor ingrese un número que contenga entre 8 y 13 dígitos.
         </span>
@@ -136,26 +136,27 @@
 <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 
-    <!-- Users credit card number -->
-    <div class="form-group" ng-form name="innerForm">
+  <!-- Users credit card number -->  
+  <div class="form-group" ng-form name="CCForm">
       <label for="creditCardNumber">Número de la tarjeta de crédito:</label>
       <input type="number" class="form-control" name="creditCardNumber" id="creditCardNumber"
       placeholder="{{user_data.creditCardNumber}}"
       ng-model="user_data.creditCardNumber"
       ng-minlength="16"
       ng-maxlength="16"
-      ng-blur ="innerForm.$valid && update_user_information(user_data)"
+      ng-blur ="CCForm.$valid && update_user_information(user_data)"
       required/>
 
       <div class="alert alert-danger" role="alert"
-      ng-show="innerForm.creditCardNumber.$error.required">
+      ng-show="CCForm.creditCardNumber.$error.required">
       <span class="text-danger text-center">
         Por favor ingrese su número de tarjeta de crédito.
       </span>
     </div>
+    
     <div class="alert alert-danger" role="alert"
-    ng-show="innerForm.creditCardNumber.$error.maxlength ||
-    innerForm.creditCardNumber.$error.minlength">
+    ng-show="CCForm.creditCardNumber.$error.maxlength ||
+    CCForm.creditCardNumber.$error.minlength">
     <span class="text-danger text-center">
       Por favor ingrese un número que contenga 16 dígitos.
     </span>
@@ -183,21 +184,21 @@
 
 <!-- Users security code -->
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-  <div class="form-group" ng-form name="innerForm">
+  <div class="form-group" ng-form name="SecurityCodeForm">
     <label for="creditCardSecCode">Código de seguridad:</label>
     <input type="number" class="form-control" name="creditCardSecCode" id="creditCardSecCode"
     placeholder="{{user_data.creditCardSecCode}}" ng-model="user_data.creditCardSecCode"
     ng-minlength="3" ng-maxlength="4" required
-    ng-blur="innerForm.$valid && update_user_information(user_data)"/>
+    ng-blur="SecurityCodeForm.$valid && update_user_information(user_data)"/>
     <div class="alert alert-danger" role="alert"
-    ng-show="innerForm.creditCardSecCode.$error.required">
+    ng-show="SecurityCodeForm.creditCardSecCode.$error.required">
     <span class="text-danger text-center">
       Por favor, ingrese el código de seguridad.
     </span>
   </div>
   <div class="alert alert-danger" role="alert"
-  ng-show="innerForm.creditCardSecCode.$error.minlength ||
-  innerForm.creditCardSecCode.$error.maxlength">
+  ng-show="SecurityCodeForm.creditCardSecCode.$error.minlength ||
+  SecurityCodeForm.creditCardSecCode.$error.maxlength">
   <span class="text-danger text-center">
     Por favor, ingrese un código que contenga entre 3 y 4 dígitos.
   </span>
