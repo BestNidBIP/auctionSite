@@ -28,7 +28,7 @@
                 <td>{{ offer.description }}</td>
                 <td>
                 <div ng-form name="innerForm">
-                        <input type="number" class="form-control" name="amountOffered" ng-model="offer.offer"  ng-blur="inngerForm.amountOffered.$valid && user_update_offer(offer)" min="1" required  ng-class="highlight-red">
+                        <input type="number" class="form-control" name="amountOffered" ng-model="offer.offer"  ng-blur="innerForm.amountOffered.$valid && user_update_offer(offer)" min="1" required  ng-class="highlight-red">
                         <div class="alert alert-danger" role="alert" ng-show="!innerForm.amountOffered.$valid">
                             Por favor ingrese un monto para su oferta mayor a $1.
                         </div>
