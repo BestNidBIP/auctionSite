@@ -48,10 +48,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center">
+                        <div ng-if="!global.user.name">
                             <p class="text-danger btn-make-offer" ng-if="!global.user.name">Debes estar registrado para poder realizar una oferta.</p>
+                        </div>
+                        <div class="text-center" ng-if="global.user.name" >
                             <button class="btn btn-success btn-lg btn-make-offer" 
-                            ng-click="display_offer_form = !display_offer_form" aria-label="Toggle ngShow"
+                            ng-click="toogle(display_offer_form)" aria-label="Toggle ngShow"
                             type="submit" >Ofertar</button>
                         </div>
 
