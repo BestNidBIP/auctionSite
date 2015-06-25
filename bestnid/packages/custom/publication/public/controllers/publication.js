@@ -15,7 +15,7 @@ angular.module('mean.publication').controller('PublicationController', ['$scope'
 		//Toogle helper
 		$scope.toogle = function(boolean){
 			$scope.display_offer_form = !$scope.display_offer_form;
-		}
+		};
 
 		// Get categories available
 		$scope.categories = null;
