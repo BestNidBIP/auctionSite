@@ -14,13 +14,7 @@ var mongoose = require('mongoose'),
  */
 exports.all = function(req, res) {
   Offers.find({ user: req.user._id}, function(err, offers) {
-    var offerMap = {};
-
-    offers.forEach(function(offer) {
-      offerMap[offer._id] = offer;
-    });
-
-    res.send(offerMap);  
+    res.send(offers);  
   });
 };
 

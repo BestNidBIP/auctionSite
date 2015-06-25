@@ -23,7 +23,7 @@
                 <th>Monto ofertado</th>
                 <th></th>
             </tr>
-            <tr ng-repeat="offer in user_offers">
+            <tr ng-repeat="offer in user_offers | filter:search_for_offers">
                 <td>{{ offer._id }}</td>
                 <td>{{ offer.description }}</td>
                 <td>
